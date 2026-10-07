@@ -1,0 +1,6 @@
+{
+  "dataset_url": "http://127.0.0.1:3032/digitalcare_submission_v7",
+  "app_host": "127.0.0.1",
+  "app_port": 8770,
+  "model_file": "model/DigitalCare_TheStar_ass2_v8.rdf"
+}

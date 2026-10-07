@@ -1,0 +1,24 @@
+PREFIX dc: <http://uow.edu.au/isit906/thestar/digitalcare#>
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX owl: <http://www.w3.org/2002/07/owl#>
+
+# "individuals" counts explicit owl:NamedIndividual statements, not triples.
+SELECT ?guides ?reviewers ?individuals ?reviewLinks
+WHERE {
+  { SELECT (COUNT(DISTINCT ?guide) AS ?guides) WHERE {
+      ?guide rdf:type/rdfs:subClassOf* dc:Guide .
+      FILTER(isIRI(?guide) && STRSTARTS(STR(?guide), "http://uow.edu.au/isit906/thestar/digitalcare#"))
+  } }
+  { SELECT (COUNT(DISTINCT ?reviewer) AS ?reviewers) WHERE {
+      ?reviewer rdf:type/rdfs:subClassOf* dc:HealthcareProfessional .
+      FILTER(isIRI(?reviewer) && STRSTARTS(STR(?reviewer), "http://uow.edu.au/isit906/thestar/digitalcare#"))
+  } }
+  { SELECT (COUNT(DISTINCT ?record) AS ?individuals) WHERE {
+      ?record rdf:type owl:NamedIndividual .
+  } }
+  { SELECT (COUNT(*) AS ?reviewLinks) WHERE {
+      ?guide dc:isReviewedBy ?reviewer .
+  } }
+}
+

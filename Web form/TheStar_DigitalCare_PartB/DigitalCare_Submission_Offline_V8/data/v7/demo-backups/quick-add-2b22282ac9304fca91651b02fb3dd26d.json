@@ -1,0 +1,110 @@
+{
+  "dataset": "http://127.0.0.1:3032/digitalcare_submission_v7",
+  "createdAt": "2026-09-23T11:46:45.938683+00:00",
+  "plan": {
+    "cq": "CQ3",
+    "recordIri": "http://uow.edu.au/isit906/thestar/digitalcare#Demo-CQ3-2b22282ac9304fca91651b02fb3dd26d",
+    "recordLabel": "NSW Support Service 3",
+    "createdIndividuals": 1,
+    "ownedIris": [
+      "http://uow.edu.au/isit906/thestar/digitalcare#Demo-CQ3-2b22282ac9304fca91651b02fb3dd26d"
+    ],
+    "triples": "<http://uow.edu.au/isit906/thestar/digitalcare#Demo-CQ3-2b22282ac9304fca91651b02fb3dd26d> a dc:SupportService, owl:NamedIndividual; rdfs:label \"NSW Support Service 3\"^^<http://www.w3.org/2001/XMLSchema#string>; rdfs:comment \"Fictional classroom demo data.\" .\n<http://uow.edu.au/isit906/thestar/digitalcare#Demo-CQ3-2b22282ac9304fca91651b02fb3dd26d> <http://uow.edu.au/isit906/thestar/digitalcare#supportsCondition> <http://uow.edu.au/isit906/thestar/digitalcare#AlzheimersDementia> .\n<http://uow.edu.au/isit906/thestar/digitalcare#Demo-CQ3-2b22282ac9304fca91651b02fb3dd26d> <http://uow.edu.au/isit906/thestar/digitalcare#isLocatedIn> <http://uow.edu.au/isit906/thestar/digitalcare#NSW> .\n<http://uow.edu.au/isit906/thestar/digitalcare#Demo-CQ3-2b22282ac9304fca91651b02fb3dd26d> <http://uow.edu.au/isit906/thestar/digitalcare#phoneNumber> \"DEMO CONTACT 3\"^^<http://www.w3.org/2001/XMLSchema#string> .\n<http://uow.edu.au/isit906/thestar/digitalcare#Demo-CQ3-2b22282ac9304fca91651b02fb3dd26d> <http://uow.edu.au/isit906/thestar/digitalcare#isReliable> \"true\"^^<http://www.w3.org/2001/XMLSchema#boolean> .\n<http://uow.edu.au/isit906/thestar/digitalcare#Demo-CQ3-2b22282ac9304fca91651b02fb3dd26d> <http://uow.edu.au/isit906/thestar/digitalcare#reliabilityEvidence> \"Internal demo assessment\"^^<http://www.w3.org/2001/XMLSchema#string> .\n<http://uow.edu.au/isit906/thestar/digitalcare#Demo-CQ3-2b22282ac9304fca91651b02fb3dd26d> <http://uow.edu.au/isit906/thestar/digitalcare#distanceKm> \"5.8\"^^<http://www.w3.org/2001/XMLSchema#decimal> .",
+    "guards": "dc:SarahCarer rdf:type/rdfs:subClassOf* dc:Carer; dc:caresFor <http://uow.edu.au/isit906/thestar/digitalcare#MaryOlderAdult> . <http://uow.edu.au/isit906/thestar/digitalcare#MaryOlderAdult> rdf:type/rdfs:subClassOf* dc:OlderAdult; dc:hasCondition <http://uow.edu.au/isit906/thestar/digitalcare#AlzheimersDementia> . <http://uow.edu.au/isit906/thestar/digitalcare#AlzheimersDementia> rdf:type/rdfs:subClassOf* dc:HealthCondition . FILTER(<http://uow.edu.au/isit906/thestar/digitalcare#MaryOlderAdult> = dc:MaryOlderAdult)\n<http://uow.edu.au/isit906/thestar/digitalcare#NSW> rdf:type/rdfs:subClassOf* dc:Location . ",
+    "form": {
+      "cq": "CQ3",
+      "title": "Add a NSW support service",
+      "summary": "Enter the fields below. Examples show what to enter.",
+      "ready": true,
+      "formVersion": 2,
+      "fields": [
+        {
+          "id": "name",
+          "label": "Service name",
+          "type": "text",
+          "required": true,
+          "example": "My CQ3 demo",
+          "hint": "Enter the name you want to see in the answer.",
+          "maxLength": 150
+        },
+        {
+          "id": "condition",
+          "label": "Condition",
+          "type": "select",
+          "required": true,
+          "example": "AlzheimersDementia",
+          "hint": "Choose the condition already recorded for the older adult in Sarah's scenario.",
+          "options": [
+            {
+              "value": "http://uow.edu.au/isit906/thestar/digitalcare#AlzheimersDementia",
+              "label": "AlzheimersDementia"
+            }
+          ]
+        },
+        {
+          "id": "location",
+          "label": "Location",
+          "type": "select",
+          "required": true,
+          "example": "NSW",
+          "hint": "Choose NSW because CQ3 asks about NSW.",
+          "options": [
+            {
+              "value": "http://uow.edu.au/isit906/thestar/digitalcare#NSW",
+              "label": "NSW"
+            }
+          ]
+        },
+        {
+          "id": "phone",
+          "label": "Phone / demo contact",
+          "type": "text",
+          "required": true,
+          "example": "DEMO ONLY - no telephone service",
+          "hint": "For a fictional service, use the example rather than a real phone number.",
+          "maxLength": 150
+        },
+        {
+          "id": "reliable",
+          "label": "Recorded reliable",
+          "type": "select",
+          "required": true,
+          "example": "True",
+          "hint": "Choose True to include this fictional service in the reliable-service answer.",
+          "options": [
+            {
+              "value": "true",
+              "label": "True"
+            }
+          ]
+        },
+        {
+          "id": "evidence",
+          "label": "Assessment source",
+          "type": "text",
+          "required": true,
+          "example": "Fictional classroom assessment",
+          "hint": "Enter the source supporting your demo reliability claim.",
+          "maxLength": 500
+        },
+        {
+          "id": "distance",
+          "label": "Distance from Mary (km)",
+          "type": "number",
+          "required": true,
+          "example": "1",
+          "hint": "Enter the demo distance from Mary; results are ranked by distance.",
+          "min": 0,
+          "max": 50000,
+          "step": "any"
+        }
+      ],
+      "context": [
+        "This question uses Sarah's recorded care relationship with Mary."
+      ]
+    }
+  },
+  "planHash": "4c5c856dbff191e2f1db439ab8d2db2c9dba66809de7a0d1962052ee2a27ffe4",
+  "inputHash": "f79ee39a19c09f39bff6af72da37b0cfeb936f0b56fc2870cf291d615a7e9c2e",
+  "resetStamp": "2026-09-23T11:36:07.393113+00:00"
+}

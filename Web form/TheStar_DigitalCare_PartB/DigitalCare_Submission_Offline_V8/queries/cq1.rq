@@ -1,0 +1,32 @@
+PREFIX dc: <http://uow.edu.au/isit906/thestar/digitalcare#>
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
+
+SELECT
+  (COALESCE(MIN(STR(?carerLabel)), STRAFTER(STR(?carerRecord), "#")) AS ?carer)
+  (COALESCE(MIN(STR(?olderAdultLabel)), STRAFTER(STR(?olderAdultRecord), "#")) AS ?olderAdult)
+  (COALESCE(MIN(STR(?conditionLabel)), STRAFTER(STR(?conditionRecord), "#")) AS ?condition)
+  (COALESCE(MIN(STR(?guideLabel)), STRAFTER(STR(?guideRecord), "#")) AS ?guide)
+  (COALESCE(MIN(STR(?difficultyLabel)), STRAFTER(STR(?difficultyRecord), "#")) AS ?difficulty)
+  (COALESCE(GROUP_CONCAT(DISTINCT STR(?level); separator="; "), "") AS ?readingLevel)
+WHERE {
+
+  VALUES ?carerRecord { dc:SarahCarer }
+  ?carerRecord rdf:type/rdfs:subClassOf* dc:Carer ; dc:caresFor ?olderAdultRecord .
+  ?olderAdultRecord rdf:type/rdfs:subClassOf* dc:OlderAdult ; dc:hasCondition ?conditionRecord .
+  ?conditionRecord rdf:type/rdfs:subClassOf* dc:HealthCondition .
+  ?guideRecord rdf:type/rdfs:subClassOf* dc:Guide ; dc:addresses ?conditionRecord ;
+    dc:isIntendedFor ?audience ; dc:isRelatedTo ?difficultyRecord .
+  ?audience rdf:type/rdfs:subClassOf* dc:Carer .
+  ?difficultyRecord rdf:type/rdfs:subClassOf* dc:DailyTaskStruggling .
+  OPTIONAL { ?guideRecord dc:readingLevel ?level }
+
+  OPTIONAL { ?carerRecord rdfs:label ?carerLabel }
+  OPTIONAL { ?olderAdultRecord rdfs:label ?olderAdultLabel }
+  OPTIONAL { ?conditionRecord rdfs:label ?conditionLabel }
+  OPTIONAL { ?guideRecord rdfs:label ?guideLabel }
+  OPTIONAL { ?difficultyRecord rdfs:label ?difficultyLabel }
+}
+GROUP BY ?carerRecord ?olderAdultRecord ?conditionRecord ?guideRecord ?difficultyRecord
+ORDER BY ?guide ?difficulty

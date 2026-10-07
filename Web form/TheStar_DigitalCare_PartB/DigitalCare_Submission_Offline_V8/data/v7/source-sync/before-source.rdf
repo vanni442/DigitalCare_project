@@ -1,0 +1,2102 @@
+<?xml version="1.0"?>
+<rdf:RDF xmlns="http://uow.edu.au/isit906/thestar/digitalcare#"
+     xml:base="http://uow.edu.au/isit906/thestar/digitalcare"
+     xmlns:dc="http://uow.edu.au/isit906/thestar/digitalcare#"
+     xmlns:ws="http://uow.edu.au/isit906/thestar/digitalcare/worksheet#"
+     xmlns:owl="http://www.w3.org/2002/07/owl#"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:xml="http://www.w3.org/XML/1998/namespace"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+     xmlns:worksheet="http://uow.edu.au/isit906/thestar/digitalcare:worksheet#">
+    <owl:Ontology rdf:about="http://uow.edu.au/isit906/thestar/digitalcare">
+        <owl:versionIRI rdf:resource="http://uow.edu.au/isit906/thestar/digitalcare/version8"/>
+        <worksheet:competencyQuestion>1. Competency Questions!A10:I10 | A=CQ6 | B=Which Alzheimer’s symptoms written for older people were published most recently I can read in larger text size? | C=Chen —Older adult | D=FR02, CR02, CR03, TR03 | E=Multi-relationship | F=OlderAdult —hasCondition→ HealthCondition —hasSymptom→ Symptom ←describes— Guide —isRelatedTo→ DementiaType | G=4 | H=Yes | I=[BLANK]</worksheet:competencyQuestion>
+        <worksheet:competencyQuestion>1. Competency Questions!A11:I11 | A=CQ7 | B=Which Alzheimer’s guides are written for older people and available in Chinese? | C=Chen —Older adult | D=FR02, CR03, CR04 | E=Multi-relationship | F=OlderAdult ←isIntendedFor— Guide —isRelatedTo→ AlzheimersDementia and Guide —isAvailableIn→ Language (Chinese) | G=3 | H=Yes | I=[BLANK]</worksheet:competencyQuestion>
+        <worksheet:competencyQuestion>1. Competency Questions!A12:I12 | A=CQ8 | B=Is there a care centre near my area in Victoria with someone who speaks Chinese? | C=Chen —Older adult | D=CR05, FR01, FR03 | E=Multi-relationship | F=OlderAdult —isLocatedIn→ Location (Victoria) ←isLocatedIn— CareCentre —hasStaffMember→ StaffMember —speaksLanguage→ Language (Chinese) | G=4 | H=No | I=Add suburb/postcode or coordinates and a distance measure so care centres can be ranked by proximity to the older adult.</worksheet:competencyQuestion>
+        <worksheet:competencyQuestion>1. Competency Questions!A13:I13 | A=CQ9 | B=Is there a guide that can help me compare different dementia symptoms my mother might experience? | C=Sarah—Unpaid carer | D=FR02, CR01, CR03 | E=Multi-relationship, Counting | F=Guide —isRelatedTo→ Symptom (×2, e.g. MemoryLoss and Confusion); Symptom is a subclass of InformationTopic | G=2 | H=Yes | I=[BLANK]</worksheet:competencyQuestion>
+        <worksheet:competencyQuestion>1. Competency Questions!A5:I5 | A=CQ1 | B=Mum’s dementia is getting harder to manage, and I don’t know where to start. Where I can find a simple guide written for carers how to deal with difficult daily tasks struggling of my mother? | C=Sarah—Unpaid carer | D=FR01, FR02, CR01, CR03 | E=Multi-relationship | F=Carer —caresFor→ OlderAdult —hasCondition→ HealthCondition ←addresses— Guide —isRelatedTo→ DailyTaskStruggling | G=4 | H=Yes | I=[BLANK]</worksheet:competencyQuestion>
+        <worksheet:competencyQuestion>1. Competency Questions!A6:I6 | A=CQ2 | B=Which dementia guides for carers about my mum’s type of dementia have been reviewed by a healthcare professional? | C=Sarah—Unpaid carer | D=FR02, CR03, GR04 | E=Multi-relationship | F=Carer —caresFor→ OlderAdult —hasCondition→ HealthCondition ←addresses— Guide —isReviewedBy→ HealthcareProfessional; Guide —isRelatedTo→ DementiaType
+ | G=5 | H=Yes | I=[BLANK]</worksheet:competencyQuestion>
+        <worksheet:competencyQuestion>1. Competency Questions!A7:I7 | A=CQ3 | B=How many reliable and nearest support services or organisations in NSW I can call for help in case of mother&apos;s urgencies? | C=Sarah—Unpaid carer | D=CR05, FR01, FR03 | E=Multi-relationship, Counting | F=Carer —caresFor→ OlderAdult —hasCondition→ HealthCondition ←supportsCondition— SupportService —isLocatedIn→ Location | G=4 | H=No | I=Add reliability status, phone number and postcode/distance data so services can be filtered, counted and ranked by proximity.</worksheet:competencyQuestion>
+        <worksheet:competencyQuestion>1. Competency Questions!A8:I8 | A=CQ4 | B=Which dementia care guides for carers can I download or print to read offline on smartphone? | C=Sarah—Unpaid carer | D=FR02, FR04, CR03, TR01 | E=Multi-relationship | F=Carer ←isIntendedFor—  Guide —isAvailableInFormat→ DocumentFormat
+isDownloadable: true / isPrintable: true | G=2 | H=Yes | I=[BLANK]</worksheet:competencyQuestion>
+        <worksheet:competencyQuestion>1. Competency Questions!A9:I9 | A=CQ5 | B=Can I search for Alzheimer’s symptoms without giving the website my privacy information? | C=Chen —Older adult | D=FR01, GR01, GR02 | E=Multi-relationship | F=HealthCondition —hasSymptom→ Symptom ←describes— Guide —isGovernedBy→ PrivacyPolicy | G=3 | H=No | I=Add a boolean attribute such as requiresPersonalInformationForSearch = false to represent anonymous symptom searching.</worksheet:competencyQuestion>
+        <worksheet:logicalReconciliation>Sample predicate isRelatedto is asserted with the declared property isRelatedTo; the original case is retained verbatim in ws:sampleRow and the mapping CSV.</worksheet:logicalReconciliation>
+        <worksheet:sourceSHA256>FAA1D4EF530B952BB592E2B8FC785964ADB1EDBACD640019FC3E4B8B1BA95C8A</worksheet:sourceSHA256>
+        <worksheet:sourceWorkbook>ISIT906_TheStar_DigitalCare_Model_Worksheet_v2.xlsx</worksheet:sourceWorkbook>
+        <worksheet:teamName>The Star</worksheet:teamName>
+        <worksheet:temporaryIRIReason>Read me first!C68 ontology IRI is blank; D68 is only an ISIT406/team07 example and was not used.</worksheet:temporaryIRIReason>
+        <worksheet:traceabilityRow>6. Traceability!A11:D11 | A=HealthCondition | B=Class | C=Hierarchical Health Condition taxonomy with topic pages, applied to Guides, Symptoms and Support Services. | D=CQ1, CQ2, CQ3, CQ5, CQ6, CQ7</worksheet:traceabilityRow>
+        <worksheet:traceabilityRow>6. Traceability!A12:D12 | A=DementiaType | B=Class | C=Child terms/pages within the Health Condition taxonomy, used to filter condition-specific Guides and Symptoms. | D=CQ2, CQ6, CQ7</worksheet:traceabilityRow>
+        <worksheet:traceabilityRow>6. Traceability!A13:D13 | A=AlzheimersDisease | B=Class | C=Dedicated Alzheimer&apos;s topic page and taxonomy term under DementiaType. | D=CQ7</worksheet:traceabilityRow>
+        <worksheet:traceabilityRow>6. Traceability!A14:D14 | A=Symptom | B=Class | C=Symptom Custom Post Type with searchable pages and links to related conditions and Guides. | D=CQ5, CQ6</worksheet:traceabilityRow>
+        <worksheet:traceabilityRow>6. Traceability!A15:D15 | A=DailyTaskStruggling | B=Class | C=Child category/term within the Symptom structure, used to group practical daily-task Guides. | D=CQ1</worksheet:traceabilityRow>
+        <worksheet:traceabilityRow>6. Traceability!A16:D16 | A=Guide | B=Class | C=Guide Custom Post Type with fields for title, publication/review dates, reading level, download/print links and accessibility information. | D=CQ1, CQ2, CQ4</worksheet:traceabilityRow>
+        <worksheet:traceabilityRow>6. Traceability!A17:D17 | A=Organization | B=Class | C=Organisation Custom Post Type with name, contact details and links to its services or care centres. | D=CQ3, CQ8</worksheet:traceabilityRow>
+        <worksheet:traceabilityRow>6. Traceability!A18:D18 | A=SupportService | B=Class | C=Support Service Custom Post Type with phone, location, supported condition and organisation fields. | D=CQ3</worksheet:traceabilityRow>
+        <worksheet:traceabilityRow>6. Traceability!A19:D19 | A=CareCentre | B=Class | C=Care Centre Custom Post Type with contact, location, staff and language information. | D=CQ8</worksheet:traceabilityRow>
+        <worksheet:traceabilityRow>6. Traceability!A20:D20 | A=Location | B=Class | C=Hierarchical location taxonomy plus postcode field, used to filter services and care centres by state or area. | D=CQ3, CQ8</worksheet:traceabilityRow>
+        <worksheet:traceabilityRow>6. Traceability!A21:D21 | A=Language | B=Class | C=Language taxonomy assigned to Guides and staff records, with a Chinese-language filter. | D=CQ7, CQ8</worksheet:traceabilityRow>
+        <worksheet:traceabilityRow>6. Traceability!A22:D22 | A=DocumentFormat | B=Class | C=Guide format taxonomy/custom field (for example, PDF or HTML), with download and print links. | D=CQ4</worksheet:traceabilityRow>
+        <worksheet:traceabilityRow>6. Traceability!A23:D23 | A=PrivacyPolicy | B=Class | C=Static WordPress Privacy Policy page linked in the footer and from search or feedback notices. | D=CQ5</worksheet:traceabilityRow>
+        <worksheet:traceabilityRow>6. Traceability!A24:D24 | A=caresFor (Carer → OlderAdult) | B=Relationship | C=No stored WordPress relationship because the site does not keep personal care profiles. Represent it only through example scenarios in carer guidance. | D=CQ1, CQ2, CQ3</worksheet:traceabilityRow>
+        <worksheet:traceabilityRow>6. Traceability!A25:D25 | A=hasCondition (OlderAdult → HealthCondition) | B=Relationship | C=No stored personal-health relationship. Users browse or filter by condition without saving a personal profile. | D=CQ1, CQ2, CQ3, CQ6</worksheet:traceabilityRow>
+        <worksheet:traceabilityRow>6. Traceability!A26:D26 | A=addresses (Guide → HealthCondition) | B=Relationship | C=Condition taxonomy/reference field on each Guide; condition pages automatically list related Guides. | D=CQ1, CQ2, CQ6, CQ7</worksheet:traceabilityRow>
+        <worksheet:traceabilityRow>6. Traceability!A27:D27 | A=isRelatedTo (Guide → InformationTopic) | B=Relationship | C=Topic taxonomy/reference field linking each Guide to relevant information topics so users can find Guides based on their needs | D=CQ1, CQ2, CQ6, CQ7</worksheet:traceabilityRow>
+        <worksheet:traceabilityRow>6. Traceability!A28:D28 | A=isReviewedBy (Guide → HealthcareProfessional) | B=Relationship | C=Reviewer post/reference field on each Guide, displayed with credentials and the last-reviewed date. | D=CQ2</worksheet:traceabilityRow>
+        <worksheet:traceabilityRow>6. Traceability!A29:D29 | A=isLocatedIn (OlderAdult OR SupportService OR CareCentre → Location) | B=Relationship | C=Location field/taxonomy assigned to Older Adults, Support Services and Care Centres, enabling support options to be matched or filtered by the same area. | D=CQ3, CQ8</worksheet:traceabilityRow>
+        <worksheet:traceabilityRow>6. Traceability!A30:D30 | A=isIntendedFor (Guide → Person) | B=Relationship | C=Audience taxonomy assigned to Guides using specific audience terms such as Carer and OlderAdult, with corresponding audience filters | D=CQ4, CQ7</worksheet:traceabilityRow>
+        <worksheet:traceabilityRow>6. Traceability!A31:D31 | A=isAvailableInFormat (Guide → DocumentFormat) | B=Relationship | C=Document-format taxonomy/custom field plus downloadable or printable file links on the Guide page. | D=CQ4</worksheet:traceabilityRow>
+        <worksheet:traceabilityRow>6. Traceability!A32:D32 | A=hasSymptom (HealthCondition → Symptom) | B=Relationship | C=Post-reference field linking each Health Condition to relevant Symptom records; shown as a related-symptoms list. | D=CQ5, CQ6</worksheet:traceabilityRow>
+        <worksheet:traceabilityRow>6. Traceability!A33:D33 | A=describes (Guide → Symptom) | B=Relationship | C=Symptom reference/taxonomy field on each Guide; Symptom pages list Guides that describe them. | D=CQ5, CQ6</worksheet:traceabilityRow>
+        <worksheet:traceabilityRow>6. Traceability!A34:D34 | A=isGovernedBy (Guide → PrivacyPolicy) | B=Relationship | C=Implemented site-wide through the Privacy Policy link and public search that requires no login or personal data; no separate relationship record. | D=CQ5</worksheet:traceabilityRow>
+        <worksheet:traceabilityRow>6. Traceability!A35:D35 | A=isAvailableIn (Guide → Language (Chinese)) | B=Relationship | C=Language taxonomy on each Guide, with a Chinese filter and links to translated versions. | D=CQ7</worksheet:traceabilityRow>
+        <worksheet:traceabilityRow>6. Traceability!A36:D36 | A=hasStaffMember (CareCentre → StaffMember) | B=Relationship | C=Staff repeater/reference field on each CareCentre page, showing staff names and roles relevant to service enquiries. | D=CQ8</worksheet:traceabilityRow>
+        <worksheet:traceabilityRow>6. Traceability!A37:D37 | A=speaksLanguage (StaffMember → Language (Chinese)) | B=Relationship | C=Language field/taxonomy on each staff entry; supports filtering CareCentres for Chinese-speaking staff. | D=CQ8</worksheet:traceabilityRow>
+        <worksheet:traceabilityRow>6. Traceability!A5:D5 | A=Person | B=Class | C=No standalone public profile. Represented only through author, reviewer or staff display fields on relevant content; personal accounts are outside the initial scope. | D=CQ1, CQ2, CQ3, CQ4, CQ5, CQ6, CQ7, CQ8</worksheet:traceabilityRow>
+        <worksheet:traceabilityRow>6. Traceability!A6:D6 | A=Carer | B=Class | C=Audience taxonomy and a &apos;For Carers&apos; landing page; no proxy account or access to an older person&apos;s health information. | D=CQ1, CQ2, CQ3, CQ4</worksheet:traceabilityRow>
+        <worksheet:traceabilityRow>6. Traceability!A7:D7 | A=OlderAdult | B=Class | C=Audience taxonomy and a &apos;For Older People&apos; landing page; no personal health profile is stored. | D=CQ1, CQ2, CQ3, CQ5, CQ6, CQ7, CQ8</worksheet:traceabilityRow>
+        <worksheet:traceabilityRow>6. Traceability!A8:D8 | A=HealthcareProfessional | B=Class | C=Reviewer record/reference field storing name, professional role and credentials; displayed with each reviewed Guide. | D=CQ2</worksheet:traceabilityRow>
+        <worksheet:traceabilityRow>6. Traceability!A9:D9 | A=StaffMember | B=Class | C=Staff name, role and language fields attached to a CareCentre record; not a WordPress user account. | D=CQ8</worksheet:traceabilityRow>
+        <rdfs:comment>Built by exact transcription of DigitalCare_Model_Worksheet.xlsx. The worksheet Ontology IRI cell is blank; this provisional IRI is derived only from the immutable worksheet SHA-256.</rdfs:comment>
+        <rdfs:label>Digital Care — The Star</rdfs:label>
+    </owl:Ontology>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Annotation properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://uow.edu.au/isit906/thestar/digitalcare:worksheet#axiomCQ -->
+
+    <owl:AnnotationProperty rdf:about="http://uow.edu.au/isit906/thestar/digitalcare:worksheet#axiomCQ">
+        <rdfs:comment>Competency question(s) that justify this axiom (Assignment 2 section 4.2).</rdfs:comment>
+        <rdfs:label>axiomCQ</rdfs:label>
+    </owl:AnnotationProperty>
+    
+
+
+    <!-- http://uow.edu.au/isit906/thestar/digitalcare:worksheet#character -->
+
+    <owl:AnnotationProperty rdf:about="http://uow.edu.au/isit906/thestar/digitalcare:worksheet#character">
+        <rdfs:label>character</rdfs:label>
+    </owl:AnnotationProperty>
+    
+
+
+    <!-- http://uow.edu.au/isit906/thestar/digitalcare:worksheet#competencyQuestion -->
+
+    <owl:AnnotationProperty rdf:about="http://uow.edu.au/isit906/thestar/digitalcare:worksheet#competencyQuestion">
+        <rdfs:label>competencyQuestion</rdfs:label>
+    </owl:AnnotationProperty>
+    
+
+
+    <!-- http://uow.edu.au/isit906/thestar/digitalcare:worksheet#exampleValue -->
+
+    <owl:AnnotationProperty rdf:about="http://uow.edu.au/isit906/thestar/digitalcare:worksheet#exampleValue">
+        <rdfs:label>exampleValue</rdfs:label>
+    </owl:AnnotationProperty>
+    
+
+
+    <!-- http://uow.edu.au/isit906/thestar/digitalcare:worksheet#exampleValueStatus -->
+
+    <owl:AnnotationProperty rdf:about="http://uow.edu.au/isit906/thestar/digitalcare:worksheet#exampleValueStatus">
+        <rdfs:label>exampleValueStatus</rdfs:label>
+    </owl:AnnotationProperty>
+    
+
+
+    <!-- http://uow.edu.au/isit906/thestar/digitalcare:worksheet#incompleteAssertion -->
+
+    <owl:AnnotationProperty rdf:about="http://uow.edu.au/isit906/thestar/digitalcare:worksheet#incompleteAssertion">
+        <rdfs:label>incompleteAssertion</rdfs:label>
+    </owl:AnnotationProperty>
+    
+
+
+    <!-- http://uow.edu.au/isit906/thestar/digitalcare:worksheet#inverseName -->
+
+    <owl:AnnotationProperty rdf:about="http://uow.edu.au/isit906/thestar/digitalcare:worksheet#inverseName">
+        <rdfs:label>inverseName</rdfs:label>
+    </owl:AnnotationProperty>
+    
+
+
+    <!-- http://uow.edu.au/isit906/thestar/digitalcare:worksheet#logicalReconciliation -->
+
+    <owl:AnnotationProperty rdf:about="http://uow.edu.au/isit906/thestar/digitalcare:worksheet#logicalReconciliation">
+        <rdfs:label>logicalReconciliation</rdfs:label>
+    </owl:AnnotationProperty>
+    
+
+
+    <!-- http://uow.edu.au/isit906/thestar/digitalcare:worksheet#readAloud -->
+
+    <owl:AnnotationProperty rdf:about="http://uow.edu.au/isit906/thestar/digitalcare:worksheet#readAloud">
+        <rdfs:label>readAloud</rdfs:label>
+    </owl:AnnotationProperty>
+    
+
+
+    <!-- http://uow.edu.au/isit906/thestar/digitalcare:worksheet#referenceOnly -->
+
+    <owl:AnnotationProperty rdf:about="http://uow.edu.au/isit906/thestar/digitalcare:worksheet#referenceOnly">
+        <rdfs:label>referenceOnly</rdfs:label>
+    </owl:AnnotationProperty>
+    
+
+
+    <!-- http://uow.edu.au/isit906/thestar/digitalcare:worksheet#reuseReason -->
+
+    <owl:AnnotationProperty rdf:about="http://uow.edu.au/isit906/thestar/digitalcare:worksheet#reuseReason">
+        <rdfs:label>reuseReason</rdfs:label>
+    </owl:AnnotationProperty>
+    
+
+
+    <!-- http://uow.edu.au/isit906/thestar/digitalcare:worksheet#reusedFrom -->
+
+    <owl:AnnotationProperty rdf:about="http://uow.edu.au/isit906/thestar/digitalcare:worksheet#reusedFrom">
+        <rdfs:label>reusedFrom</rdfs:label>
+    </owl:AnnotationProperty>
+    
+
+
+    <!-- http://uow.edu.au/isit906/thestar/digitalcare:worksheet#sampleOnly -->
+
+    <owl:AnnotationProperty rdf:about="http://uow.edu.au/isit906/thestar/digitalcare:worksheet#sampleOnly">
+        <rdfs:label>sampleOnly</rdfs:label>
+    </owl:AnnotationProperty>
+    
+
+
+    <!-- http://uow.edu.au/isit906/thestar/digitalcare:worksheet#sampleRow -->
+
+    <owl:AnnotationProperty rdf:about="http://uow.edu.au/isit906/thestar/digitalcare:worksheet#sampleRow">
+        <rdfs:label>sampleRow</rdfs:label>
+    </owl:AnnotationProperty>
+    
+
+
+    <!-- http://uow.edu.au/isit906/thestar/digitalcare:worksheet#sourceCell -->
+
+    <owl:AnnotationProperty rdf:about="http://uow.edu.au/isit906/thestar/digitalcare:worksheet#sourceCell">
+        <rdfs:label>sourceCell</rdfs:label>
+    </owl:AnnotationProperty>
+    
+
+
+    <!-- http://uow.edu.au/isit906/thestar/digitalcare:worksheet#sourceSHA256 -->
+
+    <owl:AnnotationProperty rdf:about="http://uow.edu.au/isit906/thestar/digitalcare:worksheet#sourceSHA256">
+        <rdfs:label>sourceSHA256</rdfs:label>
+    </owl:AnnotationProperty>
+    
+
+
+    <!-- http://uow.edu.au/isit906/thestar/digitalcare:worksheet#sourceWorkbook -->
+
+    <owl:AnnotationProperty rdf:about="http://uow.edu.au/isit906/thestar/digitalcare:worksheet#sourceWorkbook">
+        <rdfs:label>sourceWorkbook</rdfs:label>
+    </owl:AnnotationProperty>
+    
+
+
+    <!-- http://uow.edu.au/isit906/thestar/digitalcare:worksheet#teamName -->
+
+    <owl:AnnotationProperty rdf:about="http://uow.edu.au/isit906/thestar/digitalcare:worksheet#teamName">
+        <rdfs:label>teamName</rdfs:label>
+    </owl:AnnotationProperty>
+    
+
+
+    <!-- http://uow.edu.au/isit906/thestar/digitalcare:worksheet#temporaryIRIReason -->
+
+    <owl:AnnotationProperty rdf:about="http://uow.edu.au/isit906/thestar/digitalcare:worksheet#temporaryIRIReason">
+        <rdfs:label>temporaryIRIReason</rdfs:label>
+    </owl:AnnotationProperty>
+    
+
+
+    <!-- http://uow.edu.au/isit906/thestar/digitalcare:worksheet#traceabilityRow -->
+
+    <owl:AnnotationProperty rdf:about="http://uow.edu.au/isit906/thestar/digitalcare:worksheet#traceabilityRow">
+        <rdfs:label>traceabilityRow</rdfs:label>
+    </owl:AnnotationProperty>
+    
+
+
+    <!-- http://uow.edu.au/isit906/thestar/digitalcare:worksheet#usedByCQ -->
+
+    <owl:AnnotationProperty rdf:about="http://uow.edu.au/isit906/thestar/digitalcare:worksheet#usedByCQ">
+        <rdfs:label>usedByCQ</rdfs:label>
+    </owl:AnnotationProperty>
+    
+
+
+    <!-- http://uow.edu.au/isit906/thestar/digitalcare:worksheet#worksheetRow -->
+
+    <owl:AnnotationProperty rdf:about="http://uow.edu.au/isit906/thestar/digitalcare:worksheet#worksheetRow">
+        <rdfs:label>worksheetRow</rdfs:label>
+    </owl:AnnotationProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Datatypes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.w3.org/2001/XMLSchema#date -->
+
+    <rdfs:Datatype rdf:about="http://www.w3.org/2001/XMLSchema#date"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Object Properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://uow.edu.au/isit906/thestar/digitalcare#addresses -->
+
+    <owl:ObjectProperty rdf:about="http://uow.edu.au/isit906/thestar/digitalcare#addresses">
+        <rdfs:subPropertyOf rdf:resource="http://uow.edu.au/isit906/thestar/digitalcare#isRelatedTo"/>
+        <owl:inverseOf rdf:resource="http://uow.edu.au/isit906/thestar/digitalcare#isAddressedIn"/>
+        <rdfs:domain rdf:resource="http://uow.edu.au/isit906/thestar/digitalcare#Guide"/>
+        <rdfs:range rdf:resource="http://uow.edu.au/isit906/thestar/digitalcare#HealthCondition"/>
+        <worksheet:character>inverse</worksheet:character>
+        <worksheet:inverseName>isAddressedIn</worksheet:inverseName>
+        <worksheet:readAloud>a Guide addresses a healthCondition</worksheet:readAloud>
+        <worksheet:sourceCell>3. Relationships!A7:G7</worksheet:sourceCell>
+        <worksheet:usedByCQ>CQ1, CQ2, CQ6, CQ7</worksheet:usedByCQ>
+        <worksheet:worksheetRow>3. Relationships!A7:G7 | A=Guide | B=addresses | C=HealthCondition | D=isAddressedIn | E=inverse | F=CQ1, CQ2, CQ6, CQ7 | G=a Guide addresses a healthCondition</worksheet:worksheetRow>
+        <rdfs:label>addresses</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://uow.edu.au/isit906/thestar/digitalcare#caresFor -->
+
+    <owl:ObjectProperty rdf:about="http://uow.edu.au/isit906/thestar/digitalcare#caresFor">
+        <rdfs:domain rdf:resource="http://uow.edu.au/isit906/thestar/digitalcare#Carer"/>
+        <rdfs:range rdf:resource="http://uow.edu.au/isit906/thestar/digitalcare#OlderAdult"/>
+        <worksheet:character>none</worksheet:character>
+        <worksheet:readAloud>a Carer caresFor a OlderAdult</worksheet:readAloud>
+        <worksheet:sourceCell>3. Relationships!A5:G5</worksheet:sourceCell>
+        <worksheet:usedByCQ>CQ1, CQ2, CQ3</worksheet:usedByCQ>
+        <worksheet:worksheetRow>3. Relationships!A5:G5 | A=Carer | B=caresFor | C=OlderAdult | D=[BLANK] | E=none | F=CQ1, CQ2, CQ3 | G=a Carer caresFor a OlderAdult</worksheet:worksheetRow>
+        <rdfs:label>caresFor</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://uow.edu.au/isit906/thestar/digitalcare#caresForSomeoneWith -->
+
+    <owl:ObjectProperty rdf:about="http://uow.edu.au/isit906/thestar/digitalcare#caresForSomeoneWith">
+        <rdfs:domain rdf:resource="http://uow.edu.au/isit906/thestar/digitalcare#Carer"/>
+        <rdfs:range rdf:resource="http://uow.edu.au/isit906/thestar/digitalcare#HealthCondition"/>
+        <owl:propertyChainAxiom rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://uow.edu.au/isit906/thestar/digitalcare#caresFor"/>
+            <rdf:Description rdf:about="http://uow.edu.au/isit906/thestar/digitalcare#hasCondition"/>
+        </owl:propertyChainAxiom>
+        <worksheet:axiomCQ>CQ1, CQ2</worksheet:axiomCQ>
+        <worksheet:character>none</worksheet:character>
+        <worksheet:readAloud>a Carer caresForSomeoneWith a HealthCondition</worksheet:readAloud>
+        <worksheet:usedByCQ>CQ1, CQ2</worksheet:usedByCQ>
+        <rdfs:comment>Shortcut from a Carer to the health condition of the person they care for. Entailed by caresFor o hasCondition; never asserted directly.</rdfs:comment>
+        <rdfs:label>caresForSomeoneWith</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://uow.edu.au/isit906/thestar/digitalcare#describes -->
+
+    <owl:ObjectProperty rdf:about="http://uow.edu.au/isit906/thestar/digitalcare#describes">
+        <rdfs:subPropertyOf rdf:resource="http://uow.edu.au/isit906/thestar/digitalcare#isRelatedTo"/>
+        <owl:inverseOf rdf:resource="http://uow.edu.au/isit906/thestar/digitalcare#isDescribedIn"/>
+        <rdfs:domain rdf:resource="http://uow.edu.au/isit906/thestar/digitalcare#Guide"/>
+        <rdfs:range rdf:resource="http://uow.edu.au/isit906/thestar/digitalcare#Symptom"/>
+        <worksheet:character>inverse</worksheet:character>
+        <worksheet:inverseName>isDescribedIn</worksheet:inverseName>
+        <worksheet:readAloud>a Guide describes a Symptom</worksheet:readAloud>
+        <worksheet:sourceCell>3. Relationships!A15:G15</worksheet:sourceCell>
+        <worksheet:usedByCQ>CQ5, CQ6</worksheet:usedByCQ>
+        <worksheet:worksheetRow>3. Relationships!A15:G15 | A=Guide | B=describes | C=Symptom | D=isDescribedIn | E=inverse | F=CQ5, CQ6 | G=a Guide describes a Symptom</worksheet:worksheetRow>
+        <rdfs:label>describes</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://uow.edu.au/isit906/thestar/digitalcare#hasCondition -->
+
+    <owl:ObjectProperty rdf:about="http://uow.edu.au/isit906/thestar/digitalcare#hasCondition">
+        <rdfs:domain rdf:resource="http://uow.edu.au/isit906/thestar/digitalcare#OlderAdult"/>
+        <rdfs:range rdf:resource="http://uow.edu.au/isit906/thestar/digitalcare#HealthCondition"/>
+        <worksheet:character>none</worksheet:character>
+        <worksheet:readAloud>a OlderAdult hasCondition a healthCondition</worksheet:readAloud>
+        <worksheet:sourceCell>3. Relationships!A6:G6</worksheet:sourceCell>
+        <worksheet:usedByCQ>CQ1, CQ2, CQ3, CQ6</worksheet:usedByCQ>
+        <worksheet:worksheetRow>3. Relationships!A6:G6 | A=OlderAdult | B=hasCondition | C=HealthCondition | D=[BLANK] | E=none | F=CQ1, CQ2, CQ3, CQ6 | G=a OlderAdult hasCondition a healthCondition</worksheet:worksheetRow>
+        <rdfs:label>hasCondition</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://uow.edu.au/isit906/thestar/digitalcare#hasStaffMember -->
+
+    <owl:ObjectProperty rdf:about="http://uow.edu.au/isit906/thestar/digitalcare#hasStaffMember">
+        <rdfs:domain rdf:resource="http://uow.edu.au/isit906/thestar/digitalcare#CareCentre"/>
+        <rdfs:range rdf:resource="http://uow.edu.au/isit906/thestar/digitalcare#StaffMember"/>
+        <worksheet:character>none</worksheet:character>
+        <worksheet:readAloud>a CareCentre hasStaffMember a StaffMember</worksheet:readAloud>
+        <worksheet:sourceCell>3. Relationships!A18:G18</worksheet:sourceCell>
+        <worksheet:usedByCQ>CQ8</worksheet:usedByCQ>
+        <worksheet:worksheetRow>3. Relationships!A18:G18 | A=CareCentre | B=hasStaffMember | C=StaffMember | D=[BLANK] | E=none | F=CQ8 | G=a CareCentre hasStaffMember a StaffMember</worksheet:worksheetRow>
+        <rdfs:label>hasStaffMember</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://uow.edu.au/isit906/thestar/digitalcare#hasSymptom -->
+
+    <owl:ObjectProperty rdf:about="http://uow.edu.au/isit906/thestar/digitalcare#hasSymptom">
+        <rdfs:domain rdf:resource="http://uow.edu.au/isit906/thestar/digitalcare#HealthCondition"/>
+        <rdfs:range rdf:resource="http://uow.edu.au/isit906/thestar/digitalcare#Symptom"/>
+        <worksheet:character>none</worksheet:character>
+        <worksheet:readAloud>a HealthCondition hasSymptom a Symptom</worksheet:readAloud>
+        <worksheet:sourceCell>3. Relationships!A14:G14</worksheet:sourceCell>
+        <worksheet:usedByCQ>CQ5, CQ6</worksheet:usedByCQ>
+        <worksheet:worksheetRow>3. Relationships!A14:G14 | A=HealthCondition | B=hasSymptom | C=Symptom | D=[BLANK] | E=none | F=CQ5, CQ6 | G=a HealthCondition hasSymptom a Symptom</worksheet:worksheetRow>
+        <rdfs:label>hasSymptom</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://uow.edu.au/isit906/thestar/digitalcare#isAddressedIn -->
+
+    <owl:ObjectProperty rdf:about="http://uow.edu.au/isit906/thestar/digitalcare#isAddressedIn">
+        <rdfs:label>isAddressedIn</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://uow.edu.au/isit906/thestar/digitalcare#isAvailableIn -->
+
+    <owl:ObjectProperty rdf:about="http://uow.edu.au/isit906/thestar/digitalcare#isAvailableIn">
+        <rdfs:domain rdf:resource="http://uow.edu.au/isit906/thestar/digitalcare#Guide"/>
+        <rdfs:range rdf:resource="http://uow.edu.au/isit906/thestar/digitalcare#Language"/>
+        <worksheet:character>none</worksheet:character>
+        <worksheet:readAloud>a Guide isAvailableIn a Language </worksheet:readAloud>
+        <worksheet:sourceCell>3. Relationships!A17:G17</worksheet:sourceCell>
+        <worksheet:usedByCQ>CQ7</worksheet:usedByCQ>
+        <worksheet:worksheetRow>3. Relationships!A17:G17 | A=Guide | B=isAvailableIn | C=Language  | D=[BLANK] | E=none | F=CQ7 | G=a Guide isAvailableIn a Language </worksheet:worksheetRow>
+        <rdfs:label>isAvailableIn</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://uow.edu.au/isit906/thestar/digitalcare#isAvailableInFormat -->
+
+    <owl:ObjectProperty rdf:about="http://uow.edu.au/isit906/thestar/digitalcare#isAvailableInFormat">
+        <rdfs:domain rdf:resource="http://uow.edu.au/isit906/thestar/digitalcare#Guide"/>
+        <rdfs:range rdf:resource="http://uow.edu.au/isit906/thestar/digitalcare#DocumentFormat"/>
+        <worksheet:character>none</worksheet:character>
+        <worksheet:readAloud>a Guide isAvailableInFormat a DocumentFormat</worksheet:readAloud>
+        <worksheet:sourceCell>3. Relationships!A13:G13</worksheet:sourceCell>
+        <worksheet:usedByCQ>CQ4</worksheet:usedByCQ>
+        <worksheet:worksheetRow>3. Relationships!A13:G13 | A=Guide | B=isAvailableInFormat | C=DocumentFormat | D=[BLANK] | E=none | F=CQ4 | G=a Guide isAvailableInFormat a DocumentFormat</worksheet:worksheetRow>
+        <rdfs:label>isAvailableInFormat</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://uow.edu.au/isit906/thestar/digitalcare#isDescribedIn -->
+
+    <owl:ObjectProperty rdf:about="http://uow.edu.au/isit906/thestar/digitalcare#isDescribedIn">
+        <rdfs:label>isDescribedIn</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://uow.edu.au/isit906/thestar/digitalcare#isGovernedBy -->
+
+    <owl:ObjectProperty rdf:about="http://uow.edu.au/isit906/thestar/digitalcare#isGovernedBy">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:domain rdf:resource="http://uow.edu.au/isit906/thestar/digitalcare#Guide"/>
+        <rdfs:range rdf:resource="http://uow.edu.au/isit906/thestar/digitalcare#PrivacyPolicy"/>
+        <worksheet:character>functional</worksheet:character>
+        <worksheet:readAloud>a Guide isGovernedBy a PrivacyPolicy</worksheet:readAloud>
+        <worksheet:sourceCell>3. Relationships!A16:G16</worksheet:sourceCell>
+        <worksheet:usedByCQ>CQ5</worksheet:usedByCQ>
+        <worksheet:worksheetRow>3. Relationships!A16:G16 | A=Guide | B=isGovernedBy | C=PrivacyPolicy | D=[BLANK] | E=functional | F=CQ5 | G=a Guide isGovernedBy a PrivacyPolicy</worksheet:worksheetRow>
+        <rdfs:label>isGovernedBy</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://uow.edu.au/isit906/thestar/digitalcare#isIntendedFor -->
+
+    <owl:ObjectProperty rdf:about="http://uow.edu.au/isit906/thestar/digitalcare#isIntendedFor">
+        <owl:inverseOf rdf:resource="http://uow.edu.au/isit906/thestar/digitalcare#isTargetAudienceOf"/>
+        <rdfs:domain rdf:resource="http://uow.edu.au/isit906/thestar/digitalcare#Guide"/>
+        <rdfs:range rdf:resource="http://uow.edu.au/isit906/thestar/digitalcare#Person"/>
+        <worksheet:character>inverse</worksheet:character>
+        <worksheet:inverseName>isTargetAudienceOf</worksheet:inverseName>
+        <worksheet:readAloud>a Guide isIntended for a Person</worksheet:readAloud>
+        <worksheet:sourceCell>3. Relationships!A12:G12</worksheet:sourceCell>
+        <worksheet:usedByCQ>CQ1, CQ2, CQ4, CQ6, CQ7, CQ9</worksheet:usedByCQ>
+        <worksheet:worksheetRow>3. Relationships!A12:G12 | A=Guide | B=isIntendedFor | C=Person | D=isTargetAudienceOf | E=inverse | F=CQ1, CQ2, CQ4, CQ6, CQ7, CQ9 | G=a Guide isIntended for a Person</worksheet:worksheetRow>
+        <rdfs:label>isIntendedFor</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://uow.edu.au/isit906/thestar/digitalcare#isLocatedIn -->
+
+    <owl:ObjectProperty rdf:about="http://uow.edu.au/isit906/thestar/digitalcare#isLocatedIn">
+        <rdfs:domain>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://uow.edu.au/isit906/thestar/digitalcare#CareCentre"/>
+                    <rdf:Description rdf:about="http://uow.edu.au/isit906/thestar/digitalcare#OlderAdult"/>
+                    <rdf:Description rdf:about="http://uow.edu.au/isit906/thestar/digitalcare#SupportService"/>
+                </owl:unionOf>
+            </owl:Class>
+        </rdfs:domain>
+        <rdfs:range rdf:resource="http://uow.edu.au/isit906/thestar/digitalcare#Location"/>
+        <worksheet:character>none</worksheet:character>
+        <worksheet:readAloud>an OlderAdult, a SupportService, or a CareCentre is located in a Location</worksheet:readAloud>
+        <worksheet:sourceCell>3. Relationships!A11:G11</worksheet:sourceCell>
+        <worksheet:usedByCQ>CQ3, CQ8</worksheet:usedByCQ>
+        <worksheet:worksheetRow>3. Relationships!A11:G11 | A=OlderAdult OR SupportService OR CareCentre | B=isLocatedIn | C=Location | D=[BLANK] | E=none | F=CQ3, CQ8 | G=an OlderAdult, a SupportService, or a CareCentre is located in a Location</worksheet:worksheetRow>
+        <rdfs:label>isLocatedIn</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://uow.edu.au/isit906/thestar/digitalcare#isRelatedTo -->
+
+    <owl:ObjectProperty rdf:about="http://uow.edu.au/isit906/thestar/digitalcare#isRelatedTo">
+        <rdfs:domain rdf:resource="http://uow.edu.au/isit906/thestar/digitalcare#Guide"/>
+        <rdfs:range rdf:resource="http://uow.edu.au/isit906/thestar/digitalcare#InformationTopic"/>
+        <worksheet:character>none</worksheet:character>
+        <worksheet:readAloud>a Guide is related to an InformationTopic</worksheet:readAloud>
+        <worksheet:sourceCell>3. Relationships!A8:G8</worksheet:sourceCell>
+        <worksheet:usedByCQ>CQ1, CQ2, CQ6, CQ7, CQ9</worksheet:usedByCQ>
+        <worksheet:worksheetRow>3. Relationships!A8:G8 | A=Guide | B=isRelatedTo | C=InformationTopic | D=[BLANK] | E=none | F=CQ1, CQ2, CQ6, CQ7, CQ9 | G=a Guide is related to an InformationTopic</worksheet:worksheetRow>
+        <rdfs:label>isRelatedTo</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://uow.edu.au/isit906/thestar/digitalcare#isReviewedBy -->
+
+    <owl:ObjectProperty rdf:about="http://uow.edu.au/isit906/thestar/digitalcare#isReviewedBy">
+        <rdfs:domain rdf:resource="http://uow.edu.au/isit906/thestar/digitalcare#Guide"/>
+        <rdfs:range rdf:resource="http://uow.edu.au/isit906/thestar/digitalcare#HealthcareProfessional"/>
+        <worksheet:character>none</worksheet:character>
+        <worksheet:readAloud>a Guide isReviewedBy a HealthcareProfessional</worksheet:readAloud>
+        <worksheet:sourceCell>3. Relationships!A9:G9</worksheet:sourceCell>
+        <worksheet:usedByCQ>CQ2</worksheet:usedByCQ>
+        <worksheet:worksheetRow>3. Relationships!A9:G9 | A=Guide | B=isReviewedBy | C=HealthcareProfessional | D=[BLANK] | E=none | F=CQ2 | G=a Guide isReviewedBy a HealthcareProfessional</worksheet:worksheetRow>
+        <rdfs:label>isReviewedBy</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://uow.edu.au/isit906/thestar/digitalcare#isSupportedBy -->
+
+    <owl:ObjectProperty rdf:about="http://uow.edu.au/isit906/thestar/digitalcare#isSupportedBy">
+        <owl:inverseOf rdf:resource="http://uow.edu.au/isit906/thestar/digitalcare#supportsCondition"/>
+        <rdfs:label>isSupportedBy</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://uow.edu.au/isit906/thestar/digitalcare#isTargetAudienceOf -->
+
+    <owl:ObjectProperty rdf:about="http://uow.edu.au/isit906/thestar/digitalcare#isTargetAudienceOf">
+        <rdfs:label>isTargetAudienceOf</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://uow.edu.au/isit906/thestar/digitalcare#speaksLanguage -->
+
+    <owl:ObjectProperty rdf:about="http://uow.edu.au/isit906/thestar/digitalcare#speaksLanguage">
+        <rdfs:domain rdf:resource="http://uow.edu.au/isit906/thestar/digitalcare#StaffMember"/>
+        <rdfs:range rdf:resource="http://uow.edu.au/isit906/thestar/digitalcare#Language"/>
+        <worksheet:character>none</worksheet:character>
+        <worksheet:readAloud>a StaffMember speaksLanguage a Language</worksheet:readAloud>
+        <worksheet:sourceCell>3. Relationships!A19:G19</worksheet:sourceCell>
+        <worksheet:usedByCQ>CQ8</worksheet:usedByCQ>
+        <worksheet:worksheetRow>3. Relationships!A19:G19 | A=StaffMember | B=speaksLanguage | C=Language | D=[BLANK] | E=none | F=CQ8 | G=a StaffMember speaksLanguage a Language</worksheet:worksheetRow>
+        <rdfs:label>speaksLanguage</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://uow.edu.au/isit906/thestar/digitalcare#supportsCondition -->
+
+    <owl:ObjectProperty rdf:about="http://uow.edu.au/isit906/thestar/digitalcare#supportsCondition">
+        <rdfs:domain rdf:resource="http://uow.edu.au/isit906/thestar/digitalcare#SupportService"/>
+        <rdfs:range rdf:resource="http://uow.edu.au/isit906/thestar/digitalcare#HealthCondition"/>
+        <worksheet:character>inverse</worksheet:character>
+        <worksheet:inverseName>isSupportedBy</worksheet:inverseName>
+        <worksheet:readAloud>a SupportService supportsCondition HealthCondition</worksheet:readAloud>
+        <worksheet:sourceCell>3. Relationships!A10:G10</worksheet:sourceCell>
+        <worksheet:usedByCQ>CQ3</worksheet:usedByCQ>
+        <worksheet:worksheetRow>3. Relationships!A10:G10 | A=SupportService | B=supportsCondition | C=HealthCondition | D=isSupportedBy | E=inverse | F=CQ3 | G=a SupportService supportsCondition HealthCondition</worksheet:worksheetRow>
+        <rdfs:label>supportsCondition</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Data properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://uow.edu.au/isit906/thestar/digitalcare#centreName -->
+
+    <owl:DatatypeProperty rdf:about="http://uow.edu.au/isit906/thestar/digitalcare#centreName">
+        <rdfs:domain rdf:resource="http://uow.edu.au/isit906/thestar/digitalcare#CareCentre"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <worksheet:exampleValue>St Vincent&apos;s Health Australia</worksheet:exampleValue>
+        <worksheet:sourceCell>4. Attributes!A23:E23</worksheet:sourceCell>
+        <worksheet:usedByCQ>CQ8</worksheet:usedByCQ>
+        <worksheet:worksheetRow>4. Attributes!A23:E23 | A=CareCentre | B=centreName | C=xsd:string | D=St Vincent&apos;s Health Australia | E=CQ8</worksheet:worksheetRow>
+        <rdfs:label>centreName</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://uow.edu.au/isit906/thestar/digitalcare#conditionName -->
+
+    <owl:DatatypeProperty rdf:about="http://uow.edu.au/isit906/thestar/digitalcare#conditionName">
+        <rdfs:domain rdf:resource="http://uow.edu.au/isit906/thestar/digitalcare#HealthCondition"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <worksheet:exampleValue>Dementia</worksheet:exampleValue>
+        <worksheet:sourceCell>4. Attributes!A8:E8</worksheet:sourceCell>
+        <worksheet:usedByCQ>CQ1, CQ2, CQ3, CQ5, CQ6, CQ7</worksheet:usedByCQ>
+        <worksheet:worksheetRow>4. Attributes!A8:E8 | A=HealthCondition | B=conditionName | C=xsd:string | D=Dementia | E=CQ1, CQ2, CQ3, CQ5, CQ6, CQ7</worksheet:worksheetRow>
+        <rdfs:label>conditionName</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://uow.edu.au/isit906/thestar/digitalcare#difficultyDescription -->
+
+    <owl:DatatypeProperty rdf:about="http://uow.edu.au/isit906/thestar/digitalcare#difficultyDescription">
+        <rdfs:domain rdf:resource="http://uow.edu.au/isit906/thestar/digitalcare#DailyTaskStruggling"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <worksheet:exampleValue>Difficulty managing medication</worksheet:exampleValue>
+        <worksheet:sourceCell>4. Attributes!A11:E11</worksheet:sourceCell>
+        <worksheet:usedByCQ>CQ1</worksheet:usedByCQ>
+        <worksheet:worksheetRow>4. Attributes!A11:E11 | A=DailyTaskStruggling | B=difficultyDescription | C=xsd:string | D=Difficulty managing medication | E=CQ1</worksheet:worksheetRow>
+        <rdfs:label>difficultyDescription</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://uow.edu.au/isit906/thestar/digitalcare#displayName -->
+
+    <owl:DatatypeProperty rdf:about="http://uow.edu.au/isit906/thestar/digitalcare#displayName">
+        <rdfs:domain rdf:resource="http://uow.edu.au/isit906/thestar/digitalcare#Person"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <worksheet:exampleValue>Joe</worksheet:exampleValue>
+        <worksheet:sourceCell>4. Attributes!A5:E5</worksheet:sourceCell>
+        <worksheet:usedByCQ>CQ1–CQ8</worksheet:usedByCQ>
+        <worksheet:worksheetRow>4. Attributes!A5:E5 | A=Person | B=displayName | C=xsd:string | D=Joe | E=CQ1–CQ8</worksheet:worksheetRow>
+        <rdfs:label>displayName</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://uow.edu.au/isit906/thestar/digitalcare#distanceKm -->
+
+    <owl:DatatypeProperty rdf:about="http://uow.edu.au/isit906/thestar/digitalcare#distanceKm">
+        <rdfs:domain rdf:resource="http://uow.edu.au/isit906/thestar/digitalcare#Organization"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#decimal"/>
+        <worksheet:exampleValue rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">12.5</worksheet:exampleValue>
+        <worksheet:sourceCell>4. Attributes!A32:E32</worksheet:sourceCell>
+        <worksheet:usedByCQ>CQ3, CQ8</worksheet:usedByCQ>
+        <worksheet:worksheetRow>4. Attributes!A32:E32 | A=Organization | B=distanceKm | C=xsd:decimal | D=12.5 | E=CQ3, CQ8</worksheet:worksheetRow>
+        <rdfs:comment>Sample simplification: distance from the location of the persona in the competency question being tested (Mary for CQ3, Chen for CQ8). A live site would calculate this at query time from the user&apos;s postcode instead of storing it.</rdfs:comment>
+        <rdfs:label>Distance from the persona&apos;s location (km)</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://uow.edu.au/isit906/thestar/digitalcare#downloadURL -->
+
+    <owl:DatatypeProperty rdf:about="http://uow.edu.au/isit906/thestar/digitalcare#downloadURL">
+        <rdfs:domain rdf:resource="http://uow.edu.au/isit906/thestar/digitalcare#Guide"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#anyURI"/>
+        <worksheet:exampleValueStatus>blank</worksheet:exampleValueStatus>
+        <worksheet:sourceCell>4. Attributes!A18:E18</worksheet:sourceCell>
+        <worksheet:usedByCQ>CQ4</worksheet:usedByCQ>
+        <worksheet:worksheetRow>4. Attributes!A18:E18 | A=Guide | B=downloadURL | C=xsd:anyURI | D=[BLANK] | E=CQ4</worksheet:worksheetRow>
+        <rdfs:label>downloadURL</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://uow.edu.au/isit906/thestar/digitalcare#formatName -->
+
+    <owl:DatatypeProperty rdf:about="http://uow.edu.au/isit906/thestar/digitalcare#formatName">
+        <rdfs:domain rdf:resource="http://uow.edu.au/isit906/thestar/digitalcare#DocumentFormat"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <worksheet:exampleValue>PDF</worksheet:exampleValue>
+        <worksheet:sourceCell>4. Attributes!A27:E27</worksheet:sourceCell>
+        <worksheet:usedByCQ>CQ4</worksheet:usedByCQ>
+        <worksheet:worksheetRow>4. Attributes!A27:E27 | A=DocumentFormat | B=formatName | C=xsd:string | D=PDF | E=CQ4</worksheet:worksheetRow>
+        <rdfs:label>formatName</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://uow.edu.au/isit906/thestar/digitalcare#formatType -->
+
+    <owl:DatatypeProperty rdf:about="http://uow.edu.au/isit906/thestar/digitalcare#formatType">
+        <rdfs:domain rdf:resource="http://uow.edu.au/isit906/thestar/digitalcare#DocumentFormat"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <worksheet:exampleValue>application/pdf</worksheet:exampleValue>
+        <worksheet:sourceCell>4. Attributes!A28:E28</worksheet:sourceCell>
+        <worksheet:usedByCQ>CQ4</worksheet:usedByCQ>
+        <worksheet:worksheetRow>4. Attributes!A28:E28 | A=DocumentFormat | B=formatType | C=xsd:string | D=application/pdf | E=CQ4</worksheet:worksheetRow>
+        <rdfs:label>formatType</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://uow.edu.au/isit906/thestar/digitalcare#isDownloadable -->
+
+    <owl:DatatypeProperty rdf:about="http://uow.edu.au/isit906/thestar/digitalcare#isDownloadable">
+        <rdfs:domain rdf:resource="http://uow.edu.au/isit906/thestar/digitalcare#Guide"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
+        <worksheet:exampleValue>True</worksheet:exampleValue>
+        <worksheet:sourceCell>4. Attributes!A16:E16</worksheet:sourceCell>
+        <worksheet:usedByCQ>CQ4</worksheet:usedByCQ>
+        <worksheet:worksheetRow>4. Attributes!A16:E16 | A=Guide | B=isDownloadable | C=xsd:boolean | D=True | E=CQ4</worksheet:worksheetRow>
+        <rdfs:label>isDownloadable</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://uow.edu.au/isit906/thestar/digitalcare#isPrintable -->
+
+    <owl:DatatypeProperty rdf:about="http://uow.edu.au/isit906/thestar/digitalcare#isPrintable">
+        <rdfs:domain rdf:resource="http://uow.edu.au/isit906/thestar/digitalcare#Guide"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
+        <worksheet:exampleValue>True</worksheet:exampleValue>
+        <worksheet:sourceCell>4. Attributes!A17:E17</worksheet:sourceCell>
+        <worksheet:usedByCQ>CQ4</worksheet:usedByCQ>
+        <worksheet:worksheetRow>4. Attributes!A17:E17 | A=Guide | B=isPrintable | C=xsd:boolean | D=True | E=CQ4</worksheet:worksheetRow>
+        <rdfs:label>isPrintable</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://uow.edu.au/isit906/thestar/digitalcare#isReliable -->
+
+    <owl:DatatypeProperty rdf:about="http://uow.edu.au/isit906/thestar/digitalcare#isReliable">
+        <rdfs:domain rdf:resource="http://uow.edu.au/isit906/thestar/digitalcare#SupportService"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
+        <worksheet:exampleValue rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</worksheet:exampleValue>
+        <worksheet:sourceCell>4. Attributes!A30:E30</worksheet:sourceCell>
+        <worksheet:usedByCQ>CQ3</worksheet:usedByCQ>
+        <worksheet:worksheetRow>4. Attributes!A30:E30 | A=SupportService | B=isReliable | C=xsd:boolean | D=True | E=CQ3</worksheet:worksheetRow>
+        <rdfs:label>Service recorded as reliable</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://uow.edu.au/isit906/thestar/digitalcare#languageName -->
+
+    <owl:DatatypeProperty rdf:about="http://uow.edu.au/isit906/thestar/digitalcare#languageName">
+        <rdfs:domain rdf:resource="http://uow.edu.au/isit906/thestar/digitalcare#Language"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <worksheet:exampleValue>Chinese</worksheet:exampleValue>
+        <worksheet:sourceCell>4. Attributes!A26:E26</worksheet:sourceCell>
+        <worksheet:usedByCQ>CQ7, CQ8</worksheet:usedByCQ>
+        <worksheet:worksheetRow>4. Attributes!A26:E26 | A=Language | B=languageName | C=xsd:string | D=Chinese | E=CQ7, CQ8</worksheet:worksheetRow>
+        <rdfs:label>languageName</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://uow.edu.au/isit906/thestar/digitalcare#lastReviewedOn -->
+
+    <owl:DatatypeProperty rdf:about="http://uow.edu.au/isit906/thestar/digitalcare#lastReviewedOn">
+        <rdfs:domain rdf:resource="http://uow.edu.au/isit906/thestar/digitalcare#Guide"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#date"/>
+        <worksheet:exampleValue>2026-07-20</worksheet:exampleValue>
+        <worksheet:sourceCell>4. Attributes!A14:E14</worksheet:sourceCell>
+        <worksheet:usedByCQ>CQ2</worksheet:usedByCQ>
+        <worksheet:worksheetRow>4. Attributes!A14:E14 | A=Guide | B=lastReviewedOn | C=xsd:date | D=2026-07-20 | E=CQ2</worksheet:worksheetRow>
+        <rdfs:label>lastReviewedOn</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://uow.edu.au/isit906/thestar/digitalcare#nearbyRadiusKm -->
+
+    <owl:DatatypeProperty rdf:about="http://uow.edu.au/isit906/thestar/digitalcare#nearbyRadiusKm">
+        <rdfs:domain rdf:resource="http://uow.edu.au/isit906/thestar/digitalcare#OlderAdult"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#decimal"/>
+        <worksheet:exampleValue rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">10</worksheet:exampleValue>
+        <worksheet:sourceCell>4. Attributes!A36:E36</worksheet:sourceCell>
+        <worksheet:usedByCQ>CQ8</worksheet:usedByCQ>
+        <worksheet:worksheetRow>4. Attributes!A36:E36 | A=OlderAdult | B=nearbyRadiusKm | C=xsd:decimal | D=10 | E=CQ8</worksheet:worksheetRow>
+        <rdfs:label>Older adult&apos;s chosen nearby radius (km)</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://uow.edu.au/isit906/thestar/digitalcare#organizationName -->
+
+    <owl:DatatypeProperty rdf:about="http://uow.edu.au/isit906/thestar/digitalcare#organizationName">
+        <rdfs:domain rdf:resource="http://uow.edu.au/isit906/thestar/digitalcare#Organization"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <worksheet:exampleValue>Dementia Australia</worksheet:exampleValue>
+        <worksheet:sourceCell>4. Attributes!A20:E20</worksheet:sourceCell>
+        <worksheet:usedByCQ>CQ3, CQ8</worksheet:usedByCQ>
+        <worksheet:worksheetRow>4. Attributes!A20:E20 | A=Organization | B=organizationName | C=xsd:string | D=Dementia Australia | E=CQ3, CQ8</worksheet:worksheetRow>
+        <rdfs:label>organizationName</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://uow.edu.au/isit906/thestar/digitalcare#phoneNumber -->
+
+    <owl:DatatypeProperty rdf:about="http://uow.edu.au/isit906/thestar/digitalcare#phoneNumber">
+        <rdfs:domain rdf:resource="http://uow.edu.au/isit906/thestar/digitalcare#SupportService"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <worksheet:exampleValue>1800 100 500</worksheet:exampleValue>
+        <worksheet:sourceCell>4. Attributes!A22:E22</worksheet:sourceCell>
+        <worksheet:usedByCQ>CQ3</worksheet:usedByCQ>
+        <worksheet:worksheetRow>4. Attributes!A22:E22 | A=SupportService | B=phoneNumber | C=xsd:string | D=1800 100 500 | E=CQ3</worksheet:worksheetRow>
+        <rdfs:label>phoneNumber</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://uow.edu.au/isit906/thestar/digitalcare#policyURL -->
+
+    <owl:DatatypeProperty rdf:about="http://uow.edu.au/isit906/thestar/digitalcare#policyURL">
+        <rdfs:domain rdf:resource="http://uow.edu.au/isit906/thestar/digitalcare#PrivacyPolicy"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#anyURI"/>
+        <worksheet:exampleValueStatus>blank</worksheet:exampleValueStatus>
+        <worksheet:sourceCell>4. Attributes!A29:E29</worksheet:sourceCell>
+        <worksheet:usedByCQ>CQ5</worksheet:usedByCQ>
+        <worksheet:worksheetRow>4. Attributes!A29:E29 | A=PrivacyPolicy | B=policyURL | C=xsd:anyURI | D=[BLANK] | E=CQ5</worksheet:worksheetRow>
+        <rdfs:label>policyURL</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://uow.edu.au/isit906/thestar/digitalcare#postcode -->
+
+    <owl:DatatypeProperty rdf:about="http://uow.edu.au/isit906/thestar/digitalcare#postcode">
+        <rdfs:domain rdf:resource="http://uow.edu.au/isit906/thestar/digitalcare#Location"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <worksheet:exampleValue>3000</worksheet:exampleValue>
+        <worksheet:sourceCell>4. Attributes!A25:E25</worksheet:sourceCell>
+        <worksheet:usedByCQ>CQ3, CQ8</worksheet:usedByCQ>
+        <worksheet:worksheetRow>4. Attributes!A25:E25 | A=Location | B=postcode | C=xsd:string | D=3000 | E=CQ3, CQ8</worksheet:worksheetRow>
+        <rdfs:label>postcode</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://uow.edu.au/isit906/thestar/digitalcare#professionalRole -->
+
+    <owl:DatatypeProperty rdf:about="http://uow.edu.au/isit906/thestar/digitalcare#professionalRole">
+        <rdfs:domain rdf:resource="http://uow.edu.au/isit906/thestar/digitalcare#HealthcareProfessional"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <worksheet:exampleValue>Geriatrician</worksheet:exampleValue>
+        <worksheet:sourceCell>4. Attributes!A6:E6</worksheet:sourceCell>
+        <worksheet:usedByCQ>CQ2</worksheet:usedByCQ>
+        <worksheet:worksheetRow>4. Attributes!A6:E6 | A=HealthcareProfessional | B=professionalRole | C=xsd:string | D=Geriatrician | E=CQ2</worksheet:worksheetRow>
+        <rdfs:label>professionalRole</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://uow.edu.au/isit906/thestar/digitalcare#publishedOn -->
+
+    <owl:DatatypeProperty rdf:about="http://uow.edu.au/isit906/thestar/digitalcare#publishedOn">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:domain rdf:resource="http://uow.edu.au/isit906/thestar/digitalcare#Guide"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#date"/>
+        <worksheet:exampleValue>2026-03-14</worksheet:exampleValue>
+        <worksheet:sourceCell>4. Attributes!A13:E13</worksheet:sourceCell>
+        <worksheet:usedByCQ>CQ6</worksheet:usedByCQ>
+        <worksheet:worksheetRow>4. Attributes!A13:E13 | A=Guide | B=publishedOn | C=xsd:date | D=2026-03-14 | E=CQ6</worksheet:worksheetRow>
+        <rdfs:label>publishedOn</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://uow.edu.au/isit906/thestar/digitalcare#readingLevel -->
+
+    <owl:DatatypeProperty rdf:about="http://uow.edu.au/isit906/thestar/digitalcare#readingLevel">
+        <rdfs:domain rdf:resource="http://uow.edu.au/isit906/thestar/digitalcare#Guide"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <worksheet:exampleValue>Plain English</worksheet:exampleValue>
+        <worksheet:sourceCell>4. Attributes!A15:E15</worksheet:sourceCell>
+        <worksheet:usedByCQ>CQ1</worksheet:usedByCQ>
+        <worksheet:worksheetRow>4. Attributes!A15:E15 | A=Guide | B=readingLevel | C=xsd:string | D=Plain English | E=CQ1</worksheet:worksheetRow>
+        <rdfs:label>readingLevel</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://uow.edu.au/isit906/thestar/digitalcare#regionName -->
+
+    <owl:DatatypeProperty rdf:about="http://uow.edu.au/isit906/thestar/digitalcare#regionName">
+        <rdfs:domain rdf:resource="http://uow.edu.au/isit906/thestar/digitalcare#Location"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <worksheet:exampleValue>Victoria</worksheet:exampleValue>
+        <worksheet:sourceCell>4. Attributes!A24:E24</worksheet:sourceCell>
+        <worksheet:usedByCQ>CQ3, CQ8</worksheet:usedByCQ>
+        <worksheet:worksheetRow>4. Attributes!A24:E24 | A=Location | B=regionName | C=xsd:string | D=Victoria | E=CQ3, CQ8</worksheet:worksheetRow>
+        <rdfs:label>regionName</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://uow.edu.au/isit906/thestar/digitalcare#reliabilityEvidence -->
+
+    <owl:DatatypeProperty rdf:about="http://uow.edu.au/isit906/thestar/digitalcare#reliabilityEvidence">
+        <rdfs:domain rdf:resource="http://uow.edu.au/isit906/thestar/digitalcare#SupportService"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <worksheet:exampleValue>Verified via Dementia Australia service directory, 2026</worksheet:exampleValue>
+        <worksheet:sourceCell>4. Attributes!A31:E31</worksheet:sourceCell>
+        <worksheet:usedByCQ>CQ3</worksheet:usedByCQ>
+        <worksheet:worksheetRow>4. Attributes!A31:E31 | A=SupportService | B=reliabilityEvidence | C=xsd:string | D=Verified via Dementia Australia service directory, 2026 | E=CQ3</worksheet:worksheetRow>
+        <rdfs:label>Source for the reliability assessment</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://uow.edu.au/isit906/thestar/digitalcare#requiresPersonalInformationForSearch -->
+
+    <owl:DatatypeProperty rdf:about="http://uow.edu.au/isit906/thestar/digitalcare#requiresPersonalInformationForSearch">
+        <rdfs:domain rdf:resource="http://uow.edu.au/isit906/thestar/digitalcare#PrivacyPolicy"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
+        <worksheet:exampleValue rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">false</worksheet:exampleValue>
+        <worksheet:sourceCell>4. Attributes!A33:E33</worksheet:sourceCell>
+        <worksheet:usedByCQ>CQ5</worksheet:usedByCQ>
+        <worksheet:worksheetRow>4. Attributes!A33:E33 | A=PrivacyPolicy | B=requiresPersonalInformationForSearch | C=xsd:boolean | D=False | E=CQ5</worksheet:worksheetRow>
+        <rdfs:label>Policy requires personal information to search</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://uow.edu.au/isit906/thestar/digitalcare#searchRequirementEvidence -->
+
+    <owl:DatatypeProperty rdf:about="http://uow.edu.au/isit906/thestar/digitalcare#searchRequirementEvidence">
+        <rdfs:domain rdf:resource="http://uow.edu.au/isit906/thestar/digitalcare#PrivacyPolicy"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <worksheet:exampleValue>Digital Care Privacy Policy, section 3</worksheet:exampleValue>
+        <worksheet:sourceCell>4. Attributes!A34:E34</worksheet:sourceCell>
+        <worksheet:usedByCQ>CQ5</worksheet:usedByCQ>
+        <worksheet:worksheetRow>4. Attributes!A34:E34 | A=PrivacyPolicy | B=searchRequirementEvidence | C=xsd:string | D=Digital Care Privacy Policy, section 3 | E=CQ5</worksheet:worksheetRow>
+        <rdfs:label>Source for the search requirement</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://uow.edu.au/isit906/thestar/digitalcare#serviceName -->
+
+    <owl:DatatypeProperty rdf:about="http://uow.edu.au/isit906/thestar/digitalcare#serviceName">
+        <rdfs:domain rdf:resource="http://uow.edu.au/isit906/thestar/digitalcare#SupportService"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <worksheet:exampleValue>Dementia Australia Helpline</worksheet:exampleValue>
+        <worksheet:sourceCell>4. Attributes!A21:E21</worksheet:sourceCell>
+        <worksheet:usedByCQ>CQ3</worksheet:usedByCQ>
+        <worksheet:worksheetRow>4. Attributes!A21:E21 | A=SupportService | B=serviceName | C=xsd:string | D=Dementia Australia Helpline | E=CQ3</worksheet:worksheetRow>
+        <rdfs:label>serviceName</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://uow.edu.au/isit906/thestar/digitalcare#staffRole -->
+
+    <owl:DatatypeProperty rdf:about="http://uow.edu.au/isit906/thestar/digitalcare#staffRole">
+        <rdfs:domain rdf:resource="http://uow.edu.au/isit906/thestar/digitalcare#StaffMember"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <worksheet:exampleValue>Dementia support worker</worksheet:exampleValue>
+        <worksheet:sourceCell>4. Attributes!A7:E7</worksheet:sourceCell>
+        <worksheet:usedByCQ>CQ8</worksheet:usedByCQ>
+        <worksheet:worksheetRow>4. Attributes!A7:E7 | A=StaffMember | B=staffRole | C=xsd:string | D=Dementia support worker | E=CQ8</worksheet:worksheetRow>
+        <rdfs:label>staffRole</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://uow.edu.au/isit906/thestar/digitalcare#supportsLargeText -->
+
+    <owl:DatatypeProperty rdf:about="http://uow.edu.au/isit906/thestar/digitalcare#supportsLargeText">
+        <rdfs:domain rdf:resource="http://uow.edu.au/isit906/thestar/digitalcare#Guide"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
+        <worksheet:usedByCQ>CQ6</worksheet:usedByCQ>
+        <rdfs:label>supportsLargeText</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://uow.edu.au/isit906/thestar/digitalcare#symptomName -->
+
+    <owl:DatatypeProperty rdf:about="http://uow.edu.au/isit906/thestar/digitalcare#symptomName">
+        <rdfs:domain rdf:resource="http://uow.edu.au/isit906/thestar/digitalcare#Symptom"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <worksheet:exampleValue>Short-term memory loss</worksheet:exampleValue>
+        <worksheet:sourceCell>4. Attributes!A10:E10</worksheet:sourceCell>
+        <worksheet:usedByCQ>CQ5, CQ6</worksheet:usedByCQ>
+        <worksheet:worksheetRow>4. Attributes!A10:E10 | A=Symptom | B=symptomName | C=xsd:string | D=Short-term memory loss | E=CQ5, CQ6</worksheet:worksheetRow>
+        <rdfs:label>symptomName</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://uow.edu.au/isit906/thestar/digitalcare#title -->
+
+    <owl:DatatypeProperty rdf:about="http://uow.edu.au/isit906/thestar/digitalcare#title">
+        <rdfs:domain rdf:resource="http://uow.edu.au/isit906/thestar/digitalcare#Guide"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <worksheet:exampleValue>Managing daily tasks with dementia</worksheet:exampleValue>
+        <worksheet:sourceCell>4. Attributes!A12:E12</worksheet:sourceCell>
+        <worksheet:usedByCQ>CQ1, CQ2, CQ4, CQ6, CQ7</worksheet:usedByCQ>
+        <worksheet:worksheetRow>4. Attributes!A12:E12 | A=Guide | B=title | C=xsd:string | D=Managing daily tasks with dementia | E=CQ1, CQ2, CQ4, CQ6, CQ7</worksheet:worksheetRow>
+        <rdfs:label>title</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://uow.edu.au/isit906/thestar/digitalcare#typeDescription -->
+
+    <owl:DatatypeProperty rdf:about="http://uow.edu.au/isit906/thestar/digitalcare#typeDescription">
+        <rdfs:domain rdf:resource="http://uow.edu.au/isit906/thestar/digitalcare#DementiaType"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <worksheet:exampleValue>Alzheimer’s disease</worksheet:exampleValue>
+        <worksheet:sourceCell>4. Attributes!A9:E9</worksheet:sourceCell>
+        <worksheet:usedByCQ>CQ1, CQ2, CQ6, CQ7</worksheet:usedByCQ>
+        <worksheet:worksheetRow>4. Attributes!A9:E9 | A=DementiaType | B=typeDescription | C=xsd:string | D=Alzheimer’s disease | E=CQ1, CQ2, CQ6, CQ7</worksheet:worksheetRow>
+        <rdfs:label>typeDescription</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Classes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://uow.edu.au/isit906/thestar/digitalcare#AlzheimersDisease -->
+
+    <owl:Class rdf:about="http://uow.edu.au/isit906/thestar/digitalcare#AlzheimersDisease">
+        <rdfs:subClassOf rdf:resource="http://uow.edu.au/isit906/thestar/digitalcare#DementiaType"/>
+    </owl:Class>
+    
+
+
+    <!-- http://uow.edu.au/isit906/thestar/digitalcare#CareCentre -->
+
+    <owl:Class rdf:about="http://uow.edu.au/isit906/thestar/digitalcare#CareCentre">
+        <rdfs:subClassOf rdf:resource="http://uow.edu.au/isit906/thestar/digitalcare#Organization"/>
+        <worksheet:sourceCell>2. Classes!A19:F19</worksheet:sourceCell>
+        <worksheet:usedByCQ>CQ8</worksheet:usedByCQ>
+        <worksheet:worksheetRow>2. Classes!A19:F19 | A=CareCentre | B=An organisation or centre providing in-person care or support. | C=Organization | D=CQ8 | E=[BLANK] | F=[BLANK]</worksheet:worksheetRow>
+        <rdfs:comment>An organisation or centre providing in-person care or support.</rdfs:comment>
+        <rdfs:label>CareCentre</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://uow.edu.au/isit906/thestar/digitalcare#Carer -->
+
+    <owl:Class rdf:about="http://uow.edu.au/isit906/thestar/digitalcare#Carer">
+        <rdfs:subClassOf rdf:resource="http://uow.edu.au/isit906/thestar/digitalcare#Person"/>
+        <worksheet:sourceCell>2. Classes!A6:F6</worksheet:sourceCell>
+        <worksheet:usedByCQ>CQ1, CQ2, CQ3, CQ4, CQ9</worksheet:usedByCQ>
+        <worksheet:worksheetRow>2. Classes!A6:F6 | A=Carer | B=An unpaid family member or friend providing routine care and seeking actionable advice | C=Person | D=CQ1, CQ2, CQ3, CQ4, CQ9 | E=[BLANK] | F=[BLANK]</worksheet:worksheetRow>
+        <rdfs:comment>An unpaid family member or friend providing routine care and seeking actionable advice</rdfs:comment>
+        <rdfs:label>Carer</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://uow.edu.au/isit906/thestar/digitalcare#CarerGuide -->
+
+    <owl:Class rdf:about="http://uow.edu.au/isit906/thestar/digitalcare#CarerGuide">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://uow.edu.au/isit906/thestar/digitalcare#Guide"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://uow.edu.au/isit906/thestar/digitalcare#isIntendedFor"/>
+                        <owl:someValuesFrom rdf:resource="http://uow.edu.au/isit906/thestar/digitalcare#Carer"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <worksheet:axiomCQ>CQ1, CQ4</worksheet:axiomCQ>
+        <rdfs:comment>A Guide whose intended audience includes a Carer. Defined class: membership is entailed from isIntendedFor, never asserted.</rdfs:comment>
+        <rdfs:label>CarerGuide</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://uow.edu.au/isit906/thestar/digitalcare#DailyTaskStruggling -->
+
+    <owl:Class rdf:about="http://uow.edu.au/isit906/thestar/digitalcare#DailyTaskStruggling">
+        <rdfs:subClassOf rdf:resource="http://uow.edu.au/isit906/thestar/digitalcare#Symptom"/>
+        <worksheet:sourceCell>2. Classes!A15:F15</worksheet:sourceCell>
+        <worksheet:usedByCQ>CQ1</worksheet:usedByCQ>
+        <worksheet:worksheetRow>2. Classes!A15:F15 | A=DailyTaskStruggling | B=Struggling to complete routine activities like cooking, driving, or managing medications. | C=Symptom | D=CQ1 | E=[BLANK] | F=[BLANK]</worksheet:worksheetRow>
+        <rdfs:comment>Struggling to complete routine activities like cooking, driving, or managing medications.</rdfs:comment>
+        <rdfs:label>DailyTaskStruggling</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://uow.edu.au/isit906/thestar/digitalcare#DementiaType -->
+
+    <owl:Class rdf:about="http://uow.edu.au/isit906/thestar/digitalcare#DementiaType">
+        <rdfs:subClassOf rdf:resource="http://uow.edu.au/isit906/thestar/digitalcare#HealthCondition"/>
+        <worksheet:sourceCell>2. Classes!A12:F12</worksheet:sourceCell>
+        <worksheet:usedByCQ>CQ2, CQ6, CQ7</worksheet:usedByCQ>
+        <worksheet:worksheetRow>2. Classes!A12:F12 | A=DementiaType | B=A specific clinical subtype of dementia (e.g., Alzheimer’s, Vascular, Lewy Body) | C=HealthCondition | D=CQ2, CQ6, CQ7 | E=[BLANK] | F=[BLANK]</worksheet:worksheetRow>
+        <rdfs:comment>A specific clinical subtype of dementia (e.g., Alzheimer’s, Vascular, Lewy Body)</rdfs:comment>
+        <rdfs:label>DementiaType</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://uow.edu.au/isit906/thestar/digitalcare#DocumentFormat -->
+
+    <owl:Class rdf:about="http://uow.edu.au/isit906/thestar/digitalcare#DocumentFormat">
+        <worksheet:sourceCell>2. Classes!A22:F22</worksheet:sourceCell>
+        <worksheet:usedByCQ>CQ4</worksheet:usedByCQ>
+        <worksheet:worksheetRow>2. Classes!A22:F22 | A=DocumentFormat | B=The format in which a guide is provided, such as PDF. | C=[BLANK] | D=CQ4 | E=[BLANK] | F=[BLANK]</worksheet:worksheetRow>
+        <rdfs:comment>The format in which a guide is provided, such as PDF.</rdfs:comment>
+        <rdfs:label>DocumentFormat</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://uow.edu.au/isit906/thestar/digitalcare#Guide -->
+
+    <owl:Class rdf:about="http://uow.edu.au/isit906/thestar/digitalcare#Guide">
+        <worksheet:reuseReason>Standardises instructional documents for search engine crawling and content aggregation.</worksheet:reuseReason>
+        <worksheet:reusedFrom>https://schema.org/Guide</worksheet:reusedFrom>
+        <worksheet:sourceCell>2. Classes!A16:F16</worksheet:sourceCell>
+        <worksheet:usedByCQ>CQ1, CQ2, CQ4, CQ5, CQ6, CQ7, CQ9</worksheet:usedByCQ>
+        <worksheet:worksheetRow>2. Classes!A16:F16 | A=Guide | B=A structured digital publication, toolkit, or practical advice document | C=[BLANK] | D=CQ1, CQ2, CQ4, CQ5, CQ6, CQ7, CQ9 | E=https://schema.org/Guide | F=Standardises instructional documents for search engine crawling and content aggregation.</worksheet:worksheetRow>
+        <rdfs:comment>A structured digital publication, toolkit, or practical advice document</rdfs:comment>
+        <rdfs:label>Guide</rdfs:label>
+        <rdfs:seeAlso rdf:resource="https://schema.org/Guide"/>
+    </owl:Class>
+    
+
+
+    <!-- http://uow.edu.au/isit906/thestar/digitalcare#HealthCondition -->
+
+    <owl:Class rdf:about="http://uow.edu.au/isit906/thestar/digitalcare#HealthCondition">
+        <rdfs:subClassOf rdf:resource="http://uow.edu.au/isit906/thestar/digitalcare#InformationTopic"/>
+        <owl:disjointWith rdf:resource="http://uow.edu.au/isit906/thestar/digitalcare#Symptom"/>
+        <worksheet:reuseReason>Provides a recognised medical meaning for symptoms.</worksheet:reuseReason>
+        <worksheet:reusedFrom>https://schema.org/MedicalCondition</worksheet:reusedFrom>
+        <worksheet:sourceCell>2. Classes!A11:F11</worksheet:sourceCell>
+        <worksheet:usedByCQ>CQ1, CQ2, CQ3, CQ5, CQ6, CQ7</worksheet:usedByCQ>
+        <worksheet:worksheetRow>2. Classes!A11:F11 | A=HealthCondition | B=Specifying the health condition(s) of a patient, medical study, or other target audience. | C=InformationTopic | D=CQ1, CQ2, CQ3, CQ5, CQ6, CQ7 | E=https://schema.org/MedicalCondition | F=Provides a recognised medical meaning for symptoms.</worksheet:worksheetRow>
+        <rdfs:comment>Specifying the health condition(s) of a patient, medical study, or other target audience.</rdfs:comment>
+        <rdfs:label>HealthCondition</rdfs:label>
+        <rdfs:seeAlso rdf:resource="https://schema.org/MedicalCondition"/>
+    </owl:Class>
+    
+
+
+    <!-- http://uow.edu.au/isit906/thestar/digitalcare#HealthcareProfessional -->
+
+    <owl:Class rdf:about="http://uow.edu.au/isit906/thestar/digitalcare#HealthcareProfessional">
+        <rdfs:subClassOf rdf:resource="http://uow.edu.au/isit906/thestar/digitalcare#Person"/>
+        <worksheet:reuseReason>Establishes clinical governance and accountability for published care guidelines.</worksheet:reuseReason>
+        <worksheet:reusedFrom>https://schema.org/Physician</worksheet:reusedFrom>
+        <worksheet:sourceCell>2. Classes!A8:F8</worksheet:sourceCell>
+        <worksheet:usedByCQ>CQ2</worksheet:usedByCQ>
+        <worksheet:worksheetRow>2. Classes!A8:F8 | A=HealthcareProfessional | B=A credentialed medical practitioner or clinician who reviews and validates content | C=Person | D=CQ2 | E=https://schema.org/Physician | F=Establishes clinical governance and accountability for published care guidelines.</worksheet:worksheetRow>
+        <rdfs:comment>A credentialed medical practitioner or clinician who reviews and validates content</rdfs:comment>
+        <rdfs:label>HealthcareProfessional</rdfs:label>
+        <rdfs:seeAlso rdf:resource="https://schema.org/Physician"/>
+    </owl:Class>
+    
+
+
+    <!-- http://uow.edu.au/isit906/thestar/digitalcare#InformationTopic -->
+
+    <owl:Class rdf:about="http://uow.edu.au/isit906/thestar/digitalcare#InformationTopic">
+        <worksheet:sourceCell>2. Classes!A10:F10</worksheet:sourceCell>
+        <worksheet:usedByCQ>CQ1, CQ2, CQ6, CQ7, CQ9</worksheet:usedByCQ>
+        <worksheet:worksheetRow>2. Classes!A10:F10 | A=InformationTopic | B=A general topic or information need that a Guide can relate to | C=[BLANK] | D=CQ1, CQ2, CQ6, CQ7, CQ9 | E=[BLANK] | F=[BLANK]</worksheet:worksheetRow>
+        <rdfs:label>InformationTopic</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://uow.edu.au/isit906/thestar/digitalcare#Language -->
+
+    <owl:Class rdf:about="http://uow.edu.au/isit906/thestar/digitalcare#Language">
+        <worksheet:sourceCell>2. Classes!A21:F21</worksheet:sourceCell>
+        <worksheet:usedByCQ>CQ7, CQ8</worksheet:usedByCQ>
+        <worksheet:worksheetRow>2. Classes!A21:F21 | A=Language | B=A formal spoken or written natural language (e.g., Mandarin, English) | C=[BLANK] | D=CQ7, CQ8 | E=[BLANK] | F=[BLANK]</worksheet:worksheetRow>
+        <rdfs:comment>A formal spoken or written natural language (e.g., Mandarin, English)</rdfs:comment>
+        <rdfs:label>Language</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://uow.edu.au/isit906/thestar/digitalcare#Location -->
+
+    <owl:Class rdf:about="http://uow.edu.au/isit906/thestar/digitalcare#Location">
+        <worksheet:reuseReason>Represents service areas using an established geographical concept.</worksheet:reuseReason>
+        <worksheet:reusedFrom>https://schema.org/PostalAddress</worksheet:reusedFrom>
+        <worksheet:sourceCell>2. Classes!A20:F20</worksheet:sourceCell>
+        <worksheet:usedByCQ>CQ3, CQ8</worksheet:usedByCQ>
+        <worksheet:worksheetRow>2. Classes!A20:F20 | A=Location | B=The region in which the locality is, and which is in the country.  | C=[BLANK] | D=CQ3, CQ8 | E=https://schema.org/PostalAddress | F=Represents service areas using an established geographical concept.</worksheet:worksheetRow>
+        <rdfs:comment>The region in which the locality is, and which is in the country. </rdfs:comment>
+        <rdfs:label>Location</rdfs:label>
+        <rdfs:seeAlso rdf:resource="https://schema.org/PostalAddress"/>
+    </owl:Class>
+    
+
+
+    <!-- http://uow.edu.au/isit906/thestar/digitalcare#OlderAdult -->
+
+    <owl:Class rdf:about="http://uow.edu.au/isit906/thestar/digitalcare#OlderAdult">
+        <rdfs:subClassOf rdf:resource="http://uow.edu.au/isit906/thestar/digitalcare#Person"/>
+        <worksheet:sourceCell>2. Classes!A7:F7</worksheet:sourceCell>
+        <worksheet:usedByCQ>CQ1, CQ2, CQ3, CQ5, CQ6, CQ7, CQ8</worksheet:usedByCQ>
+        <worksheet:worksheetRow>2. Classes!A7:F7 | A=OlderAdult | B=An individual receiving care, living with cognitive decline or diagnosed dementia | C=Person | D=CQ1, CQ2, CQ3, CQ5, CQ6, CQ7, CQ8 | E=[BLANK] | F=[BLANK]</worksheet:worksheetRow>
+        <rdfs:comment>An individual receiving care, living with cognitive decline or diagnosed dementia</rdfs:comment>
+        <rdfs:label>OlderAdult</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://uow.edu.au/isit906/thestar/digitalcare#OlderAdultGuide -->
+
+    <owl:Class rdf:about="http://uow.edu.au/isit906/thestar/digitalcare#OlderAdultGuide">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://uow.edu.au/isit906/thestar/digitalcare#Guide"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://uow.edu.au/isit906/thestar/digitalcare#isIntendedFor"/>
+                        <owl:someValuesFrom rdf:resource="http://uow.edu.au/isit906/thestar/digitalcare#OlderAdult"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <worksheet:axiomCQ>CQ6, CQ7</worksheet:axiomCQ>
+        <rdfs:comment>A Guide whose intended audience includes an OlderAdult. Defined class: membership is entailed from isIntendedFor, never asserted.</rdfs:comment>
+        <rdfs:label>OlderAdultGuide</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://uow.edu.au/isit906/thestar/digitalcare#Organization -->
+
+    <owl:Class rdf:about="http://uow.edu.au/isit906/thestar/digitalcare#Organization">
+        <worksheet:reuseReason>Provides a standard class for service providers.</worksheet:reuseReason>
+        <worksheet:reusedFrom>https://schema.org/Organization</worksheet:reusedFrom>
+        <worksheet:sourceCell>2. Classes!A17:F17</worksheet:sourceCell>
+        <worksheet:usedByCQ>CQ3, CQ8</worksheet:usedByCQ>
+        <worksheet:worksheetRow>2. Classes!A17:F17 | A=Organization | B=An organisation responsible for a support service or care centre. | C=[BLANK] | D=CQ3, CQ8 | E=https://schema.org/Organization | F=Provides a standard class for service providers.</worksheet:worksheetRow>
+        <rdfs:comment>An organisation responsible for a support service or care centre.</rdfs:comment>
+        <rdfs:label>Organization</rdfs:label>
+        <rdfs:seeAlso rdf:resource="https://schema.org/Organization"/>
+    </owl:Class>
+    
+
+
+    <!-- http://uow.edu.au/isit906/thestar/digitalcare#Person -->
+
+    <owl:Class rdf:about="http://uow.edu.au/isit906/thestar/digitalcare#Person">
+        <worksheet:reuseReason>Provides a standard general class for people.                                                                                                                                                                                               </worksheet:reuseReason>
+        <worksheet:reusedFrom>https://schema.org/Person</worksheet:reusedFrom>
+        <worksheet:sourceCell>2. Classes!A5:F5</worksheet:sourceCell>
+        <worksheet:usedByCQ>CQ1, CQ2, CQ3, CQ4, CQ5, CQ6, CQ7, CQ8, CQ9</worksheet:usedByCQ>
+        <worksheet:worksheetRow>2. Classes!A5:F5 | A=Person | B=An individual human actor interacting with or referenced in the care system | C=[BLANK] | D=CQ1, CQ2, CQ3, CQ4, CQ5, CQ6, CQ7, CQ8, CQ9 | E=https://schema.org/Person | F=Provides a standard general class for people.</worksheet:worksheetRow>
+        <rdfs:comment>An individual human actor interacting with or referenced in the care system</rdfs:comment>
+        <rdfs:label>Person</rdfs:label>
+        <rdfs:seeAlso rdf:resource="https://schema.org/Person"/>
+    </owl:Class>
+    
+
+
+    <!-- http://uow.edu.au/isit906/thestar/digitalcare#PrivacyPolicy -->
+
+    <owl:Class rdf:about="http://uow.edu.au/isit906/thestar/digitalcare#PrivacyPolicy">
+        <worksheet:sourceCell>2. Classes!A23:F23</worksheet:sourceCell>
+        <worksheet:usedByCQ>CQ5</worksheet:usedByCQ>
+        <worksheet:worksheetRow>2. Classes!A23:F23 | A=PrivacyPolicy | B=A policy explaining how Digital Care handles personal information. | C=[BLANK] | D=CQ5 | E=[BLANK] | F=[BLANK]</worksheet:worksheetRow>
+        <rdfs:comment>A policy explaining how Digital Care handles personal information.</rdfs:comment>
+        <rdfs:label>PrivacyPolicy</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://uow.edu.au/isit906/thestar/digitalcare#ProfessionallyReviewedGuide -->
+
+    <owl:Class rdf:about="http://uow.edu.au/isit906/thestar/digitalcare#ProfessionallyReviewedGuide">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://uow.edu.au/isit906/thestar/digitalcare#Guide"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://uow.edu.au/isit906/thestar/digitalcare#isReviewedBy"/>
+                        <owl:someValuesFrom rdf:resource="http://uow.edu.au/isit906/thestar/digitalcare#HealthcareProfessional"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <worksheet:axiomCQ>CQ2</worksheet:axiomCQ>
+        <rdfs:comment>A Guide signed off by a healthcare professional. Defined class: membership is entailed from isReviewedBy, never asserted.</rdfs:comment>
+        <rdfs:label>ProfessionallyReviewedGuide</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://uow.edu.au/isit906/thestar/digitalcare#StaffMember -->
+
+    <owl:Class rdf:about="http://uow.edu.au/isit906/thestar/digitalcare#StaffMember">
+        <rdfs:subClassOf rdf:resource="http://uow.edu.au/isit906/thestar/digitalcare#Person"/>
+        <worksheet:reuseReason>Enables service directory queries based on individual staff competencies (e.g. spoken languages).</worksheet:reuseReason>
+        <worksheet:reusedFrom>https://schema.org/EmployeeRole</worksheet:reusedFrom>
+        <worksheet:sourceCell>2. Classes!A9:F9</worksheet:sourceCell>
+        <worksheet:usedByCQ>CQ8</worksheet:usedByCQ>
+        <worksheet:worksheetRow>2. Classes!A9:F9 | A=StaffMember | B=A healthcare or administrative worker employed at an operating community care facility | C=Person | D=CQ8 | E=https://schema.org/EmployeeRole | F=Enables service directory queries based on individual staff competencies (e.g. spoken languages).</worksheet:worksheetRow>
+        <rdfs:comment>A healthcare or administrative worker employed at an operating community care facility</rdfs:comment>
+        <rdfs:label>StaffMember</rdfs:label>
+        <rdfs:seeAlso rdf:resource="https://schema.org/EmployeeRole"/>
+    </owl:Class>
+    
+
+
+    <!-- http://uow.edu.au/isit906/thestar/digitalcare#SupportService -->
+
+    <owl:Class rdf:about="http://uow.edu.au/isit906/thestar/digitalcare#SupportService">
+        <rdfs:subClassOf rdf:resource="http://uow.edu.au/isit906/thestar/digitalcare#Organization"/>
+        <worksheet:sourceCell>2. Classes!A18:F18</worksheet:sourceCell>
+        <worksheet:usedByCQ>CQ3</worksheet:usedByCQ>
+        <worksheet:worksheetRow>2. Classes!A18:F18 | A=SupportService | B=A registered local healthcare centre, respite provider, or community organisation | C=Organization | D=CQ3 | E=[BLANK] | F=[BLANK]</worksheet:worksheetRow>
+        <rdfs:comment>A registered local healthcare centre, respite provider, or community organisation</rdfs:comment>
+        <rdfs:label>SupportService</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://uow.edu.au/isit906/thestar/digitalcare#Symptom -->
+
+    <owl:Class rdf:about="http://uow.edu.au/isit906/thestar/digitalcare#Symptom">
+        <rdfs:subClassOf rdf:resource="http://uow.edu.au/isit906/thestar/digitalcare#InformationTopic"/>
+        <worksheet:sourceCell>2. Classes!A14:F14</worksheet:sourceCell>
+        <worksheet:usedByCQ>CQ5, CQ6, CQ9</worksheet:usedByCQ>
+        <worksheet:worksheetRow>2. Classes!A14:F14 | A=Symptom | B=An observable cognitive, behavioral, or physical manifestation of a condition | C=InformationTopic | D=CQ5, CQ6, CQ9 | E=[BLANK] | F=[BLANK]</worksheet:worksheetRow>
+        <rdfs:comment>An observable cognitive, behavioral, or physical manifestation of a condition</rdfs:comment>
+        <rdfs:label>Symptom</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://uow.edu.au/isit906/thestar/digitalcare#SymptomComparisonGuide -->
+
+    <owl:Class rdf:about="http://uow.edu.au/isit906/thestar/digitalcare#SymptomComparisonGuide">
+        <rdfs:subClassOf rdf:resource="http://uow.edu.au/isit906/thestar/digitalcare#Guide"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://uow.edu.au/isit906/thestar/digitalcare#isRelatedTo"/>
+                <owl:minQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">2</owl:minQualifiedCardinality>
+                <owl:onClass rdf:resource="http://uow.edu.au/isit906/thestar/digitalcare#Symptom"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <worksheet:axiomCQ>CQ9</worksheet:axiomCQ>
+        <worksheet:sourceCell>2. Classes!A24:F24</worksheet:sourceCell>
+        <worksheet:usedByCQ>CQ9</worksheet:usedByCQ>
+        <rdfs:comment>A Guide that sets two or more symptoms side by side so a reader can tell them apart.</rdfs:comment>
+        <rdfs:label>SymptomComparisonGuide</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Individuals
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://uow.edu.au/isit906/thestar/digitalcare#AlzheimerType -->
+
+    <owl:NamedIndividual rdf:about="http://uow.edu.au/isit906/thestar/digitalcare#AlzheimerType">
+        <rdf:type rdf:resource="http://uow.edu.au/isit906/thestar/digitalcare#DementiaType"/>
+        <rdfs:label>AlzheimerType</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://uow.edu.au/isit906/thestar/digitalcare#AlzheimersDementia -->
+
+    <owl:NamedIndividual rdf:about="http://uow.edu.au/isit906/thestar/digitalcare#AlzheimersDementia">
+        <rdf:type rdf:resource="http://uow.edu.au/isit906/thestar/digitalcare#HealthCondition"/>
+        <hasSymptom rdf:resource="http://uow.edu.au/isit906/thestar/digitalcare#MemoryLoss"/>
+        <worksheet:sampleRow>5. Sample data!A39:F39 | A=AlzheimersDementia | B=hasSymptom | C=MemoryLoss | D=HealthCondition | E=relationship | F=[BLANK]</worksheet:sampleRow>
+        <worksheet:sourceCell>5. Sample data!A39:F39</worksheet:sourceCell>
+        <worksheet:usedByCQ>CQ7</worksheet:usedByCQ>
+        <rdfs:comment>A specific neurodegenerative disease characterised by progressive memory loss</rdfs:comment>
+        <rdfs:label>AlzheimersDementia</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://uow.edu.au/isit906/thestar/digitalcare#AnnaWong -->
+
+    <owl:NamedIndividual rdf:about="http://uow.edu.au/isit906/thestar/digitalcare#AnnaWong">
+        <rdf:type rdf:resource="http://uow.edu.au/isit906/thestar/digitalcare#StaffMember"/>
+        <speaksLanguage rdf:resource="http://uow.edu.au/isit906/thestar/digitalcare#English"/>
+        <worksheet:sampleRow>5. Sample data!A76:F76 | A=AnnaWong | B=speaksLanguage | C=English | D=StaffMember | E=relationship | F=Additional Language example</worksheet:sampleRow>
+        <rdfs:label>AnnaWong</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://uow.edu.au/isit906/thestar/digitalcare#BathingDifficulty -->
+
+    <owl:NamedIndividual rdf:about="http://uow.edu.au/isit906/thestar/digitalcare#BathingDifficulty">
+        <rdf:type rdf:resource="http://uow.edu.au/isit906/thestar/digitalcare#DailyTaskStruggling"/>
+        <rdfs:label>BathingDifficulty</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://uow.edu.au/isit906/thestar/digitalcare#BrisbaneCareCentre -->
+
+    <owl:NamedIndividual rdf:about="http://uow.edu.au/isit906/thestar/digitalcare#BrisbaneCareCentre">
+        <rdf:type rdf:resource="http://uow.edu.au/isit906/thestar/digitalcare#CareCentre"/>
+        <hasStaffMember rdf:resource="http://uow.edu.au/isit906/thestar/digitalcare#LucaRossi"/>
+        <isLocatedIn rdf:resource="http://uow.edu.au/isit906/thestar/digitalcare#Queensland"/>
+        <distanceKm rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">1680.0</distanceKm>
+        <worksheet:sampleRow>5. Sample data!A71:F71 | A=BrisbaneCareCentre | B=isLocatedIn | C=Queensland | D=CareCentre | E=relationship | F=Additional care centre</worksheet:sampleRow>
+        <worksheet:sampleRow>5. Sample data!A74:F74 | A=BrisbaneCareCentre | B=hasStaffMember | C=LucaRossi | D=CareCentre | E=relationship | F=Additional StaffMember</worksheet:sampleRow>
+        <rdfs:label>BrisbaneCareCentre</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://uow.edu.au/isit906/thestar/digitalcare#CarerCommunicationGuide -->
+
+    <owl:NamedIndividual rdf:about="http://uow.edu.au/isit906/thestar/digitalcare#CarerCommunicationGuide">
+        <rdf:type rdf:resource="http://uow.edu.au/isit906/thestar/digitalcare#Guide"/>
+        <isAvailableInFormat rdf:resource="http://uow.edu.au/isit906/thestar/digitalcare#PrintableWebPage"/>
+        <isIntendedFor rdf:resource="http://uow.edu.au/isit906/thestar/digitalcare#DavidCarer"/>
+        <isPrintable rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</isPrintable>
+        <worksheet:sampleRow>5. Sample data!A32:F32 | A=CarerCommunicationGuide | B=isIntendedFor | C=DavidCarer | D=Guide | E=relationship | F=Additional carer-targetted guide</worksheet:sampleRow>
+        <worksheet:sampleRow>5. Sample data!A35:F35 | A=CarerCommunicationGuide | B=isAvailableInFormat | C=PrintableWebPage | D=Guide | E=relationship | F=Additional document format</worksheet:sampleRow>
+        <rdfs:label>CarerCommunicationGuide</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://uow.edu.au/isit906/thestar/digitalcare#CarerHelpNSW -->
+
+    <owl:NamedIndividual rdf:about="http://uow.edu.au/isit906/thestar/digitalcare#CarerHelpNSW">
+        <rdf:type rdf:resource="http://uow.edu.au/isit906/thestar/digitalcare#SupportService"/>
+        <isLocatedIn rdf:resource="http://uow.edu.au/isit906/thestar/digitalcare#NSW"/>
+        <supportsCondition rdf:resource="http://uow.edu.au/isit906/thestar/digitalcare#AlzheimersDementia"/>
+        <distanceKm rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">4.2</distanceKm>
+        <isReliable rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</isReliable>
+        <phoneNumber>1800 100 501</phoneNumber>
+        <reliabilityEvidence>Listed on Carer Gateway service finder, 2026</reliabilityEvidence>
+        <worksheet:sampleRow>5. Sample data!A26:F26 | A=CarerHelpNSW | B=supportsCondition | C=AlzheimersDementia | D=SupportService | E=relationship | F=CQ3, allows counting</worksheet:sampleRow>
+        <worksheet:sampleRow>5. Sample data!A29:F29 | A=CarerHelpNSW | B=isLocatedIn | C=NSW | D=SupportService | E=relationship | F=CQ3</worksheet:sampleRow>
+        <rdfs:label>CarerHelpNSW</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://uow.edu.au/isit906/thestar/digitalcare#ChenOlderAdult -->
+
+    <owl:NamedIndividual rdf:about="http://uow.edu.au/isit906/thestar/digitalcare#ChenOlderAdult">
+        <rdf:type rdf:resource="http://uow.edu.au/isit906/thestar/digitalcare#OlderAdult"/>
+        <hasCondition rdf:resource="http://uow.edu.au/isit906/thestar/digitalcare#LewyBodyDementia"/>
+        <isLocatedIn rdf:resource="http://uow.edu.au/isit906/thestar/digitalcare#Victoria"/>
+        <nearbyRadiusKm rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">10.0</nearbyRadiusKm>
+        <worksheet:sampleRow>5. Sample data!A10:F10 | A=ChenOlderAdult | B=hasCondition | C=LewyBodyDementia | D=OlderAdult | E=relationship | F=additional older adult/ health condition example</worksheet:sampleRow>
+        <worksheet:sampleRow>5. Sample data!A68:F68 | A=ChenOlderAdult | B=isLocatedIn | C=Victoria | D=OlderAdult | E=relationship | F=Additional location example</worksheet:sampleRow>
+        <rdfs:label>ChenOlderAdult</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://uow.edu.au/isit906/thestar/digitalcare#Chinese -->
+
+    <owl:NamedIndividual rdf:about="http://uow.edu.au/isit906/thestar/digitalcare#Chinese">
+        <rdf:type rdf:resource="http://uow.edu.au/isit906/thestar/digitalcare#Language"/>
+        <rdfs:label>Chinese</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://uow.edu.au/isit906/thestar/digitalcare#ChineseAlzheimersGuide -->
+
+    <owl:NamedIndividual rdf:about="http://uow.edu.au/isit906/thestar/digitalcare#ChineseAlzheimersGuide">
+        <rdf:type rdf:resource="http://uow.edu.au/isit906/thestar/digitalcare#Guide"/>
+        <isAvailableIn rdf:resource="http://uow.edu.au/isit906/thestar/digitalcare#Chinese"/>
+        <isIntendedFor rdf:resource="http://uow.edu.au/isit906/thestar/digitalcare#MaryOlderAdult"/>
+        <isRelatedTo rdf:resource="http://uow.edu.au/isit906/thestar/digitalcare#AlzheimersDementia"/>
+        <publishedOn rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2026-08-01</publishedOn>
+        <supportsLargeText rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</supportsLargeText>
+        <worksheet:sampleRow>5. Sample data!A57:F57 | A=ChineseAlzheimersGuide | B=isIntendedFor | C=MaryOlderAdult | D=Guide | E=relationship | F=CQ7</worksheet:sampleRow>
+        <worksheet:sampleRow>5. Sample data!A60:F60 | A=ChineseAlzheimersGuide | B=isRelatedTo | C=AlzheimersDementia | D=Guide | E=relationship | F=CQ7 </worksheet:sampleRow>
+        <worksheet:sampleRow>5. Sample data!A63:F63 | A=ChineseAlzheimersGuide | B=isAvailableIn | C=Chinese | D=Guide | E=relationship | F=CQ7 </worksheet:sampleRow>
+        <rdfs:label>ChineseAlzheimersGuide</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://uow.edu.au/isit906/thestar/digitalcare#Confusion -->
+
+    <owl:NamedIndividual rdf:about="http://uow.edu.au/isit906/thestar/digitalcare#Confusion">
+        <rdf:type rdf:resource="http://uow.edu.au/isit906/thestar/digitalcare#Symptom"/>
+        <rdfs:label>Confusion</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://uow.edu.au/isit906/thestar/digitalcare#DailyCareGuide -->
+
+    <owl:NamedIndividual rdf:about="http://uow.edu.au/isit906/thestar/digitalcare#DailyCareGuide">
+        <rdf:type rdf:resource="http://uow.edu.au/isit906/thestar/digitalcare#Guide"/>
+        <addresses rdf:resource="http://uow.edu.au/isit906/thestar/digitalcare#AlzheimersDementia"/>
+        <isAvailableInFormat rdf:resource="http://uow.edu.au/isit906/thestar/digitalcare#PDF"/>
+        <isIntendedFor rdf:resource="http://uow.edu.au/isit906/thestar/digitalcare#SarahCarer"/>
+        <isRelatedTo rdf:resource="http://uow.edu.au/isit906/thestar/digitalcare#AlzheimerType"/>
+        <isRelatedTo rdf:resource="http://uow.edu.au/isit906/thestar/digitalcare#BathingDifficulty"/>
+        <isReviewedBy rdf:resource="http://uow.edu.au/isit906/thestar/digitalcare#DrLee"/>
+        <isReviewedBy rdf:resource="http://uow.edu.au/isit906/thestar/digitalcare#DrNguyen"/>
+        <isDownloadable rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</isDownloadable>
+        <isPrintable rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</isPrintable>
+        <worksheet:sampleRow>5. Sample data!A11:F11 | A=DailyCareGuide | B=addresses | C=AlzheimersDementia | D=Guide | E=relationship | F=CQ1,CQ2</worksheet:sampleRow>
+        <worksheet:sampleRow>5. Sample data!A14:F14 | A=DailyCareGuide | B=isRelatedTo | C=BathingDifficulty | D=Guide | E=relationship | F=CQ1/Daily task</worksheet:sampleRow>
+        <worksheet:sampleRow>5. Sample data!A17:F17 | A=DailyCareGuide | B=isReviewedBy | C=DrLee | D=Guide | E=relationship | F=CQ2</worksheet:sampleRow>
+        <worksheet:sampleRow>5. Sample data!A20:F20 | A=DailyCareGuide | B=isRelatedTo | C=AlzheimerType | D=Guide | E=relationship | F=[BLANK]</worksheet:sampleRow>
+        <worksheet:sampleRow>5. Sample data!A31:F31 | A=DailyCareGuide | B=isIntendedFor | C=SarahCarer | D=Guide | E=relationship | F=[BLANK]</worksheet:sampleRow>
+        <worksheet:sampleRow>5. Sample data!A34:F34 | A=DailyCareGuide | B=isAvailableInFormat | C=PDF | D=Guide | E=relationship | F=CQ4</worksheet:sampleRow>
+        <worksheet:sampleRow>5. Sample data!A37:F37 | A=DailyCareGuide | B=isDownloadable | C=True | D=Guide | E=attribute | F=CQ4-only if this is in stage 4</worksheet:sampleRow>
+        <worksheet:sampleRow>5. Sample data!A38:F38 | A=DailyCareGuide | B=isPrintable | C=True | D=Guide | E=attribute | F=CQ4-only if this is in stage 4</worksheet:sampleRow>
+        <rdfs:label>DailyCareGuide</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://uow.edu.au/isit906/thestar/digitalcare#DavidCarer -->
+
+    <owl:NamedIndividual rdf:about="http://uow.edu.au/isit906/thestar/digitalcare#DavidCarer">
+        <rdf:type rdf:resource="http://uow.edu.au/isit906/thestar/digitalcare#Carer"/>
+        <caresFor rdf:resource="http://uow.edu.au/isit906/thestar/digitalcare#RobertOlderAdult"/>
+        <worksheet:sampleRow>5. Sample data!A6:F6 | A=DavidCarer | B=caresFor | C=RobertOlderAdult | D=Carer | E=relationship | F=additional carer individual</worksheet:sampleRow>
+        <rdfs:label>DavidCarer</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://uow.edu.au/isit906/thestar/digitalcare#DementiaSupportNSW -->
+
+    <owl:NamedIndividual rdf:about="http://uow.edu.au/isit906/thestar/digitalcare#DementiaSupportNSW">
+        <rdf:type rdf:resource="http://uow.edu.au/isit906/thestar/digitalcare#SupportService"/>
+        <isLocatedIn rdf:resource="http://uow.edu.au/isit906/thestar/digitalcare#NSW"/>
+        <supportsCondition rdf:resource="http://uow.edu.au/isit906/thestar/digitalcare#AlzheimersDementia"/>
+        <distanceKm rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">12.5</distanceKm>
+        <isReliable rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</isReliable>
+        <phoneNumber>1800 100 500</phoneNumber>
+        <reliabilityEvidence>Verified via Dementia Australia service directory, 2026</reliabilityEvidence>
+        <worksheet:sampleRow>5. Sample data!A25:F25 | A=DementiaSupportNSW | B=supportsCondition | C=AlzheimersDementia | D=SupportService | E=relationship | F=CQ3</worksheet:sampleRow>
+        <worksheet:sampleRow>5. Sample data!A28:F28 | A=DementiaSupportNSW | B=isLocatedIn | C=NSW | D=SupportService | E=relationship | F=CQ3</worksheet:sampleRow>
+        <rdfs:label>DementiaSupportNSW</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://uow.edu.au/isit906/thestar/digitalcare#DementiaSymptomComparisonGuide -->
+
+    <owl:NamedIndividual rdf:about="http://uow.edu.au/isit906/thestar/digitalcare#DementiaSymptomComparisonGuide">
+        <rdf:type rdf:resource="http://uow.edu.au/isit906/thestar/digitalcare#SymptomComparisonGuide"/>
+        <isGovernedBy rdf:resource="http://uow.edu.au/isit906/thestar/digitalcare#DigitalCarePrivacyPolicy"/>
+        <isIntendedFor rdf:resource="http://uow.edu.au/isit906/thestar/digitalcare#SarahCarer"/>
+        <isRelatedTo rdf:resource="http://uow.edu.au/isit906/thestar/digitalcare#AlzheimerType"/>
+        <isRelatedTo rdf:resource="http://uow.edu.au/isit906/thestar/digitalcare#Confusion"/>
+        <isRelatedTo rdf:resource="http://uow.edu.au/isit906/thestar/digitalcare#MemoryLoss"/>
+        <isRelatedTo rdf:resource="http://uow.edu.au/isit906/thestar/digitalcare#VisualHallucination"/>
+        <publishedOn rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2026-05-10</publishedOn>
+        <supportsLargeText rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</supportsLargeText>
+        <title>Comparing dementia symptoms side by side</title>
+        <worksheet:sampleRow>5. Sample data!A88:F88 | A=DementiaSymptomComparisonGuide | B=isRelatedTo | C=MemoryLoss | D=SymptomComparisonGuide | E=relationship | F=CQ9</worksheet:sampleRow>
+        <worksheet:sampleRow>5. Sample data!A89:F89 | A=DementiaSymptomComparisonGuide | B=isRelatedTo | C=Confusion | D=SymptomComparisonGuide | E=relationship | F=CQ9</worksheet:sampleRow>
+        <worksheet:sampleRow>5. Sample data!A90:F90 | A=DementiaSymptomComparisonGuide | B=isRelatedTo | C=VisualHallucination | D=SymptomComparisonGuide | E=relationship | F=CQ9</worksheet:sampleRow>
+        <worksheet:sampleRow>5. Sample data!A91:F91 | A=DementiaSymptomComparisonGuide | B=isRelatedTo | C=AlzheimerType | D=SymptomComparisonGuide | E=relationship | F=CQ9</worksheet:sampleRow>
+        <worksheet:sampleRow>5. Sample data!A92:F92 | A=DementiaSymptomComparisonGuide | B=isIntendedFor | C=SarahCarer | D=SymptomComparisonGuide | E=relationship | F=CQ9</worksheet:sampleRow>
+        <worksheet:sampleRow>5. Sample data!A93:F93 | A=DementiaSymptomComparisonGuide | B=isGovernedBy | C=DigitalCarePrivacyPolicy | D=SymptomComparisonGuide | E=relationship | F=CQ9</worksheet:sampleRow>
+        <rdfs:label>DementiaSymptomComparisonGuide</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://uow.edu.au/isit906/thestar/digitalcare#DigitalCarePrivacyPolicy -->
+
+    <owl:NamedIndividual rdf:about="http://uow.edu.au/isit906/thestar/digitalcare#DigitalCarePrivacyPolicy">
+        <rdf:type rdf:resource="http://uow.edu.au/isit906/thestar/digitalcare#PrivacyPolicy"/>
+        <requiresPersonalInformationForSearch rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">false</requiresPersonalInformationForSearch>
+        <searchRequirementEvidence>Digital Care Privacy Policy, section 3</searchRequirementEvidence>
+        <rdfs:label>DigitalCarePrivacyPolicy</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://uow.edu.au/isit906/thestar/digitalcare#DrLee -->
+
+    <owl:NamedIndividual rdf:about="http://uow.edu.au/isit906/thestar/digitalcare#DrLee">
+        <rdf:type rdf:resource="http://uow.edu.au/isit906/thestar/digitalcare#HealthcareProfessional"/>
+        <rdfs:label>DrLee</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://uow.edu.au/isit906/thestar/digitalcare#DrNguyen -->
+
+    <owl:NamedIndividual rdf:about="http://uow.edu.au/isit906/thestar/digitalcare#DrNguyen">
+        <rdf:type rdf:resource="http://uow.edu.au/isit906/thestar/digitalcare#HealthcareProfessional"/>
+        <rdfs:label>DrNguyen</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://uow.edu.au/isit906/thestar/digitalcare#DrPatel -->
+
+    <owl:NamedIndividual rdf:about="http://uow.edu.au/isit906/thestar/digitalcare#DrPatel">
+        <rdf:type rdf:resource="http://uow.edu.au/isit906/thestar/digitalcare#HealthcareProfessional"/>
+        <rdfs:label>DrPatel</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://uow.edu.au/isit906/thestar/digitalcare#DressingDifficulty -->
+
+    <owl:NamedIndividual rdf:about="http://uow.edu.au/isit906/thestar/digitalcare#DressingDifficulty">
+        <rdf:type rdf:resource="http://uow.edu.au/isit906/thestar/digitalcare#DailyTaskStruggling"/>
+        <rdfs:label>DressingDifficulty</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://uow.edu.au/isit906/thestar/digitalcare#EarlySignsComparisonGuide -->
+
+    <owl:NamedIndividual rdf:about="http://uow.edu.au/isit906/thestar/digitalcare#EarlySignsComparisonGuide">
+        <rdf:type rdf:resource="http://uow.edu.au/isit906/thestar/digitalcare#SymptomComparisonGuide"/>
+        <isIntendedFor rdf:resource="http://uow.edu.au/isit906/thestar/digitalcare#SarahCarer"/>
+        <isRelatedTo rdf:resource="http://uow.edu.au/isit906/thestar/digitalcare#BathingDifficulty"/>
+        <isRelatedTo rdf:resource="http://uow.edu.au/isit906/thestar/digitalcare#MemoryLoss"/>
+        <publishedOn rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2026-07-02</publishedOn>
+        <title>Early signs: what to look for first</title>
+        <worksheet:sampleRow>5. Sample data!A96:F96 | A=EarlySignsComparisonGuide | B=isRelatedTo | C=MemoryLoss | D=SymptomComparisonGuide | E=relationship | F=CQ9</worksheet:sampleRow>
+        <worksheet:sampleRow>5. Sample data!A97:F97 | A=EarlySignsComparisonGuide | B=isRelatedTo | C=BathingDifficulty | D=SymptomComparisonGuide | E=relationship | F=CQ9</worksheet:sampleRow>
+        <worksheet:sampleRow>5. Sample data!A98:F98 | A=EarlySignsComparisonGuide | B=isIntendedFor | C=SarahCarer | D=SymptomComparisonGuide | E=relationship | F=CQ9</worksheet:sampleRow>
+        <rdfs:label>EarlySignsComparisonGuide</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://uow.edu.au/isit906/thestar/digitalcare#EatingDifficulty -->
+
+    <owl:NamedIndividual rdf:about="http://uow.edu.au/isit906/thestar/digitalcare#EatingDifficulty">
+        <rdf:type rdf:resource="http://uow.edu.au/isit906/thestar/digitalcare#DailyTaskStruggling"/>
+        <rdfs:label>EatingDifficulty</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://uow.edu.au/isit906/thestar/digitalcare#English -->
+
+    <owl:NamedIndividual rdf:about="http://uow.edu.au/isit906/thestar/digitalcare#English">
+        <rdf:type rdf:resource="http://uow.edu.au/isit906/thestar/digitalcare#Language"/>
+        <rdfs:label>English</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://uow.edu.au/isit906/thestar/digitalcare#EnglishAlzheimersGuide -->
+
+    <owl:NamedIndividual rdf:about="http://uow.edu.au/isit906/thestar/digitalcare#EnglishAlzheimersGuide">
+        <rdf:type rdf:resource="http://uow.edu.au/isit906/thestar/digitalcare#Guide"/>
+        <isAvailableIn rdf:resource="http://uow.edu.au/isit906/thestar/digitalcare#English"/>
+        <isIntendedFor rdf:resource="http://uow.edu.au/isit906/thestar/digitalcare#RobertOlderAdult"/>
+        <isRelatedTo rdf:resource="http://uow.edu.au/isit906/thestar/digitalcare#AlzheimersDementia"/>
+        <publishedOn rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2026-06-15</publishedOn>
+        <supportsLargeText rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</supportsLargeText>
+        <worksheet:sampleRow>5. Sample data!A58:F58 | A=EnglishAlzheimersGuide | B=isIntendedFor | C=RobertOlderAdult | D=Guide | E=relationship | F=CQ7 comparison</worksheet:sampleRow>
+        <worksheet:sampleRow>5. Sample data!A61:F61 | A=EnglishAlzheimersGuide | B=isRelatedTo | C=AlzheimersDementia | D=Guide | E=relationship | F=CQ7</worksheet:sampleRow>
+        <worksheet:sampleRow>5. Sample data!A64:F64 | A=EnglishAlzheimersGuide | B=isAvailableIn | C=English | D=Guide | E=relationship | F=Additional Language</worksheet:sampleRow>
+        <rdfs:label>EnglishAlzheimersGuide</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://uow.edu.au/isit906/thestar/digitalcare#HTML -->
+
+    <owl:NamedIndividual rdf:about="http://uow.edu.au/isit906/thestar/digitalcare#HTML">
+        <rdf:type rdf:resource="http://uow.edu.au/isit906/thestar/digitalcare#DocumentFormat"/>
+        <rdfs:label>HTML</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://uow.edu.au/isit906/thestar/digitalcare#Italian -->
+
+    <owl:NamedIndividual rdf:about="http://uow.edu.au/isit906/thestar/digitalcare#Italian">
+        <rdf:type rdf:resource="http://uow.edu.au/isit906/thestar/digitalcare#Language"/>
+        <rdfs:label>Italian</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://uow.edu.au/isit906/thestar/digitalcare#ItalianAlzheimersGuide -->
+
+    <owl:NamedIndividual rdf:about="http://uow.edu.au/isit906/thestar/digitalcare#ItalianAlzheimersGuide">
+        <rdf:type rdf:resource="http://uow.edu.au/isit906/thestar/digitalcare#Guide"/>
+        <isAvailableIn rdf:resource="http://uow.edu.au/isit906/thestar/digitalcare#Italian"/>
+        <isIntendedFor rdf:resource="http://uow.edu.au/isit906/thestar/digitalcare#ChenOlderAdult"/>
+        <isRelatedTo rdf:resource="http://uow.edu.au/isit906/thestar/digitalcare#AlzheimersDementia"/>
+        <publishedOn rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2026-04-20</publishedOn>
+        <supportsLargeText rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">false</supportsLargeText>
+        <worksheet:sampleRow>5. Sample data!A59:F59 | A=ItalianAlzheimersGuide | B=isIntendedFor | C=ChenOlderAdult | D=Guide | E=relationship | F=CQ7 comparison</worksheet:sampleRow>
+        <worksheet:sampleRow>5. Sample data!A62:F62 | A=ItalianAlzheimersGuide | B=isRelatedTo | C=AlzheimersDementia | D=Guide | E=relationship | F=CQ7 </worksheet:sampleRow>
+        <worksheet:sampleRow>5. Sample data!A65:F65 | A=ItalianAlzheimersGuide | B=isAvailableIn | C=Italian | D=Guide | E=relationship | F=Additional Language</worksheet:sampleRow>
+        <rdfs:label>ItalianAlzheimersGuide</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://uow.edu.au/isit906/thestar/digitalcare#JoeOlderAdult -->
+
+    <owl:NamedIndividual rdf:about="http://uow.edu.au/isit906/thestar/digitalcare#JoeOlderAdult">
+        <rdf:type rdf:resource="http://uow.edu.au/isit906/thestar/digitalcare#OlderAdult"/>
+        <isLocatedIn rdf:resource="http://uow.edu.au/isit906/thestar/digitalcare#Victoria"/>
+        <worksheet:sampleRow>5. Sample data!A66:F66 | A=JoeOlderAdult | B=isLocatedIn | C=Victoria | D=OlderAdult | E=relationship | F=CQ8-requires new relationship in stage 3</worksheet:sampleRow>
+        <rdfs:label>JoeOlderAdult</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://uow.edu.au/isit906/thestar/digitalcare#LewyBodyCareGuide -->
+
+    <owl:NamedIndividual rdf:about="http://uow.edu.au/isit906/thestar/digitalcare#LewyBodyCareGuide">
+        <rdf:type rdf:resource="http://uow.edu.au/isit906/thestar/digitalcare#Guide"/>
+        <addresses rdf:resource="http://uow.edu.au/isit906/thestar/digitalcare#LewyBodyDementia"/>
+        <isIntendedFor rdf:resource="http://uow.edu.au/isit906/thestar/digitalcare#MeiCarer"/>
+        <isRelatedTo rdf:resource="http://uow.edu.au/isit906/thestar/digitalcare#EatingDifficulty"/>
+        <isRelatedTo rdf:resource="http://uow.edu.au/isit906/thestar/digitalcare#LewyBodyType"/>
+        <isReviewedBy rdf:resource="http://uow.edu.au/isit906/thestar/digitalcare#DrNguyen"/>
+        <worksheet:sampleRow>5. Sample data!A13:F13 | A=LewyBodyCareGuide | B=addresses | C=LewyBodyDementia | D=Guide | E=relationship | F=Additional Guide example</worksheet:sampleRow>
+        <worksheet:sampleRow>5. Sample data!A16:F16 | A=LewyBodyCareGuide | B=isRelatedTo | C=EatingDifficulty | D=Guide | E=relationship | F=Additional DailyTaskStruggling example</worksheet:sampleRow>
+        <worksheet:sampleRow>5. Sample data!A19:F19 | A=LewyBodyCareGuide | B=isReviewedBy | C=DrNguyen | D=Guide | E=relationship | F=Additional healthcare professional</worksheet:sampleRow>
+        <worksheet:sampleRow>5. Sample data!A22:F22 | A=LewyBodyCareGuide | B=isRelatedTo | C=LewyBodyType | D=Guide | E=relationship | F=Additional Dementia Type</worksheet:sampleRow>
+        <rdfs:label>LewyBodyCareGuide</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://uow.edu.au/isit906/thestar/digitalcare#LewyBodyDementia -->
+
+    <owl:NamedIndividual rdf:about="http://uow.edu.au/isit906/thestar/digitalcare#LewyBodyDementia">
+        <rdf:type rdf:resource="http://uow.edu.au/isit906/thestar/digitalcare#HealthCondition"/>
+        <hasSymptom rdf:resource="http://uow.edu.au/isit906/thestar/digitalcare#VisualHallucination"/>
+        <worksheet:sampleRow>5. Sample data!A41:F41 | A=LewyBodyDementia | B=hasSymptom | C=VisualHallucination | D=HealthCondition | E=relationship | F=Additional Symptom</worksheet:sampleRow>
+        <rdfs:label>LewyBodyDementia</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://uow.edu.au/isit906/thestar/digitalcare#LewyBodySymptomsGuide -->
+
+    <owl:NamedIndividual rdf:about="http://uow.edu.au/isit906/thestar/digitalcare#LewyBodySymptomsGuide">
+        <rdf:type rdf:resource="http://uow.edu.au/isit906/thestar/digitalcare#Guide"/>
+        <describes rdf:resource="http://uow.edu.au/isit906/thestar/digitalcare#VisualHallucination"/>
+        <isGovernedBy rdf:resource="http://uow.edu.au/isit906/thestar/digitalcare#SupportPrivacyPolicy"/>
+        <isIntendedFor rdf:resource="http://uow.edu.au/isit906/thestar/digitalcare#ChenOlderAdult"/>
+        <publishedOn rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2026-04-20</publishedOn>
+        <supportsLargeText rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">false</supportsLargeText>
+        <worksheet:sampleRow>5. Sample data!A44:F44 | A=LewyBodySymptomsGuide | B=describes | C=VisualHallucination | D=Guide | E=relationship | F=Additional Symptom/ Guide example</worksheet:sampleRow>
+        <worksheet:sampleRow>5. Sample data!A47:F47 | A=LewyBodySymptomsGuide | B=isGovernedBy | C=SupportPrivacyPolicy | D=Guide | E=relationship | F=[BLANK]</worksheet:sampleRow>
+        <worksheet:sampleRow>5. Sample data!A50:F50 | A=LewyBodySymptomsGuide | B=isIntendedFor | C=ChenOlderAdult | D=Guide | E=relationship | F=Additional Older adult- targetted guide</worksheet:sampleRow>
+        <worksheet:sampleRow>5. Sample data!A53:F53 | A=LewyBodySymptomsGuide | B=publishedOn | C=2026-04-20 | D=Guide | E=attribute | F=CQ6 comparison</worksheet:sampleRow>
+        <worksheet:sampleRow>5. Sample data!A56:F56 | A=LewyBodySymptomsGuide | B=supportsLargeText | C=False | D=Guide | E=attribute | F=CQ6</worksheet:sampleRow>
+        <rdfs:label>LewyBodySymptomsGuide</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://uow.edu.au/isit906/thestar/digitalcare#LewyBodyType -->
+
+    <owl:NamedIndividual rdf:about="http://uow.edu.au/isit906/thestar/digitalcare#LewyBodyType">
+        <rdf:type rdf:resource="http://uow.edu.au/isit906/thestar/digitalcare#DementiaType"/>
+        <rdfs:label>LewyBodyType</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://uow.edu.au/isit906/thestar/digitalcare#LiChen -->
+
+    <owl:NamedIndividual rdf:about="http://uow.edu.au/isit906/thestar/digitalcare#LiChen">
+        <rdf:type rdf:resource="http://uow.edu.au/isit906/thestar/digitalcare#StaffMember"/>
+        <speaksLanguage rdf:resource="http://uow.edu.au/isit906/thestar/digitalcare#Chinese"/>
+        <worksheet:sampleRow>5. Sample data!A75:F75 | A=LiChen | B=speaksLanguage | C=Chinese | D=StaffMember | E=relationship | F=CQ8</worksheet:sampleRow>
+        <rdfs:label>LiChen</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://uow.edu.au/isit906/thestar/digitalcare#LucaRossi -->
+
+    <owl:NamedIndividual rdf:about="http://uow.edu.au/isit906/thestar/digitalcare#LucaRossi">
+        <rdf:type rdf:resource="http://uow.edu.au/isit906/thestar/digitalcare#StaffMember"/>
+        <speaksLanguage rdf:resource="http://uow.edu.au/isit906/thestar/digitalcare#Italian"/>
+        <worksheet:sampleRow>5. Sample data!A77:F77 | A=LucaRossi | B=speaksLanguage | C=Italian | D=StaffMember | E=relationship | F=Additional Language example</worksheet:sampleRow>
+        <rdfs:label>LucaRossi</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://uow.edu.au/isit906/thestar/digitalcare#MaryOlderAdult -->
+
+    <owl:NamedIndividual rdf:about="http://uow.edu.au/isit906/thestar/digitalcare#MaryOlderAdult">
+        <rdf:type rdf:resource="http://uow.edu.au/isit906/thestar/digitalcare#OlderAdult"/>
+        <hasCondition rdf:resource="http://uow.edu.au/isit906/thestar/digitalcare#AlzheimersDementia"/>
+        <isLocatedIn rdf:resource="http://uow.edu.au/isit906/thestar/digitalcare#NSW"/>
+        <nearbyRadiusKm rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">15.0</nearbyRadiusKm>
+        <worksheet:sampleRow>5. Sample data!A67:F67 | A=MaryOlderAdult | B=isLocatedIn | C=NSW | D=OlderAdult | E=relationship | F=Additional location example</worksheet:sampleRow>
+        <worksheet:sampleRow>5. Sample data!A8:F8 | A=MaryOlderAdult | B=hasCondition | C=AlzheimersDementia | D=OlderAdult | E=relationship | F=CQ1,CQ2,CQ3,CQ6</worksheet:sampleRow>
+        <rdfs:label>MaryOlderAdult</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://uow.edu.au/isit906/thestar/digitalcare#MeiCarer -->
+
+    <owl:NamedIndividual rdf:about="http://uow.edu.au/isit906/thestar/digitalcare#MeiCarer">
+        <rdf:type rdf:resource="http://uow.edu.au/isit906/thestar/digitalcare#Carer"/>
+        <caresFor rdf:resource="http://uow.edu.au/isit906/thestar/digitalcare#ChenOlderAdult"/>
+        <worksheet:sampleRow>5. Sample data!A7:F7 | A=MeiCarer | B=caresFor | C=ChenOlderAdult | D=Carer | E=relationship | F=additional carer individual</worksheet:sampleRow>
+        <rdfs:label>MeiCarer</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://uow.edu.au/isit906/thestar/digitalcare#MelbourneCareCentre -->
+
+    <owl:NamedIndividual rdf:about="http://uow.edu.au/isit906/thestar/digitalcare#MelbourneCareCentre">
+        <rdf:type rdf:resource="http://uow.edu.au/isit906/thestar/digitalcare#CareCentre"/>
+        <hasStaffMember rdf:resource="http://uow.edu.au/isit906/thestar/digitalcare#LiChen"/>
+        <isLocatedIn rdf:resource="http://uow.edu.au/isit906/thestar/digitalcare#Victoria"/>
+        <distanceKm rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">8.0</distanceKm>
+        <worksheet:sampleRow>5. Sample data!A69:F69 | A=MelbourneCareCentre | B=isLocatedIn | C=Victoria | D=CareCentre | E=relationship | F=CQ8</worksheet:sampleRow>
+        <worksheet:sampleRow>5. Sample data!A72:F72 | A=MelbourneCareCentre | B=hasStaffMember | C=LiChen | D=CareCentre | E=relationship | F=CQ8</worksheet:sampleRow>
+        <rdfs:label>MelbourneCareCentre</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://uow.edu.au/isit906/thestar/digitalcare#MemoryLoss -->
+
+    <owl:NamedIndividual rdf:about="http://uow.edu.au/isit906/thestar/digitalcare#MemoryLoss">
+        <rdf:type rdf:resource="http://uow.edu.au/isit906/thestar/digitalcare#Symptom"/>
+        <rdfs:label>MemoryLoss</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://uow.edu.au/isit906/thestar/digitalcare#MemorySupportNSW -->
+
+    <owl:NamedIndividual rdf:about="http://uow.edu.au/isit906/thestar/digitalcare#MemorySupportNSW">
+        <rdf:type rdf:resource="http://uow.edu.au/isit906/thestar/digitalcare#SupportService"/>
+        <isLocatedIn rdf:resource="http://uow.edu.au/isit906/thestar/digitalcare#NSW"/>
+        <supportsCondition rdf:resource="http://uow.edu.au/isit906/thestar/digitalcare#AlzheimersDementia"/>
+        <distanceKm rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">20.0</distanceKm>
+        <isReliable rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">false</isReliable>
+        <phoneNumber>1800 100 502</phoneNumber>
+        <reliabilityEvidence>No current listing in a verified service directory, 2026</reliabilityEvidence>
+        <worksheet:sampleRow>5. Sample data!A27:F27 | A=MemorySupportNSW | B=supportsCondition | C=AlzheimersDementia | D=SupportService | E=relationship | F=CQ3, allows counting</worksheet:sampleRow>
+        <worksheet:sampleRow>5. Sample data!A30:F30 | A=MemorySupportNSW | B=isLocatedIn | C=NSW | D=SupportService | E=relationship | F=CQ3</worksheet:sampleRow>
+        <rdfs:label>MemorySupportNSW</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://uow.edu.au/isit906/thestar/digitalcare#NSW -->
+
+    <owl:NamedIndividual rdf:about="http://uow.edu.au/isit906/thestar/digitalcare#NSW">
+        <rdf:type rdf:resource="http://uow.edu.au/isit906/thestar/digitalcare#Location"/>
+        <rdfs:label>NSW</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://uow.edu.au/isit906/thestar/digitalcare#PDF -->
+
+    <owl:NamedIndividual rdf:about="http://uow.edu.au/isit906/thestar/digitalcare#PDF">
+        <rdf:type rdf:resource="http://uow.edu.au/isit906/thestar/digitalcare#DocumentFormat"/>
+        <rdfs:label>PDF</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://uow.edu.au/isit906/thestar/digitalcare#PracticalCarerGuide -->
+
+    <owl:NamedIndividual rdf:about="http://uow.edu.au/isit906/thestar/digitalcare#PracticalCarerGuide">
+        <rdf:type rdf:resource="http://uow.edu.au/isit906/thestar/digitalcare#Guide"/>
+        <isAvailableInFormat rdf:resource="http://uow.edu.au/isit906/thestar/digitalcare#HTML"/>
+        <isIntendedFor rdf:resource="http://uow.edu.au/isit906/thestar/digitalcare#MeiCarer"/>
+        <worksheet:sampleRow>5. Sample data!A33:F33 | A=PracticalCarerGuide | B=isIntendedFor | C=MeiCarer | D=Guide | E=relationship | F=Additional carer-targetted guide</worksheet:sampleRow>
+        <worksheet:sampleRow>5. Sample data!A36:F36 | A=PracticalCarerGuide | B=isAvailableInFormat | C=HTML | D=Guide | E=relationship | F=Additional document format</worksheet:sampleRow>
+        <rdfs:label>PracticalCarerGuide</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://uow.edu.au/isit906/thestar/digitalcare#PrintableWebPage -->
+
+    <owl:NamedIndividual rdf:about="http://uow.edu.au/isit906/thestar/digitalcare#PrintableWebPage">
+        <rdf:type rdf:resource="http://uow.edu.au/isit906/thestar/digitalcare#DocumentFormat"/>
+        <rdfs:label>PrintableWebPage</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://uow.edu.au/isit906/thestar/digitalcare#Queensland -->
+
+    <owl:NamedIndividual rdf:about="http://uow.edu.au/isit906/thestar/digitalcare#Queensland">
+        <rdf:type rdf:resource="http://uow.edu.au/isit906/thestar/digitalcare#Location"/>
+        <rdfs:label>Queensland</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://uow.edu.au/isit906/thestar/digitalcare#RobertOlderAdult -->
+
+    <owl:NamedIndividual rdf:about="http://uow.edu.au/isit906/thestar/digitalcare#RobertOlderAdult">
+        <rdf:type rdf:resource="http://uow.edu.au/isit906/thestar/digitalcare#OlderAdult"/>
+        <hasCondition rdf:resource="http://uow.edu.au/isit906/thestar/digitalcare#VascularDementia"/>
+        <worksheet:sampleRow>5. Sample data!A9:F9 | A=RobertOlderAdult | B=hasCondition | C=VascularDementia | D=OlderAdult | E=relationship | F=additional older adult/ health condition example</worksheet:sampleRow>
+        <rdfs:label>RobertOlderAdult</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://uow.edu.au/isit906/thestar/digitalcare#SarahCarer -->
+
+    <owl:NamedIndividual rdf:about="http://uow.edu.au/isit906/thestar/digitalcare#SarahCarer">
+        <rdf:type rdf:resource="http://uow.edu.au/isit906/thestar/digitalcare#Carer"/>
+        <caresFor rdf:resource="http://uow.edu.au/isit906/thestar/digitalcare#MaryOlderAdult"/>
+        <worksheet:sampleRow>5. Sample data!A5:F5 | A=SarahCarer | B=caresFor | C=MaryOlderAdult | D=Carer | E=relationship | F=CQ1,CQ2,CQ3</worksheet:sampleRow>
+        <rdfs:label>SarahCarer</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://uow.edu.au/isit906/thestar/digitalcare#SupportPrivacyPolicy -->
+
+    <owl:NamedIndividual rdf:about="http://uow.edu.au/isit906/thestar/digitalcare#SupportPrivacyPolicy">
+        <rdf:type rdf:resource="http://uow.edu.au/isit906/thestar/digitalcare#PrivacyPolicy"/>
+        <requiresPersonalInformationForSearch rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</requiresPersonalInformationForSearch>
+        <searchRequirementEvidence>Support Privacy Policy, section 2: contact form requires name and email</searchRequirementEvidence>
+        <rdfs:label>SupportPrivacyPolicy</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://uow.edu.au/isit906/thestar/digitalcare#SydneyCareCentre -->
+
+    <owl:NamedIndividual rdf:about="http://uow.edu.au/isit906/thestar/digitalcare#SydneyCareCentre">
+        <rdf:type rdf:resource="http://uow.edu.au/isit906/thestar/digitalcare#CareCentre"/>
+        <hasStaffMember rdf:resource="http://uow.edu.au/isit906/thestar/digitalcare#AnnaWong"/>
+        <isLocatedIn rdf:resource="http://uow.edu.au/isit906/thestar/digitalcare#NSW"/>
+        <distanceKm rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">880.0</distanceKm>
+        <worksheet:sampleRow>5. Sample data!A70:F70 | A=SydneyCareCentre | B=isLocatedIn | C=NSW | D=CareCentre | E=relationship | F=Additional care centre</worksheet:sampleRow>
+        <worksheet:sampleRow>5. Sample data!A73:F73 | A=SydneyCareCentre | B=hasStaffMember | C=AnnaWong | D=CareCentre | E=relationship | F=Additional StaffMember</worksheet:sampleRow>
+        <rdfs:label>SydneyCareCentre</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://uow.edu.au/isit906/thestar/digitalcare#SymptomsGuide -->
+
+    <owl:NamedIndividual rdf:about="http://uow.edu.au/isit906/thestar/digitalcare#SymptomsGuide">
+        <rdf:type rdf:resource="http://uow.edu.au/isit906/thestar/digitalcare#Guide"/>
+        <describes rdf:resource="http://uow.edu.au/isit906/thestar/digitalcare#MemoryLoss"/>
+        <isGovernedBy rdf:resource="http://uow.edu.au/isit906/thestar/digitalcare#DigitalCarePrivacyPolicy"/>
+        <isIntendedFor rdf:resource="http://uow.edu.au/isit906/thestar/digitalcare#MaryOlderAdult"/>
+        <isRelatedTo rdf:resource="http://uow.edu.au/isit906/thestar/digitalcare#AlzheimerType"/>
+        <publishedOn rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2026-08-01</publishedOn>
+        <supportsLargeText rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</supportsLargeText>
+        <worksheet:sampleRow>5. Sample data!A42:F42 | A=SymptomsGuide | B=describes | C=MemoryLoss | D=Guide | E=relationship | F=CQ5,CQ6</worksheet:sampleRow>
+        <worksheet:sampleRow>5. Sample data!A45:F45 | A=SymptomsGuide | B=isGovernedBy | C=DigitalCarePrivacyPolicy | D=Guide | E=relationship | F=CQ5</worksheet:sampleRow>
+        <worksheet:sampleRow>5. Sample data!A48:F48 | A=SymptomsGuide | B=isIntendedFor | C=MaryOlderAdult | D=Guide | E=relationship | F=CQ6-Older Adult/ audience</worksheet:sampleRow>
+        <worksheet:sampleRow>5. Sample data!A51:F51 | A=SymptomsGuide | B=publishedOn | C=2026-08-01 | D=Guide | E=attribute | F=CQ6-required for &apos;most recently&apos;</worksheet:sampleRow>
+        <worksheet:sampleRow>5. Sample data!A54:F54 | A=SymptomsGuide | B=supportsLargeText | C=True | D=Guide | E=attribute | F=CQ6-if Stage 4 includes this</worksheet:sampleRow>
+        <rdfs:label>SymptomsGuide</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://uow.edu.au/isit906/thestar/digitalcare#VascularCareGuide -->
+
+    <owl:NamedIndividual rdf:about="http://uow.edu.au/isit906/thestar/digitalcare#VascularCareGuide">
+        <rdf:type rdf:resource="http://uow.edu.au/isit906/thestar/digitalcare#Guide"/>
+        <addresses rdf:resource="http://uow.edu.au/isit906/thestar/digitalcare#VascularDementia"/>
+        <isIntendedFor rdf:resource="http://uow.edu.au/isit906/thestar/digitalcare#DavidCarer"/>
+        <isRelatedTo rdf:resource="http://uow.edu.au/isit906/thestar/digitalcare#DressingDifficulty"/>
+        <isRelatedTo rdf:resource="http://uow.edu.au/isit906/thestar/digitalcare#VascularType"/>
+        <isReviewedBy rdf:resource="http://uow.edu.au/isit906/thestar/digitalcare#DrPatel"/>
+        <worksheet:sampleRow>5. Sample data!A12:F12 | A=VascularCareGuide | B=addresses | C=VascularDementia | D=Guide | E=relationship | F=Additional Guide example</worksheet:sampleRow>
+        <worksheet:sampleRow>5. Sample data!A15:F15 | A=VascularCareGuide | B=isRelatedTo | C=DressingDifficulty | D=Guide | E=relationship | F=Additional DailyTaskStruggling example</worksheet:sampleRow>
+        <worksheet:sampleRow>5. Sample data!A18:F18 | A=VascularCareGuide | B=isReviewedBy | C=DrPatel | D=Guide | E=relationship | F=Additional healthcare professional</worksheet:sampleRow>
+        <worksheet:sampleRow>5. Sample data!A21:F21 | A=VascularCareGuide | B=isRelatedTo | C=VascularType | D=Guide | E=relationship | F=Additional Dementia Type</worksheet:sampleRow>
+        <rdfs:label>VascularCareGuide</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://uow.edu.au/isit906/thestar/digitalcare#VascularDementia -->
+
+    <owl:NamedIndividual rdf:about="http://uow.edu.au/isit906/thestar/digitalcare#VascularDementia">
+        <rdf:type rdf:resource="http://uow.edu.au/isit906/thestar/digitalcare#HealthCondition"/>
+        <hasSymptom rdf:resource="http://uow.edu.au/isit906/thestar/digitalcare#Confusion"/>
+        <worksheet:sampleRow>5. Sample data!A40:F40 | A=VascularDementia | B=hasSymptom | C=Confusion | D=HealthCondition | E=relationship | F=Additional Symptom</worksheet:sampleRow>
+        <rdfs:label>VascularDementia</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://uow.edu.au/isit906/thestar/digitalcare#VascularSymptomsGuide -->
+
+    <owl:NamedIndividual rdf:about="http://uow.edu.au/isit906/thestar/digitalcare#VascularSymptomsGuide">
+        <rdf:type rdf:resource="http://uow.edu.au/isit906/thestar/digitalcare#Guide"/>
+        <describes rdf:resource="http://uow.edu.au/isit906/thestar/digitalcare#Confusion"/>
+        <isGovernedBy rdf:resource="http://uow.edu.au/isit906/thestar/digitalcare#DigitalCarePrivacyPolicy"/>
+        <isIntendedFor rdf:resource="http://uow.edu.au/isit906/thestar/digitalcare#RobertOlderAdult"/>
+        <publishedOn rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2026-06-15</publishedOn>
+        <supportsLargeText rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</supportsLargeText>
+        <worksheet:sampleRow>5. Sample data!A43:F43 | A=VascularSymptomsGuide | B=describes | C=Confusion | D=Guide | E=relationship | F=Additional Symptom/ Guide example</worksheet:sampleRow>
+        <worksheet:sampleRow>5. Sample data!A46:F46 | A=VascularSymptomsGuide | B=isGovernedBy | C=DigitalCarePrivacyPolicy | D=Guide | E=relationship | F=Additional privacy policy</worksheet:sampleRow>
+        <worksheet:sampleRow>5. Sample data!A49:F49 | A=VascularSymptomsGuide | B=isIntendedFor | C=RobertOlderAdult | D=Guide | E=relationship | F=Additional Older adult- targetted guide</worksheet:sampleRow>
+        <worksheet:sampleRow>5. Sample data!A52:F52 | A=VascularSymptomsGuide | B=publishedOn | C=2026-06-15 | D=Guide | E=attribute | F=CQ6 comparison</worksheet:sampleRow>
+        <worksheet:sampleRow>5. Sample data!A55:F55 | A=VascularSymptomsGuide | B=supportsLargeText | C=True | D=Guide | E=attribute | F=CQ6</worksheet:sampleRow>
+        <rdfs:label>VascularSymptomsGuide</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://uow.edu.au/isit906/thestar/digitalcare#VascularType -->
+
+    <owl:NamedIndividual rdf:about="http://uow.edu.au/isit906/thestar/digitalcare#VascularType">
+        <rdf:type rdf:resource="http://uow.edu.au/isit906/thestar/digitalcare#DementiaType"/>
+        <rdfs:label>VascularType</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://uow.edu.au/isit906/thestar/digitalcare#Victoria -->
+
+    <owl:NamedIndividual rdf:about="http://uow.edu.au/isit906/thestar/digitalcare#Victoria">
+        <rdf:type rdf:resource="http://uow.edu.au/isit906/thestar/digitalcare#Location"/>
+        <rdfs:label>Victoria</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://uow.edu.au/isit906/thestar/digitalcare#VisualHallucination -->
+
+    <owl:NamedIndividual rdf:about="http://uow.edu.au/isit906/thestar/digitalcare#VisualHallucination">
+        <rdf:type rdf:resource="http://uow.edu.au/isit906/thestar/digitalcare#Symptom"/>
+        <rdfs:label>VisualHallucination</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // General axioms
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    <rdf:Description>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDifferent"/>
+        <owl:distinctMembers rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://uow.edu.au/isit906/thestar/digitalcare#BathingDifficulty"/>
+            <rdf:Description rdf:about="http://uow.edu.au/isit906/thestar/digitalcare#Confusion"/>
+            <rdf:Description rdf:about="http://uow.edu.au/isit906/thestar/digitalcare#DressingDifficulty"/>
+            <rdf:Description rdf:about="http://uow.edu.au/isit906/thestar/digitalcare#EatingDifficulty"/>
+            <rdf:Description rdf:about="http://uow.edu.au/isit906/thestar/digitalcare#MemoryLoss"/>
+            <rdf:Description rdf:about="http://uow.edu.au/isit906/thestar/digitalcare#VisualHallucination"/>
+        </owl:distinctMembers>
+    </rdf:Description>
+</rdf:RDF>
+
+
+
+<!-- Generated by the OWL API (version 4.5.29.2024-05-13T12:11:03Z) https://github.com/owlcs/owlapi -->
+

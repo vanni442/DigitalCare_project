@@ -1,0 +1,31 @@
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX owl: <http://www.w3.org/2002/07/owl#>
+# Read schema only. A missing object-property domain/range can follow an
+# explicitly declared owl:inverseOf axiom, swapping its partner's range/domain.
+# No property names, class defaults, schema inserts or example values are used.
+SELECT DISTINCT ?kind ?domain ?range ?domainMember ?rangeMember ?inverse WHERE {
+  <__PROPERTY__> a ?kind .
+  FILTER (?kind IN (owl:ObjectProperty, owl:DatatypeProperty))
+  {
+    <__PROPERTY__> rdfs:domain ?domain .
+  } UNION {
+    FILTER NOT EXISTS { <__PROPERTY__> rdfs:domain ?explicitDomain }
+    <__PROPERTY__> a owl:ObjectProperty .
+    { <__PROPERTY__> owl:inverseOf ?domainSource }
+    UNION { ?domainSource owl:inverseOf <__PROPERTY__> }
+    ?domainSource a owl:ObjectProperty; rdfs:range ?domain .
+  }
+  {
+    <__PROPERTY__> rdfs:range ?range .
+  } UNION {
+    FILTER NOT EXISTS { <__PROPERTY__> rdfs:range ?explicitRange }
+    <__PROPERTY__> a owl:ObjectProperty .
+    { <__PROPERTY__> owl:inverseOf ?rangeSource }
+    UNION { ?rangeSource owl:inverseOf <__PROPERTY__> }
+    ?rangeSource a owl:ObjectProperty; rdfs:domain ?range .
+  }
+  OPTIONAL { ?domain owl:unionOf/rdf:rest*/rdf:first ?domainMember }
+  OPTIONAL { ?range owl:unionOf/rdf:rest*/rdf:first ?rangeMember }
+  OPTIONAL { { <__PROPERTY__> owl:inverseOf ?inverse } UNION { ?inverse owl:inverseOf <__PROPERTY__> } }
+}

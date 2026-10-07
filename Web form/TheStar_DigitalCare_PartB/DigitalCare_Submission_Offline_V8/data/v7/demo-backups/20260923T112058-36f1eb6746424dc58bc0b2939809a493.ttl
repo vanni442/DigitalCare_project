@@ -1,0 +1,1124 @@
+PREFIX :          <http://uow.edu.au/isit906/thestar/digitalcare#>
+PREFIX dc:        <http://uow.edu.au/isit906/thestar/digitalcare#>
+PREFIX ns1:       <http://uow.edu.au/isit906/thestar/digitalcare:worksheet#>
+PREFIX ns2:       <http://uow.edu.au/isit906/thestar/digitalcare#>
+PREFIX owl:       <http://www.w3.org/2002/07/owl#>
+PREFIX rdf:       <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX rdfs:      <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX schema:    <https://schema.org/>
+PREFIX worksheet: <http://uow.edu.au/isit906/thestar/digitalcare:worksheet#>
+PREFIX ws:        <http://uow.edu.au/isit906/thestar/digitalcare/worksheet#>
+PREFIX xml:       <http://www.w3.org/XML/1998/namespace>
+PREFIX xsd:       <http://www.w3.org/2001/XMLSchema#>
+
+<http://uow.edu.au/isit906/thestar/digitalcare>
+        rdf:type                   owl:Ontology;
+        rdfs:comment               "Built by exact transcription of DigitalCare_Model_Worksheet.xlsx. The worksheet Ontology IRI cell is blank; this provisional IRI is derived only from the immutable worksheet SHA-256.";
+        rdfs:label                 "Digital Care — The Star";
+        ns1:competencyQuestion     "1. Competency Questions!A10:I10 | A=CQ6 | B=Which Alzheimer’s symptoms written for older people were published most recently I can read in larger text size? | C=Chen —Older adult | D=FR02, CR02, CR03, TR03 | E=Multi-relationship | F=OlderAdult —hasCondition→ HealthCondition —hasSymptom→ Symptom ←describes— Guide —isRelatedTo→ DementiaType | G=4 | H=Yes | I=[BLANK]" , "1. Competency Questions!A11:I11 | A=CQ7 | B=Which Alzheimer’s guides are written for older people and available in Chinese? | C=Chen —Older adult | D=FR02, CR03, CR04 | E=Multi-relationship | F=OlderAdult ←isIntendedFor— Guide —isRelatedTo→ AlzheimersDementia and Guide —isAvailableIn→ Language (Chinese) | G=3 | H=Yes | I=[BLANK]" , "1. Competency Questions!A12:I12 | A=CQ8 | B=Is there a care centre near my area in Victoria with someone who speaks Chinese? | C=Chen —Older adult | D=CR05, FR01, FR03 | E=Multi-relationship | F=OlderAdult —isLocatedIn→ Location (Victoria) ←isLocatedIn— CareCentre —hasStaffMember→ StaffMember —speaksLanguage→ Language (Chinese) | G=4 | H=No | I=Add suburb/postcode or coordinates and a distance measure so care centres can be ranked by proximity to the older adult." , "1. Competency Questions!A13:I13 | A=CQ9 | B=Is there a guide that can help me compare different dementia symptoms my mother might experience? | C=Sarah—Unpaid carer | D=FR02, CR01, CR03 | E=Multi-relationship, Counting | F=Guide —isRelatedTo→ Symptom (×2, e.g. MemoryLoss and Confusion); Symptom is a subclass of InformationTopic | G=2 | H=Yes | I=[BLANK]" , "1. Competency Questions!A5:I5 | A=CQ1 | B=Mum’s dementia is getting harder to manage, and I don’t know where to start. Where I can find a simple guide written for carers how to deal with difficult daily tasks struggling of my mother? | C=Sarah—Unpaid carer | D=FR01, FR02, CR01, CR03 | E=Multi-relationship | F=Carer —caresFor→ OlderAdult —hasCondition→ HealthCondition ←addresses— Guide —isRelatedTo→ DailyTaskStruggling | G=4 | H=Yes | I=[BLANK]" , "1. Competency Questions!A6:I6 | A=CQ2 | B=Which dementia guides for carers about my mum’s type of dementia have been reviewed by a healthcare professional? | C=Sarah—Unpaid carer | D=FR02, CR03, GR04 | E=Multi-relationship | F=Carer —caresFor→ OlderAdult —hasCondition→ HealthCondition ←addresses— Guide —isReviewedBy→ HealthcareProfessional; Guide —isRelatedTo→ DementiaType\n | G=5 | H=Yes | I=[BLANK]" , "1. Competency Questions!A7:I7 | A=CQ3 | B=How many reliable and nearest support services or organisations in NSW I can call for help in case of mother's urgencies? | C=Sarah—Unpaid carer | D=CR05, FR01, FR03 | E=Multi-relationship, Counting | F=Carer —caresFor→ OlderAdult —hasCondition→ HealthCondition ←supportsCondition— SupportService —isLocatedIn→ Location | G=4 | H=No | I=Add reliability status, phone number and postcode/distance data so services can be filtered, counted and ranked by proximity." , "1. Competency Questions!A8:I8 | A=CQ4 | B=Which dementia care guides for carers can I download or print to read offline on smartphone? | C=Sarah—Unpaid carer | D=FR02, FR04, CR03, TR01 | E=Multi-relationship | F=Carer ←isIntendedFor—  Guide —isAvailableInFormat→ DocumentFormat\nisDownloadable: true / isPrintable: true | G=2 | H=Yes | I=[BLANK]" , "1. Competency Questions!A9:I9 | A=CQ5 | B=Can I search for Alzheimer’s symptoms without giving the website my privacy information? | C=Chen —Older adult | D=FR01, GR01, GR02 | E=Multi-relationship | F=HealthCondition —hasSymptom→ Symptom ←describes— Guide —isGovernedBy→ PrivacyPolicy | G=3 | H=No | I=Add a boolean attribute such as requiresPersonalInformationForSearch = false to represent anonymous symptom searching.";
+        ns1:logicalReconciliation  "Sample predicate isRelatedto is asserted with the declared property isRelatedTo; the original case is retained verbatim in ws:sampleRow and the mapping CSV.";
+        ns1:sourceSHA256           "FAA1D4EF530B952BB592E2B8FC785964ADB1EDBACD640019FC3E4B8B1BA95C8A";
+        ns1:sourceWorkbook         "ISIT906_TheStar_DigitalCare_Model_Worksheet_v2.xlsx";
+        ns1:teamName               "The Star";
+        ns1:temporaryIRIReason     "Read me first!C68 ontology IRI is blank; D68 is only an ISIT406/team07 example and was not used.";
+        ns1:traceabilityRow        "6. Traceability!A11:D11 | A=HealthCondition | B=Class | C=Hierarchical Health Condition taxonomy with topic pages, applied to Guides, Symptoms and Support Services. | D=CQ1, CQ2, CQ3, CQ5, CQ6, CQ7" , "6. Traceability!A12:D12 | A=DementiaType | B=Class | C=Child terms/pages within the Health Condition taxonomy, used to filter condition-specific Guides and Symptoms. | D=CQ2, CQ6, CQ7" , "6. Traceability!A13:D13 | A=AlzheimersDisease | B=Class | C=Dedicated Alzheimer's topic page and taxonomy term under DementiaType. | D=CQ7" , "6. Traceability!A14:D14 | A=Symptom | B=Class | C=Symptom Custom Post Type with searchable pages and links to related conditions and Guides. | D=CQ5, CQ6" , "6. Traceability!A15:D15 | A=DailyTaskStruggling | B=Class | C=Child category/term within the Symptom structure, used to group practical daily-task Guides. | D=CQ1" , "6. Traceability!A16:D16 | A=Guide | B=Class | C=Guide Custom Post Type with fields for title, publication/review dates, reading level, download/print links and accessibility information. | D=CQ1, CQ2, CQ4" , "6. Traceability!A17:D17 | A=Organization | B=Class | C=Organisation Custom Post Type with name, contact details and links to its services or care centres. | D=CQ3, CQ8" , "6. Traceability!A18:D18 | A=SupportService | B=Class | C=Support Service Custom Post Type with phone, location, supported condition and organisation fields. | D=CQ3" , "6. Traceability!A19:D19 | A=CareCentre | B=Class | C=Care Centre Custom Post Type with contact, location, staff and language information. | D=CQ8" , "6. Traceability!A20:D20 | A=Location | B=Class | C=Hierarchical location taxonomy plus postcode field, used to filter services and care centres by state or area. | D=CQ3, CQ8" , "6. Traceability!A21:D21 | A=Language | B=Class | C=Language taxonomy assigned to Guides and staff records, with a Chinese-language filter. | D=CQ7, CQ8" , "6. Traceability!A22:D22 | A=DocumentFormat | B=Class | C=Guide format taxonomy/custom field (for example, PDF or HTML), with download and print links. | D=CQ4" , "6. Traceability!A23:D23 | A=PrivacyPolicy | B=Class | C=Static WordPress Privacy Policy page linked in the footer and from search or feedback notices. | D=CQ5" , "6. Traceability!A24:D24 | A=caresFor (Carer → OlderAdult) | B=Relationship | C=No stored WordPress relationship because the site does not keep personal care profiles. Represent it only through example scenarios in carer guidance. | D=CQ1, CQ2, CQ3" , "6. Traceability!A25:D25 | A=hasCondition (OlderAdult → HealthCondition) | B=Relationship | C=No stored personal-health relationship. Users browse or filter by condition without saving a personal profile. | D=CQ1, CQ2, CQ3, CQ6" , "6. Traceability!A26:D26 | A=addresses (Guide → HealthCondition) | B=Relationship | C=Condition taxonomy/reference field on each Guide; condition pages automatically list related Guides. | D=CQ1, CQ2, CQ6, CQ7" , "6. Traceability!A27:D27 | A=isRelatedTo (Guide → InformationTopic) | B=Relationship | C=Topic taxonomy/reference field linking each Guide to relevant information topics so users can find Guides based on their needs | D=CQ1, CQ2, CQ6, CQ7" , "6. Traceability!A28:D28 | A=isReviewedBy (Guide → HealthcareProfessional) | B=Relationship | C=Reviewer post/reference field on each Guide, displayed with credentials and the last-reviewed date. | D=CQ2" , "6. Traceability!A29:D29 | A=isLocatedIn (OlderAdult OR SupportService OR CareCentre → Location) | B=Relationship | C=Location field/taxonomy assigned to Older Adults, Support Services and Care Centres, enabling support options to be matched or filtered by the same area. | D=CQ3, CQ8" , "6. Traceability!A30:D30 | A=isIntendedFor (Guide → Person) | B=Relationship | C=Audience taxonomy assigned to Guides using specific audience terms such as Carer and OlderAdult, with corresponding audience filters | D=CQ4, CQ7" , "6. Traceability!A31:D31 | A=isAvailableInFormat (Guide → DocumentFormat) | B=Relationship | C=Document-format taxonomy/custom field plus downloadable or printable file links on the Guide page. | D=CQ4" , "6. Traceability!A32:D32 | A=hasSymptom (HealthCondition → Symptom) | B=Relationship | C=Post-reference field linking each Health Condition to relevant Symptom records; shown as a related-symptoms list. | D=CQ5, CQ6" , "6. Traceability!A33:D33 | A=describes (Guide → Symptom) | B=Relationship | C=Symptom reference/taxonomy field on each Guide; Symptom pages list Guides that describe them. | D=CQ5, CQ6" , "6. Traceability!A34:D34 | A=isGovernedBy (Guide → PrivacyPolicy) | B=Relationship | C=Implemented site-wide through the Privacy Policy link and public search that requires no login or personal data; no separate relationship record. | D=CQ5" , "6. Traceability!A35:D35 | A=isAvailableIn (Guide → Language (Chinese)) | B=Relationship | C=Language taxonomy on each Guide, with a Chinese filter and links to translated versions. | D=CQ7" , "6. Traceability!A36:D36 | A=hasStaffMember (CareCentre → StaffMember) | B=Relationship | C=Staff repeater/reference field on each CareCentre page, showing staff names and roles relevant to service enquiries. | D=CQ8" , "6. Traceability!A37:D37 | A=speaksLanguage (StaffMember → Language (Chinese)) | B=Relationship | C=Language field/taxonomy on each staff entry; supports filtering CareCentres for Chinese-speaking staff. | D=CQ8" , "6. Traceability!A5:D5 | A=Person | B=Class | C=No standalone public profile. Represented only through author, reviewer or staff display fields on relevant content; personal accounts are outside the initial scope. | D=CQ1, CQ2, CQ3, CQ4, CQ5, CQ6, CQ7, CQ8" , "6. Traceability!A6:D6 | A=Carer | B=Class | C=Audience taxonomy and a 'For Carers' landing page; no proxy account or access to an older person's health information. | D=CQ1, CQ2, CQ3, CQ4" , "6. Traceability!A7:D7 | A=OlderAdult | B=Class | C=Audience taxonomy and a 'For Older People' landing page; no personal health profile is stored. | D=CQ1, CQ2, CQ3, CQ5, CQ6, CQ7, CQ8" , "6. Traceability!A8:D8 | A=HealthcareProfessional | B=Class | C=Reviewer record/reference field storing name, professional role and credentials; displayed with each reviewed Guide. | D=CQ2" , "6. Traceability!A9:D9 | A=StaffMember | B=Class | C=Staff name, role and language fields attached to a CareCentre record; not a WordPress user account. | D=CQ8";
+        owl:versionIRI             <http://uow.edu.au/isit906/thestar/digitalcare/version8> .
+
+ns1:competencyQuestion
+        rdf:type    owl:AnnotationProperty;
+        rdfs:label  "competencyQuestion" .
+
+ns1:logicalReconciliation
+        rdf:type    owl:AnnotationProperty;
+        rdfs:label  "logicalReconciliation" .
+
+ns1:sourceSHA256  rdf:type  owl:AnnotationProperty;
+        rdfs:label  "sourceSHA256" .
+
+ns1:sourceWorkbook  rdf:type  owl:AnnotationProperty;
+        rdfs:label  "sourceWorkbook" .
+
+ns1:teamName  rdf:type  owl:AnnotationProperty;
+        rdfs:label  "teamName" .
+
+ns1:temporaryIRIReason
+        rdf:type    owl:AnnotationProperty;
+        rdfs:label  "temporaryIRIReason" .
+
+ns1:traceabilityRow  rdf:type  owl:AnnotationProperty;
+        rdfs:label  "traceabilityRow" .
+
+dc:AlzheimersDisease  rdf:type  owl:Class;
+        rdfs:subClassOf  dc:DementiaType .
+
+dc:DementiaType  rdf:type  owl:Class;
+        rdfs:comment      "A specific clinical subtype of dementia (e.g., Alzheimer’s, Vascular, Lewy Body)";
+        rdfs:label        "DementiaType";
+        rdfs:subClassOf   dc:HealthCondition;
+        ns1:sourceCell    "2. Classes!A12:F12";
+        ns1:usedByCQ      "CQ2, CQ6, CQ7";
+        ns1:worksheetRow  "2. Classes!A12:F12 | A=DementiaType | B=A specific clinical subtype of dementia (e.g., Alzheimer’s, Vascular, Lewy Body) | C=HealthCondition | D=CQ2, CQ6, CQ7 | E=[BLANK] | F=[BLANK]" .
+
+dc:BrisbaneCareCentre
+        rdf:type           dc:CareCentre , owl:NamedIndividual;
+        rdfs:label         "BrisbaneCareCentre";
+        dc:distanceKm      1680.0;
+        dc:hasStaffMember  dc:LucaRossi;
+        dc:isLocatedIn     dc:Queensland;
+        ns1:sampleRow      "5. Sample data!A71:F71 | A=BrisbaneCareCentre | B=isLocatedIn | C=Queensland | D=CareCentre | E=relationship | F=Additional care centre" , "5. Sample data!A74:F74 | A=BrisbaneCareCentre | B=hasStaffMember | C=LucaRossi | D=CareCentre | E=relationship | F=Additional StaffMember" .
+
+dc:CareCentre  rdf:type   owl:Class;
+        rdfs:comment      "An organisation or centre providing in-person care or support.";
+        rdfs:label        "CareCentre";
+        rdfs:subClassOf   dc:Organization;
+        ns1:sourceCell    "2. Classes!A19:F19";
+        ns1:usedByCQ      "CQ8";
+        ns1:worksheetRow  "2. Classes!A19:F19 | A=CareCentre | B=An organisation or centre providing in-person care or support. | C=Organization | D=CQ8 | E=[BLANK] | F=[BLANK]" .
+
+dc:distanceKm  rdf:type   owl:DatatypeProperty;
+        rdfs:comment      "Sample simplification: distance from the location of the persona in the competency question being tested (Mary for CQ3, Chen for CQ8). A live site would calculate this at query time from the user's postcode instead of storing it.";
+        rdfs:domain       dc:Organization;
+        rdfs:label        "Distance from the persona's location (km)";
+        rdfs:range        xsd:decimal;
+        ns1:exampleValue  12.5;
+        ns1:sourceCell    "4. Attributes!A32:E32";
+        ns1:usedByCQ      "CQ3, CQ8";
+        ns1:worksheetRow  "4. Attributes!A32:E32 | A=Organization | B=distanceKm | C=xsd:decimal | D=12.5 | E=CQ3, CQ8" .
+
+dc:hasStaffMember  rdf:type  owl:ObjectProperty;
+        rdfs:domain       dc:CareCentre;
+        rdfs:label        "hasStaffMember";
+        rdfs:range        dc:StaffMember;
+        ns1:character     "none";
+        ns1:readAloud     "a CareCentre hasStaffMember a StaffMember";
+        ns1:sourceCell    "3. Relationships!A18:G18";
+        ns1:usedByCQ      "CQ8";
+        ns1:worksheetRow  "3. Relationships!A18:G18 | A=CareCentre | B=hasStaffMember | C=StaffMember | D=[BLANK] | E=none | F=CQ8 | G=a CareCentre hasStaffMember a StaffMember" .
+
+dc:LucaRossi  rdf:type     owl:NamedIndividual , dc:StaffMember;
+        rdfs:label         "LucaRossi";
+        dc:speaksLanguage  dc:Italian;
+        ns1:sampleRow      "5. Sample data!A77:F77 | A=LucaRossi | B=speaksLanguage | C=Italian | D=StaffMember | E=relationship | F=Additional Language example" .
+
+dc:isLocatedIn  rdf:type  owl:ObjectProperty;
+        rdfs:domain       [ rdf:type     owl:Class;
+                            owl:unionOf  ( dc:CareCentre dc:OlderAdult dc:SupportService )
+                          ];
+        rdfs:label        "isLocatedIn";
+        rdfs:range        dc:Location;
+        ns1:character     "none";
+        ns1:readAloud     "an OlderAdult, a SupportService, or a CareCentre is located in a Location";
+        ns1:sourceCell    "3. Relationships!A11:G11";
+        ns1:usedByCQ      "CQ3, CQ8";
+        ns1:worksheetRow  "3. Relationships!A11:G11 | A=OlderAdult OR SupportService OR CareCentre | B=isLocatedIn | C=Location | D=[BLANK] | E=none | F=CQ3, CQ8 | G=an OlderAdult, a SupportService, or a CareCentre is located in a Location" .
+
+dc:Queensland  rdf:type  owl:NamedIndividual , dc:Location;
+        rdfs:label  "Queensland" .
+
+ns1:sampleRow  rdf:type  owl:AnnotationProperty;
+        rdfs:label  "sampleRow" .
+
+dc:CarerCommunicationGuide
+        rdf:type                owl:NamedIndividual , dc:Guide;
+        rdfs:label              "CarerCommunicationGuide";
+        dc:isAvailableInFormat  dc:PrintableWebPage;
+        dc:isIntendedFor        dc:DavidCarer;
+        dc:isPrintable          true;
+        ns1:sampleRow           "5. Sample data!A32:F32 | A=CarerCommunicationGuide | B=isIntendedFor | C=DavidCarer | D=Guide | E=relationship | F=Additional carer-targetted guide" , "5. Sample data!A35:F35 | A=CarerCommunicationGuide | B=isAvailableInFormat | C=PrintableWebPage | D=Guide | E=relationship | F=Additional document format" .
+
+dc:Guide  rdf:type        owl:Class;
+        rdfs:comment      "A structured digital publication, toolkit, or practical advice document";
+        rdfs:label        "Guide";
+        rdfs:seeAlso      schema:Guide;
+        ns1:reuseReason   "Standardises instructional documents for search engine crawling and content aggregation.";
+        ns1:reusedFrom    "https://schema.org/Guide";
+        ns1:sourceCell    "2. Classes!A16:F16";
+        ns1:usedByCQ      "CQ1, CQ2, CQ4, CQ5, CQ6, CQ7, CQ9";
+        ns1:worksheetRow  "2. Classes!A16:F16 | A=Guide | B=A structured digital publication, toolkit, or practical advice document | C=[BLANK] | D=CQ1, CQ2, CQ4, CQ5, CQ6, CQ7, CQ9 | E=https://schema.org/Guide | F=Standardises instructional documents for search engine crawling and content aggregation." .
+
+dc:isAvailableInFormat
+        rdf:type          owl:ObjectProperty;
+        rdfs:domain       dc:Guide;
+        rdfs:label        "isAvailableInFormat";
+        rdfs:range        dc:DocumentFormat;
+        ns1:character     "none";
+        ns1:readAloud     "a Guide isAvailableInFormat a DocumentFormat";
+        ns1:sourceCell    "3. Relationships!A13:G13";
+        ns1:usedByCQ      "CQ4";
+        ns1:worksheetRow  "3. Relationships!A13:G13 | A=Guide | B=isAvailableInFormat | C=DocumentFormat | D=[BLANK] | E=none | F=CQ4 | G=a Guide isAvailableInFormat a DocumentFormat" .
+
+dc:PrintableWebPage  rdf:type  owl:NamedIndividual , dc:DocumentFormat;
+        rdfs:label  "PrintableWebPage" .
+
+dc:isIntendedFor  rdf:type  owl:ObjectProperty;
+        rdfs:domain       dc:Guide;
+        rdfs:label        "isIntendedFor";
+        rdfs:range        dc:Person;
+        ns1:character     "inverse";
+        ns1:inverseName   "isTargetAudienceOf";
+        ns1:readAloud     "a Guide isIntended for a Person";
+        ns1:sourceCell    "3. Relationships!A12:G12";
+        ns1:usedByCQ      "CQ1, CQ2, CQ4, CQ6, CQ7, CQ9";
+        ns1:worksheetRow  "3. Relationships!A12:G12 | A=Guide | B=isIntendedFor | C=Person | D=isTargetAudienceOf | E=inverse | F=CQ1, CQ2, CQ4, CQ6, CQ7, CQ9 | G=a Guide isIntended for a Person";
+        owl:inverseOf     dc:isTargetAudienceOf .
+
+dc:DavidCarer  rdf:type  owl:NamedIndividual , dc:Carer;
+        rdfs:label     "DavidCarer";
+        dc:caresFor    dc:RobertOlderAdult;
+        ns1:sampleRow  "5. Sample data!A6:F6 | A=DavidCarer | B=caresFor | C=RobertOlderAdult | D=Carer | E=relationship | F=additional carer individual" .
+
+dc:isPrintable  rdf:type  owl:DatatypeProperty;
+        rdfs:domain       dc:Guide;
+        rdfs:label        "isPrintable";
+        rdfs:range        xsd:boolean;
+        ns1:exampleValue  "True";
+        ns1:sourceCell    "4. Attributes!A17:E17";
+        ns1:usedByCQ      "CQ4";
+        ns1:worksheetRow  "4. Attributes!A17:E17 | A=Guide | B=isPrintable | C=xsd:boolean | D=True | E=CQ4" .
+
+dc:CarerGuide  rdf:type      owl:Class;
+        rdfs:comment         "A Guide whose intended audience includes a Carer. Defined class: membership is entailed from isIntendedFor, never asserted.";
+        rdfs:label           "CarerGuide";
+        ns1:axiomCQ          "CQ1, CQ4";
+        owl:equivalentClass  [ rdf:type            owl:Class;
+                               owl:intersectionOf  ( dc:Guide
+                                                     [ rdf:type            owl:Restriction;
+                                                       owl:onProperty      dc:isIntendedFor;
+                                                       owl:someValuesFrom  dc:Carer
+                                                     ]
+                                                   )
+                             ] .
+
+ns1:axiomCQ  rdf:type  owl:AnnotationProperty;
+        rdfs:comment  "Competency question(s) that justify this axiom (Assignment 2 section 4.2).";
+        rdfs:label    "axiomCQ" .
+
+dc:Carer  rdf:type        owl:Class;
+        rdfs:comment      "An unpaid family member or friend providing routine care and seeking actionable advice";
+        rdfs:label        "Carer";
+        rdfs:subClassOf   dc:Person;
+        ns1:sourceCell    "2. Classes!A6:F6";
+        ns1:usedByCQ      "CQ1, CQ2, CQ3, CQ4, CQ9";
+        ns1:worksheetRow  "2. Classes!A6:F6 | A=Carer | B=An unpaid family member or friend providing routine care and seeking actionable advice | C=Person | D=CQ1, CQ2, CQ3, CQ4, CQ9 | E=[BLANK] | F=[BLANK]" .
+
+dc:CarerHelpNSW  rdf:type       owl:NamedIndividual , dc:SupportService;
+        rdfs:label              "CarerHelpNSW";
+        dc:distanceKm           4.2;
+        dc:isLocatedIn          dc:NSW;
+        dc:isReliable           true;
+        dc:phoneNumber          "1800 100 501";
+        dc:reliabilityEvidence  "Listed on Carer Gateway service finder, 2026";
+        dc:supportsCondition    dc:AlzheimersDementia;
+        ns1:sampleRow           "5. Sample data!A26:F26 | A=CarerHelpNSW | B=supportsCondition | C=AlzheimersDementia | D=SupportService | E=relationship | F=CQ3, allows counting" , "5. Sample data!A29:F29 | A=CarerHelpNSW | B=isLocatedIn | C=NSW | D=SupportService | E=relationship | F=CQ3" .
+
+dc:SupportService  rdf:type  owl:Class;
+        rdfs:comment      "A registered local healthcare centre, respite provider, or community organisation";
+        rdfs:label        "SupportService";
+        rdfs:subClassOf   dc:Organization;
+        ns1:sourceCell    "2. Classes!A18:F18";
+        ns1:usedByCQ      "CQ3";
+        ns1:worksheetRow  "2. Classes!A18:F18 | A=SupportService | B=A registered local healthcare centre, respite provider, or community organisation | C=Organization | D=CQ3 | E=[BLANK] | F=[BLANK]" .
+
+dc:NSW  rdf:type    owl:NamedIndividual , dc:Location;
+        rdfs:label  "NSW" .
+
+dc:isReliable  rdf:type   owl:DatatypeProperty;
+        rdfs:domain       dc:SupportService;
+        rdfs:label        "Service recorded as reliable";
+        rdfs:range        xsd:boolean;
+        ns1:exampleValue  true;
+        ns1:sourceCell    "4. Attributes!A30:E30";
+        ns1:usedByCQ      "CQ3";
+        ns1:worksheetRow  "4. Attributes!A30:E30 | A=SupportService | B=isReliable | C=xsd:boolean | D=True | E=CQ3" .
+
+dc:phoneNumber  rdf:type  owl:DatatypeProperty;
+        rdfs:domain       dc:SupportService;
+        rdfs:label        "phoneNumber";
+        rdfs:range        xsd:string;
+        ns1:exampleValue  "1800 100 500";
+        ns1:sourceCell    "4. Attributes!A22:E22";
+        ns1:usedByCQ      "CQ3";
+        ns1:worksheetRow  "4. Attributes!A22:E22 | A=SupportService | B=phoneNumber | C=xsd:string | D=1800 100 500 | E=CQ3" .
+
+dc:reliabilityEvidence
+        rdf:type          owl:DatatypeProperty;
+        rdfs:domain       dc:SupportService;
+        rdfs:label        "Source for the reliability assessment";
+        rdfs:range        xsd:string;
+        ns1:exampleValue  "Verified via Dementia Australia service directory, 2026";
+        ns1:sourceCell    "4. Attributes!A31:E31";
+        ns1:usedByCQ      "CQ3";
+        ns1:worksheetRow  "4. Attributes!A31:E31 | A=SupportService | B=reliabilityEvidence | C=xsd:string | D=Verified via Dementia Australia service directory, 2026 | E=CQ3" .
+
+dc:supportsCondition  rdf:type  owl:ObjectProperty;
+        rdfs:domain       dc:SupportService;
+        rdfs:label        "supportsCondition";
+        rdfs:range        dc:HealthCondition;
+        ns1:character     "inverse";
+        ns1:inverseName   "isSupportedBy";
+        ns1:readAloud     "a SupportService supportsCondition HealthCondition";
+        ns1:sourceCell    "3. Relationships!A10:G10";
+        ns1:usedByCQ      "CQ3";
+        ns1:worksheetRow  "3. Relationships!A10:G10 | A=SupportService | B=supportsCondition | C=HealthCondition | D=isSupportedBy | E=inverse | F=CQ3 | G=a SupportService supportsCondition HealthCondition" .
+
+dc:AlzheimersDementia
+        rdf:type        owl:NamedIndividual , dc:HealthCondition;
+        rdfs:comment    "A specific neurodegenerative disease characterised by progressive memory loss";
+        rdfs:label      "AlzheimersDementia";
+        dc:hasSymptom   dc:MemoryLoss;
+        ns1:sampleRow   "5. Sample data!A39:F39 | A=AlzheimersDementia | B=hasSymptom | C=MemoryLoss | D=HealthCondition | E=relationship | F=[BLANK]";
+        ns1:sourceCell  "5. Sample data!A39:F39";
+        ns1:usedByCQ    "CQ7" .
+
+dc:ChineseAlzheimersGuide
+        rdf:type              owl:NamedIndividual , dc:Guide;
+        rdfs:label            "ChineseAlzheimersGuide";
+        dc:isAvailableIn      dc:Chinese;
+        dc:isIntendedFor      dc:MaryOlderAdult;
+        dc:isRelatedTo        dc:AlzheimersDementia;
+        dc:publishedOn        "2026-08-01"^^xsd:date;
+        dc:supportsLargeText  true;
+        ns1:sampleRow         "5. Sample data!A57:F57 | A=ChineseAlzheimersGuide | B=isIntendedFor | C=MaryOlderAdult | D=Guide | E=relationship | F=CQ7" , "5. Sample data!A60:F60 | A=ChineseAlzheimersGuide | B=isRelatedTo | C=AlzheimersDementia | D=Guide | E=relationship | F=CQ7 " , "5. Sample data!A63:F63 | A=ChineseAlzheimersGuide | B=isAvailableIn | C=Chinese | D=Guide | E=relationship | F=CQ7 " .
+
+dc:isAvailableIn  rdf:type  owl:ObjectProperty;
+        rdfs:domain       dc:Guide;
+        rdfs:label        "isAvailableIn";
+        rdfs:range        dc:Language;
+        ns1:character     "none";
+        ns1:readAloud     "a Guide isAvailableIn a Language ";
+        ns1:sourceCell    "3. Relationships!A17:G17";
+        ns1:usedByCQ      "CQ7";
+        ns1:worksheetRow  "3. Relationships!A17:G17 | A=Guide | B=isAvailableIn | C=Language  | D=[BLANK] | E=none | F=CQ7 | G=a Guide isAvailableIn a Language " .
+
+dc:Chinese  rdf:type  owl:NamedIndividual , dc:Language;
+        rdfs:label  "Chinese" .
+
+dc:MaryOlderAdult  rdf:type  owl:NamedIndividual , dc:OlderAdult;
+        rdfs:label         "MaryOlderAdult";
+        dc:hasCondition    dc:AlzheimersDementia;
+        dc:isLocatedIn     dc:NSW;
+        dc:nearbyRadiusKm  15.0;
+        ns1:sampleRow      "5. Sample data!A67:F67 | A=MaryOlderAdult | B=isLocatedIn | C=NSW | D=OlderAdult | E=relationship | F=Additional location example" , "5. Sample data!A8:F8 | A=MaryOlderAdult | B=hasCondition | C=AlzheimersDementia | D=OlderAdult | E=relationship | F=CQ1,CQ2,CQ3,CQ6" .
+
+dc:isRelatedTo  rdf:type  owl:ObjectProperty;
+        rdfs:domain       dc:Guide;
+        rdfs:label        "isRelatedTo";
+        rdfs:range        dc:InformationTopic;
+        ns1:character     "none";
+        ns1:readAloud     "a Guide is related to an InformationTopic";
+        ns1:sourceCell    "3. Relationships!A8:G8";
+        ns1:usedByCQ      "CQ1, CQ2, CQ6, CQ7, CQ9";
+        ns1:worksheetRow  "3. Relationships!A8:G8 | A=Guide | B=isRelatedTo | C=InformationTopic | D=[BLANK] | E=none | F=CQ1, CQ2, CQ6, CQ7, CQ9 | G=a Guide is related to an InformationTopic" .
+
+dc:publishedOn  rdf:type  owl:DatatypeProperty , owl:FunctionalProperty;
+        rdfs:domain       dc:Guide;
+        rdfs:label        "publishedOn";
+        rdfs:range        xsd:date;
+        ns1:exampleValue  "2026-03-14";
+        ns1:sourceCell    "4. Attributes!A13:E13";
+        ns1:usedByCQ      "CQ6";
+        ns1:worksheetRow  "4. Attributes!A13:E13 | A=Guide | B=publishedOn | C=xsd:date | D=2026-03-14 | E=CQ6" .
+
+dc:supportsLargeText  rdf:type  owl:DatatypeProperty;
+        rdfs:domain   dc:Guide;
+        rdfs:label    "supportsLargeText";
+        rdfs:range    xsd:boolean;
+        ns1:usedByCQ  "CQ6" .
+
+dc:DailyCareGuide  rdf:type     owl:NamedIndividual , dc:Guide;
+        rdfs:label              "DailyCareGuide";
+        dc:addresses            dc:AlzheimersDementia;
+        dc:isAvailableInFormat  dc:PDF;
+        dc:isDownloadable       true;
+        dc:isIntendedFor        dc:SarahCarer;
+        dc:isPrintable          true;
+        dc:isRelatedTo          dc:AlzheimerType , dc:BathingDifficulty;
+        dc:isReviewedBy         dc:DrLee;
+        ns1:sampleRow           "5. Sample data!A11:F11 | A=DailyCareGuide | B=addresses | C=AlzheimersDementia | D=Guide | E=relationship | F=CQ1,CQ2" , "5. Sample data!A14:F14 | A=DailyCareGuide | B=isRelatedTo | C=BathingDifficulty | D=Guide | E=relationship | F=CQ1/Daily task" , "5. Sample data!A17:F17 | A=DailyCareGuide | B=isReviewedBy | C=DrLee | D=Guide | E=relationship | F=CQ2" , "5. Sample data!A20:F20 | A=DailyCareGuide | B=isRelatedTo | C=AlzheimerType | D=Guide | E=relationship | F=[BLANK]" , "5. Sample data!A31:F31 | A=DailyCareGuide | B=isIntendedFor | C=SarahCarer | D=Guide | E=relationship | F=[BLANK]" , "5. Sample data!A34:F34 | A=DailyCareGuide | B=isAvailableInFormat | C=PDF | D=Guide | E=relationship | F=CQ4" , "5. Sample data!A37:F37 | A=DailyCareGuide | B=isDownloadable | C=True | D=Guide | E=attribute | F=CQ4-only if this is in stage 4" , "5. Sample data!A38:F38 | A=DailyCareGuide | B=isPrintable | C=True | D=Guide | E=attribute | F=CQ4-only if this is in stage 4" .
+
+dc:addresses  rdf:type      owl:ObjectProperty;
+        rdfs:domain         dc:Guide;
+        rdfs:label          "addresses";
+        rdfs:range          dc:HealthCondition;
+        rdfs:subPropertyOf  dc:isRelatedTo;
+        ns1:character       "inverse";
+        ns1:inverseName     "isAddressedIn";
+        ns1:readAloud       "a Guide addresses a healthCondition";
+        ns1:sourceCell      "3. Relationships!A7:G7";
+        ns1:usedByCQ        "CQ1, CQ2, CQ6, CQ7";
+        ns1:worksheetRow    "3. Relationships!A7:G7 | A=Guide | B=addresses | C=HealthCondition | D=isAddressedIn | E=inverse | F=CQ1, CQ2, CQ6, CQ7 | G=a Guide addresses a healthCondition";
+        owl:inverseOf       dc:isAddressedIn .
+
+dc:PDF  rdf:type    owl:NamedIndividual , dc:DocumentFormat;
+        rdfs:label  "PDF" .
+
+dc:isDownloadable  rdf:type  owl:DatatypeProperty;
+        rdfs:domain       dc:Guide;
+        rdfs:label        "isDownloadable";
+        rdfs:range        xsd:boolean;
+        ns1:exampleValue  "True";
+        ns1:sourceCell    "4. Attributes!A16:E16";
+        ns1:usedByCQ      "CQ4";
+        ns1:worksheetRow  "4. Attributes!A16:E16 | A=Guide | B=isDownloadable | C=xsd:boolean | D=True | E=CQ4" .
+
+dc:SarahCarer  rdf:type  owl:NamedIndividual , dc:Carer;
+        rdfs:label     "SarahCarer";
+        dc:caresFor    dc:MaryOlderAdult;
+        ns1:sampleRow  "5. Sample data!A5:F5 | A=SarahCarer | B=caresFor | C=MaryOlderAdult | D=Carer | E=relationship | F=CQ1,CQ2,CQ3" .
+
+dc:AlzheimerType  rdf:type  dc:DementiaType , owl:NamedIndividual;
+        rdfs:label  "AlzheimerType" .
+
+dc:BathingDifficulty  rdf:type  owl:NamedIndividual , dc:DailyTaskStruggling;
+        rdfs:label  "BathingDifficulty" .
+
+dc:isReviewedBy  rdf:type  owl:ObjectProperty;
+        rdfs:domain       dc:Guide;
+        rdfs:label        "isReviewedBy";
+        rdfs:range        dc:HealthcareProfessional;
+        ns1:character     "none";
+        ns1:readAloud     "a Guide isReviewedBy a HealthcareProfessional";
+        ns1:sourceCell    "3. Relationships!A9:G9";
+        ns1:usedByCQ      "CQ2";
+        ns1:worksheetRow  "3. Relationships!A9:G9 | A=Guide | B=isReviewedBy | C=HealthcareProfessional | D=[BLANK] | E=none | F=CQ2 | G=a Guide isReviewedBy a HealthcareProfessional" .
+
+dc:DrLee  rdf:type  owl:NamedIndividual , dc:HealthcareProfessional;
+        rdfs:label  "DrLee" .
+
+dc:DementiaSupportNSW
+        rdf:type                owl:NamedIndividual , dc:SupportService;
+        rdfs:label              "DementiaSupportNSW";
+        dc:distanceKm           12.5;
+        dc:isLocatedIn          dc:NSW;
+        dc:isReliable           true;
+        dc:phoneNumber          "1800 100 500";
+        dc:reliabilityEvidence  "Verified via Dementia Australia service directory, 2026";
+        dc:supportsCondition    dc:AlzheimersDementia;
+        ns1:sampleRow           "5. Sample data!A25:F25 | A=DementiaSupportNSW | B=supportsCondition | C=AlzheimersDementia | D=SupportService | E=relationship | F=CQ3" , "5. Sample data!A28:F28 | A=DementiaSupportNSW | B=isLocatedIn | C=NSW | D=SupportService | E=relationship | F=CQ3" .
+
+dc:DementiaSymptomComparisonGuide
+        rdf:type              owl:NamedIndividual , dc:SymptomComparisonGuide;
+        rdfs:label            "DementiaSymptomComparisonGuide";
+        dc:isGovernedBy       dc:DigitalCarePrivacyPolicy;
+        dc:isIntendedFor      dc:SarahCarer;
+        dc:isRelatedTo        dc:AlzheimerType , dc:Confusion , dc:MemoryLoss , dc:VisualHallucination;
+        dc:publishedOn        "2026-05-10"^^xsd:date;
+        dc:supportsLargeText  true;
+        dc:title              "Comparing dementia symptoms side by side";
+        ns1:sampleRow         "5. Sample data!A88:F88 | A=DementiaSymptomComparisonGuide | B=isRelatedTo | C=MemoryLoss | D=SymptomComparisonGuide | E=relationship | F=CQ9" , "5. Sample data!A89:F89 | A=DementiaSymptomComparisonGuide | B=isRelatedTo | C=Confusion | D=SymptomComparisonGuide | E=relationship | F=CQ9" , "5. Sample data!A90:F90 | A=DementiaSymptomComparisonGuide | B=isRelatedTo | C=VisualHallucination | D=SymptomComparisonGuide | E=relationship | F=CQ9" , "5. Sample data!A91:F91 | A=DementiaSymptomComparisonGuide | B=isRelatedTo | C=AlzheimerType | D=SymptomComparisonGuide | E=relationship | F=CQ9" , "5. Sample data!A92:F92 | A=DementiaSymptomComparisonGuide | B=isIntendedFor | C=SarahCarer | D=SymptomComparisonGuide | E=relationship | F=CQ9" , "5. Sample data!A93:F93 | A=DementiaSymptomComparisonGuide | B=isGovernedBy | C=DigitalCarePrivacyPolicy | D=SymptomComparisonGuide | E=relationship | F=CQ9" .
+
+dc:SymptomComparisonGuide
+        rdf:type         owl:Class;
+        rdfs:comment     "A Guide that sets two or more symptoms side by side so a reader can tell them apart.";
+        rdfs:label       "SymptomComparisonGuide";
+        rdfs:subClassOf  dc:Guide;
+        rdfs:subClassOf  [ rdf:type                     owl:Restriction;
+                           owl:minQualifiedCardinality  "2"^^xsd:nonNegativeInteger;
+                           owl:onClass                  dc:Symptom;
+                           owl:onProperty               dc:isRelatedTo
+                         ];
+        ns1:axiomCQ      "CQ9";
+        ns1:sourceCell   "2. Classes!A24:F24";
+        ns1:usedByCQ     "CQ9" .
+
+dc:isGovernedBy  rdf:type  owl:ObjectProperty , owl:FunctionalProperty;
+        rdfs:domain       dc:Guide;
+        rdfs:label        "isGovernedBy";
+        rdfs:range        dc:PrivacyPolicy;
+        ns1:character     "functional";
+        ns1:readAloud     "a Guide isGovernedBy a PrivacyPolicy";
+        ns1:sourceCell    "3. Relationships!A16:G16";
+        ns1:usedByCQ      "CQ5";
+        ns1:worksheetRow  "3. Relationships!A16:G16 | A=Guide | B=isGovernedBy | C=PrivacyPolicy | D=[BLANK] | E=functional | F=CQ5 | G=a Guide isGovernedBy a PrivacyPolicy" .
+
+dc:DigitalCarePrivacyPolicy
+        rdf:type                      owl:NamedIndividual , dc:PrivacyPolicy;
+        rdfs:label                    "DigitalCarePrivacyPolicy";
+        dc:requiresPersonalInformationForSearch
+                false;
+        dc:searchRequirementEvidence  "Digital Care Privacy Policy, section 3" .
+
+dc:Confusion  rdf:type  owl:NamedIndividual , dc:Symptom;
+        rdfs:label  "Confusion" .
+
+dc:MemoryLoss  rdf:type  owl:NamedIndividual , dc:Symptom;
+        rdfs:label  "MemoryLoss" .
+
+dc:VisualHallucination
+        rdf:type    owl:NamedIndividual , dc:Symptom;
+        rdfs:label  "VisualHallucination" .
+
+dc:title  rdf:type        owl:DatatypeProperty;
+        rdfs:domain       dc:Guide;
+        rdfs:label        "title";
+        rdfs:range        xsd:string;
+        ns1:exampleValue  "Managing daily tasks with dementia";
+        ns1:sourceCell    "4. Attributes!A12:E12";
+        ns1:usedByCQ      "CQ1, CQ2, CQ4, CQ6, CQ7";
+        ns1:worksheetRow  "4. Attributes!A12:E12 | A=Guide | B=title | C=xsd:string | D=Managing daily tasks with dementia | E=CQ1, CQ2, CQ4, CQ6, CQ7" .
+
+dc:EarlySignsComparisonGuide
+        rdf:type          owl:NamedIndividual , dc:SymptomComparisonGuide;
+        rdfs:label        "EarlySignsComparisonGuide";
+        dc:isIntendedFor  dc:SarahCarer;
+        dc:isRelatedTo    dc:BathingDifficulty , dc:MemoryLoss;
+        dc:publishedOn    "2026-07-02"^^xsd:date;
+        dc:title          "Early signs: what to look for first";
+        ns1:sampleRow     "5. Sample data!A96:F96 | A=EarlySignsComparisonGuide | B=isRelatedTo | C=MemoryLoss | D=SymptomComparisonGuide | E=relationship | F=CQ9" , "5. Sample data!A97:F97 | A=EarlySignsComparisonGuide | B=isRelatedTo | C=BathingDifficulty | D=SymptomComparisonGuide | E=relationship | F=CQ9" , "5. Sample data!A98:F98 | A=EarlySignsComparisonGuide | B=isIntendedFor | C=SarahCarer | D=SymptomComparisonGuide | E=relationship | F=CQ9" .
+
+dc:EnglishAlzheimersGuide
+        rdf:type              owl:NamedIndividual , dc:Guide;
+        rdfs:label            "EnglishAlzheimersGuide";
+        dc:isAvailableIn      dc:English;
+        dc:isIntendedFor      dc:RobertOlderAdult;
+        dc:isRelatedTo        dc:AlzheimersDementia;
+        dc:publishedOn        "2026-06-15"^^xsd:date;
+        dc:supportsLargeText  true;
+        ns1:sampleRow         "5. Sample data!A58:F58 | A=EnglishAlzheimersGuide | B=isIntendedFor | C=RobertOlderAdult | D=Guide | E=relationship | F=CQ7 comparison" , "5. Sample data!A61:F61 | A=EnglishAlzheimersGuide | B=isRelatedTo | C=AlzheimersDementia | D=Guide | E=relationship | F=CQ7" , "5. Sample data!A64:F64 | A=EnglishAlzheimersGuide | B=isAvailableIn | C=English | D=Guide | E=relationship | F=Additional Language" .
+
+dc:English  rdf:type  owl:NamedIndividual , dc:Language;
+        rdfs:label  "English" .
+
+dc:RobertOlderAdult  rdf:type  owl:NamedIndividual , dc:OlderAdult;
+        rdfs:label       "RobertOlderAdult";
+        dc:hasCondition  dc:VascularDementia;
+        ns1:sampleRow    "5. Sample data!A9:F9 | A=RobertOlderAdult | B=hasCondition | C=VascularDementia | D=OlderAdult | E=relationship | F=additional older adult/ health condition example" .
+
+dc:ItalianAlzheimersGuide
+        rdf:type              owl:NamedIndividual , dc:Guide;
+        rdfs:label            "ItalianAlzheimersGuide";
+        dc:isAvailableIn      dc:Italian;
+        dc:isIntendedFor      dc:ChenOlderAdult;
+        dc:isRelatedTo        dc:AlzheimersDementia;
+        dc:publishedOn        "2026-04-20"^^xsd:date;
+        dc:supportsLargeText  false;
+        ns1:sampleRow         "5. Sample data!A59:F59 | A=ItalianAlzheimersGuide | B=isIntendedFor | C=ChenOlderAdult | D=Guide | E=relationship | F=CQ7 comparison" , "5. Sample data!A62:F62 | A=ItalianAlzheimersGuide | B=isRelatedTo | C=AlzheimersDementia | D=Guide | E=relationship | F=CQ7 " , "5. Sample data!A65:F65 | A=ItalianAlzheimersGuide | B=isAvailableIn | C=Italian | D=Guide | E=relationship | F=Additional Language" .
+
+dc:Italian  rdf:type  owl:NamedIndividual , dc:Language;
+        rdfs:label  "Italian" .
+
+dc:ChenOlderAdult  rdf:type  owl:NamedIndividual , dc:OlderAdult;
+        rdfs:label         "ChenOlderAdult";
+        dc:hasCondition    dc:LewyBodyDementia;
+        dc:isLocatedIn     dc:Victoria;
+        dc:nearbyRadiusKm  10.0;
+        ns1:sampleRow      "5. Sample data!A10:F10 | A=ChenOlderAdult | B=hasCondition | C=LewyBodyDementia | D=OlderAdult | E=relationship | F=additional older adult/ health condition example" , "5. Sample data!A68:F68 | A=ChenOlderAdult | B=isLocatedIn | C=Victoria | D=OlderAdult | E=relationship | F=Additional location example" .
+
+dc:JoeOlderAdult  rdf:type  owl:NamedIndividual , dc:OlderAdult;
+        rdfs:label      "JoeOlderAdult";
+        dc:isLocatedIn  dc:Victoria;
+        ns1:sampleRow   "5. Sample data!A66:F66 | A=JoeOlderAdult | B=isLocatedIn | C=Victoria | D=OlderAdult | E=relationship | F=CQ8-requires new relationship in stage 3" .
+
+dc:OlderAdult  rdf:type   owl:Class;
+        rdfs:comment      "An individual receiving care, living with cognitive decline or diagnosed dementia";
+        rdfs:label        "OlderAdult";
+        rdfs:subClassOf   dc:Person;
+        ns1:sourceCell    "2. Classes!A7:F7";
+        ns1:usedByCQ      "CQ1, CQ2, CQ3, CQ5, CQ6, CQ7, CQ8";
+        ns1:worksheetRow  "2. Classes!A7:F7 | A=OlderAdult | B=An individual receiving care, living with cognitive decline or diagnosed dementia | C=Person | D=CQ1, CQ2, CQ3, CQ5, CQ6, CQ7, CQ8 | E=[BLANK] | F=[BLANK]" .
+
+dc:Victoria  rdf:type  owl:NamedIndividual , dc:Location;
+        rdfs:label  "Victoria" .
+
+dc:LewyBodyCareGuide  rdf:type  owl:NamedIndividual , dc:Guide;
+        rdfs:label        "LewyBodyCareGuide";
+        dc:addresses      dc:LewyBodyDementia;
+        dc:isIntendedFor  dc:MeiCarer;
+        dc:isRelatedTo    dc:EatingDifficulty , dc:LewyBodyType;
+        dc:isReviewedBy   dc:DrNguyen;
+        ns1:sampleRow     "5. Sample data!A13:F13 | A=LewyBodyCareGuide | B=addresses | C=LewyBodyDementia | D=Guide | E=relationship | F=Additional Guide example" , "5. Sample data!A16:F16 | A=LewyBodyCareGuide | B=isRelatedTo | C=EatingDifficulty | D=Guide | E=relationship | F=Additional DailyTaskStruggling example" , "5. Sample data!A19:F19 | A=LewyBodyCareGuide | B=isReviewedBy | C=DrNguyen | D=Guide | E=relationship | F=Additional healthcare professional" , "5. Sample data!A22:F22 | A=LewyBodyCareGuide | B=isRelatedTo | C=LewyBodyType | D=Guide | E=relationship | F=Additional Dementia Type" .
+
+dc:LewyBodyDementia  rdf:type  owl:NamedIndividual , dc:HealthCondition;
+        rdfs:label     "LewyBodyDementia";
+        dc:hasSymptom  dc:VisualHallucination;
+        ns1:sampleRow  "5. Sample data!A41:F41 | A=LewyBodyDementia | B=hasSymptom | C=VisualHallucination | D=HealthCondition | E=relationship | F=Additional Symptom" .
+
+dc:MeiCarer  rdf:type  owl:NamedIndividual , dc:Carer;
+        rdfs:label     "MeiCarer";
+        dc:caresFor    dc:ChenOlderAdult;
+        ns1:sampleRow  "5. Sample data!A7:F7 | A=MeiCarer | B=caresFor | C=ChenOlderAdult | D=Carer | E=relationship | F=additional carer individual" .
+
+dc:EatingDifficulty  rdf:type  owl:NamedIndividual , dc:DailyTaskStruggling;
+        rdfs:label  "EatingDifficulty" .
+
+dc:LewyBodyType  rdf:type  dc:DementiaType , owl:NamedIndividual;
+        rdfs:label  "LewyBodyType" .
+
+dc:DrNguyen  rdf:type  owl:NamedIndividual , dc:HealthcareProfessional;
+        rdfs:label  "DrNguyen" .
+
+dc:LewyBodySymptomsGuide
+        rdf:type              owl:NamedIndividual , dc:Guide;
+        rdfs:label            "LewyBodySymptomsGuide";
+        dc:describes          dc:VisualHallucination;
+        dc:isGovernedBy       dc:SupportPrivacyPolicy;
+        dc:isIntendedFor      dc:ChenOlderAdult;
+        dc:publishedOn        "2026-04-20"^^xsd:date;
+        dc:supportsLargeText  false;
+        ns1:sampleRow         "5. Sample data!A44:F44 | A=LewyBodySymptomsGuide | B=describes | C=VisualHallucination | D=Guide | E=relationship | F=Additional Symptom/ Guide example" , "5. Sample data!A47:F47 | A=LewyBodySymptomsGuide | B=isGovernedBy | C=SupportPrivacyPolicy | D=Guide | E=relationship | F=[BLANK]" , "5. Sample data!A50:F50 | A=LewyBodySymptomsGuide | B=isIntendedFor | C=ChenOlderAdult | D=Guide | E=relationship | F=Additional Older adult- targetted guide" , "5. Sample data!A53:F53 | A=LewyBodySymptomsGuide | B=publishedOn | C=2026-04-20 | D=Guide | E=attribute | F=CQ6 comparison" , "5. Sample data!A56:F56 | A=LewyBodySymptomsGuide | B=supportsLargeText | C=False | D=Guide | E=attribute | F=CQ6" .
+
+dc:describes  rdf:type      owl:ObjectProperty;
+        rdfs:domain         dc:Guide;
+        rdfs:label          "describes";
+        rdfs:range          dc:Symptom;
+        rdfs:subPropertyOf  dc:isRelatedTo;
+        ns1:character       "inverse";
+        ns1:inverseName     "isDescribedIn";
+        ns1:readAloud       "a Guide describes a Symptom";
+        ns1:sourceCell      "3. Relationships!A15:G15";
+        ns1:usedByCQ        "CQ5, CQ6";
+        ns1:worksheetRow    "3. Relationships!A15:G15 | A=Guide | B=describes | C=Symptom | D=isDescribedIn | E=inverse | F=CQ5, CQ6 | G=a Guide describes a Symptom";
+        owl:inverseOf       dc:isDescribedIn .
+
+dc:SupportPrivacyPolicy
+        rdf:type                      owl:NamedIndividual , dc:PrivacyPolicy;
+        rdfs:label                    "SupportPrivacyPolicy";
+        dc:requiresPersonalInformationForSearch
+                true;
+        dc:searchRequirementEvidence  "Support Privacy Policy, section 2: contact form requires name and email" .
+
+dc:MelbourneCareCentre
+        rdf:type           dc:CareCentre , owl:NamedIndividual;
+        rdfs:label         "MelbourneCareCentre";
+        dc:distanceKm      8.0;
+        dc:hasStaffMember  dc:LiChen;
+        dc:isLocatedIn     dc:Victoria;
+        ns1:sampleRow      "5. Sample data!A69:F69 | A=MelbourneCareCentre | B=isLocatedIn | C=Victoria | D=CareCentre | E=relationship | F=CQ8" , "5. Sample data!A72:F72 | A=MelbourneCareCentre | B=hasStaffMember | C=LiChen | D=CareCentre | E=relationship | F=CQ8" .
+
+dc:LiChen  rdf:type        owl:NamedIndividual , dc:StaffMember;
+        rdfs:label         "LiChen";
+        dc:speaksLanguage  dc:Chinese;
+        ns1:sampleRow      "5. Sample data!A75:F75 | A=LiChen | B=speaksLanguage | C=Chinese | D=StaffMember | E=relationship | F=CQ8" .
+
+dc:MemorySupportNSW  rdf:type   owl:NamedIndividual , dc:SupportService;
+        rdfs:label              "MemorySupportNSW";
+        dc:distanceKm           20.0;
+        dc:isLocatedIn          dc:NSW;
+        dc:isReliable           false;
+        dc:phoneNumber          "1800 100 502";
+        dc:reliabilityEvidence  "No current listing in a verified service directory, 2026";
+        dc:supportsCondition    dc:AlzheimersDementia;
+        ns1:sampleRow           "5. Sample data!A27:F27 | A=MemorySupportNSW | B=supportsCondition | C=AlzheimersDementia | D=SupportService | E=relationship | F=CQ3, allows counting" , "5. Sample data!A30:F30 | A=MemorySupportNSW | B=isLocatedIn | C=NSW | D=SupportService | E=relationship | F=CQ3" .
+
+dc:OlderAdultGuide  rdf:type  owl:Class;
+        rdfs:comment         "A Guide whose intended audience includes an OlderAdult. Defined class: membership is entailed from isIntendedFor, never asserted.";
+        rdfs:label           "OlderAdultGuide";
+        ns1:axiomCQ          "CQ6, CQ7";
+        owl:equivalentClass  [ rdf:type            owl:Class;
+                               owl:intersectionOf  ( dc:Guide
+                                                     [ rdf:type            owl:Restriction;
+                                                       owl:onProperty      dc:isIntendedFor;
+                                                       owl:someValuesFrom  dc:OlderAdult
+                                                     ]
+                                                   )
+                             ] .
+
+dc:PracticalCarerGuide
+        rdf:type                owl:NamedIndividual , dc:Guide;
+        rdfs:label              "PracticalCarerGuide";
+        dc:isAvailableInFormat  dc:HTML;
+        dc:isIntendedFor        dc:MeiCarer;
+        ns1:sampleRow           "5. Sample data!A33:F33 | A=PracticalCarerGuide | B=isIntendedFor | C=MeiCarer | D=Guide | E=relationship | F=Additional carer-targetted guide" , "5. Sample data!A36:F36 | A=PracticalCarerGuide | B=isAvailableInFormat | C=HTML | D=Guide | E=relationship | F=Additional document format" .
+
+dc:HTML  rdf:type   owl:NamedIndividual , dc:DocumentFormat;
+        rdfs:label  "HTML" .
+
+dc:ProfessionallyReviewedGuide
+        rdf:type             owl:Class;
+        rdfs:comment         "A Guide signed off by a healthcare professional. Defined class: membership is entailed from isReviewedBy, never asserted.";
+        rdfs:label           "ProfessionallyReviewedGuide";
+        ns1:axiomCQ          "CQ2";
+        owl:equivalentClass  [ rdf:type            owl:Class;
+                               owl:intersectionOf  ( dc:Guide
+                                                     [ rdf:type            owl:Restriction;
+                                                       owl:onProperty      dc:isReviewedBy;
+                                                       owl:someValuesFrom  dc:HealthcareProfessional
+                                                     ]
+                                                   )
+                             ] .
+
+dc:HealthcareProfessional
+        rdf:type          owl:Class;
+        rdfs:comment      "A credentialed medical practitioner or clinician who reviews and validates content";
+        rdfs:label        "HealthcareProfessional";
+        rdfs:seeAlso      schema:Physician;
+        rdfs:subClassOf   dc:Person;
+        ns1:reuseReason   "Establishes clinical governance and accountability for published care guidelines.";
+        ns1:reusedFrom    "https://schema.org/Physician";
+        ns1:sourceCell    "2. Classes!A8:F8";
+        ns1:usedByCQ      "CQ2";
+        ns1:worksheetRow  "2. Classes!A8:F8 | A=HealthcareProfessional | B=A credentialed medical practitioner or clinician who reviews and validates content | C=Person | D=CQ2 | E=https://schema.org/Physician | F=Establishes clinical governance and accountability for published care guidelines." .
+
+dc:SydneyCareCentre  rdf:type  dc:CareCentre , owl:NamedIndividual;
+        rdfs:label         "SydneyCareCentre";
+        dc:distanceKm      880.0;
+        dc:hasStaffMember  dc:AnnaWong;
+        dc:isLocatedIn     dc:NSW;
+        ns1:sampleRow      "5. Sample data!A70:F70 | A=SydneyCareCentre | B=isLocatedIn | C=NSW | D=CareCentre | E=relationship | F=Additional care centre" , "5. Sample data!A73:F73 | A=SydneyCareCentre | B=hasStaffMember | C=AnnaWong | D=CareCentre | E=relationship | F=Additional StaffMember" .
+
+dc:AnnaWong  rdf:type      owl:NamedIndividual , dc:StaffMember;
+        rdfs:label         "AnnaWong";
+        dc:speaksLanguage  dc:English;
+        ns1:sampleRow      "5. Sample data!A76:F76 | A=AnnaWong | B=speaksLanguage | C=English | D=StaffMember | E=relationship | F=Additional Language example" .
+
+dc:SymptomsGuide  rdf:type    owl:NamedIndividual , dc:Guide;
+        rdfs:label            "SymptomsGuide";
+        dc:describes          dc:MemoryLoss;
+        dc:isGovernedBy       dc:DigitalCarePrivacyPolicy;
+        dc:isIntendedFor      dc:MaryOlderAdult;
+        dc:isRelatedTo        dc:AlzheimerType;
+        dc:publishedOn        "2026-08-01"^^xsd:date;
+        dc:supportsLargeText  true;
+        ns1:sampleRow         "5. Sample data!A42:F42 | A=SymptomsGuide | B=describes | C=MemoryLoss | D=Guide | E=relationship | F=CQ5,CQ6" , "5. Sample data!A45:F45 | A=SymptomsGuide | B=isGovernedBy | C=DigitalCarePrivacyPolicy | D=Guide | E=relationship | F=CQ5" , "5. Sample data!A48:F48 | A=SymptomsGuide | B=isIntendedFor | C=MaryOlderAdult | D=Guide | E=relationship | F=CQ6-Older Adult/ audience" , "5. Sample data!A51:F51 | A=SymptomsGuide | B=publishedOn | C=2026-08-01 | D=Guide | E=attribute | F=CQ6-required for 'most recently'" , "5. Sample data!A54:F54 | A=SymptomsGuide | B=supportsLargeText | C=True | D=Guide | E=attribute | F=CQ6-if Stage 4 includes this" .
+
+dc:VascularCareGuide  rdf:type  owl:NamedIndividual , dc:Guide;
+        rdfs:label        "VascularCareGuide";
+        dc:addresses      dc:VascularDementia;
+        dc:isIntendedFor  dc:DavidCarer;
+        dc:isRelatedTo    dc:DressingDifficulty , dc:VascularType;
+        dc:isReviewedBy   dc:DrPatel;
+        ns1:sampleRow     "5. Sample data!A12:F12 | A=VascularCareGuide | B=addresses | C=VascularDementia | D=Guide | E=relationship | F=Additional Guide example" , "5. Sample data!A15:F15 | A=VascularCareGuide | B=isRelatedTo | C=DressingDifficulty | D=Guide | E=relationship | F=Additional DailyTaskStruggling example" , "5. Sample data!A18:F18 | A=VascularCareGuide | B=isReviewedBy | C=DrPatel | D=Guide | E=relationship | F=Additional healthcare professional" , "5. Sample data!A21:F21 | A=VascularCareGuide | B=isRelatedTo | C=VascularType | D=Guide | E=relationship | F=Additional Dementia Type" .
+
+dc:VascularDementia  rdf:type  owl:NamedIndividual , dc:HealthCondition;
+        rdfs:label     "VascularDementia";
+        dc:hasSymptom  dc:Confusion;
+        ns1:sampleRow  "5. Sample data!A40:F40 | A=VascularDementia | B=hasSymptom | C=Confusion | D=HealthCondition | E=relationship | F=Additional Symptom" .
+
+dc:DressingDifficulty
+        rdf:type    owl:NamedIndividual , dc:DailyTaskStruggling;
+        rdfs:label  "DressingDifficulty" .
+
+dc:VascularType  rdf:type  dc:DementiaType , owl:NamedIndividual;
+        rdfs:label  "VascularType" .
+
+dc:DrPatel  rdf:type  owl:NamedIndividual , dc:HealthcareProfessional;
+        rdfs:label  "DrPatel" .
+
+dc:VascularSymptomsGuide
+        rdf:type              owl:NamedIndividual , dc:Guide;
+        rdfs:label            "VascularSymptomsGuide";
+        dc:describes          dc:Confusion;
+        dc:isGovernedBy       dc:DigitalCarePrivacyPolicy;
+        dc:isIntendedFor      dc:RobertOlderAdult;
+        dc:publishedOn        "2026-06-15"^^xsd:date;
+        dc:supportsLargeText  true;
+        ns1:sampleRow         "5. Sample data!A43:F43 | A=VascularSymptomsGuide | B=describes | C=Confusion | D=Guide | E=relationship | F=Additional Symptom/ Guide example" , "5. Sample data!A46:F46 | A=VascularSymptomsGuide | B=isGovernedBy | C=DigitalCarePrivacyPolicy | D=Guide | E=relationship | F=Additional privacy policy" , "5. Sample data!A49:F49 | A=VascularSymptomsGuide | B=isIntendedFor | C=RobertOlderAdult | D=Guide | E=relationship | F=Additional Older adult- targetted guide" , "5. Sample data!A52:F52 | A=VascularSymptomsGuide | B=publishedOn | C=2026-06-15 | D=Guide | E=attribute | F=CQ6 comparison" , "5. Sample data!A55:F55 | A=VascularSymptomsGuide | B=supportsLargeText | C=True | D=Guide | E=attribute | F=CQ6" .
+
+ns1:character  rdf:type  owl:AnnotationProperty;
+        rdfs:label  "character" .
+
+ns1:inverseName  rdf:type  owl:AnnotationProperty;
+        rdfs:label  "inverseName" .
+
+ns1:readAloud  rdf:type  owl:AnnotationProperty;
+        rdfs:label  "readAloud" .
+
+ns1:sourceCell  rdf:type  owl:AnnotationProperty;
+        rdfs:label  "sourceCell" .
+
+ns1:usedByCQ  rdf:type  owl:AnnotationProperty;
+        rdfs:label  "usedByCQ" .
+
+ns1:worksheetRow  rdf:type  owl:AnnotationProperty;
+        rdfs:label  "worksheetRow" .
+
+dc:HealthCondition  rdf:type  owl:Class;
+        rdfs:comment      "Specifying the health condition(s) of a patient, medical study, or other target audience.";
+        rdfs:label        "HealthCondition";
+        rdfs:seeAlso      schema:MedicalCondition;
+        rdfs:subClassOf   dc:InformationTopic;
+        ns1:reuseReason   "Provides a recognised medical meaning for symptoms.";
+        ns1:reusedFrom    "https://schema.org/MedicalCondition";
+        ns1:sourceCell    "2. Classes!A11:F11";
+        ns1:usedByCQ      "CQ1, CQ2, CQ3, CQ5, CQ6, CQ7";
+        ns1:worksheetRow  "2. Classes!A11:F11 | A=HealthCondition | B=Specifying the health condition(s) of a patient, medical study, or other target audience. | C=InformationTopic | D=CQ1, CQ2, CQ3, CQ5, CQ6, CQ7 | E=https://schema.org/MedicalCondition | F=Provides a recognised medical meaning for symptoms.";
+        owl:disjointWith  dc:Symptom .
+
+dc:isAddressedIn  rdf:type  owl:ObjectProperty;
+        rdfs:label  "isAddressedIn" .
+
+dc:caresForSomeoneWith
+        rdf:type                owl:ObjectProperty;
+        rdfs:comment            "Shortcut from a Carer to the health condition of the person they care for. Entailed by caresFor o hasCondition; never asserted directly.";
+        rdfs:domain             dc:Carer;
+        rdfs:label              "caresForSomeoneWith";
+        rdfs:range              dc:HealthCondition;
+        ns1:axiomCQ             "CQ1, CQ2";
+        ns1:character           "none";
+        ns1:readAloud           "a Carer caresForSomeoneWith a HealthCondition";
+        ns1:usedByCQ            "CQ1, CQ2";
+        owl:propertyChainAxiom  ( dc:caresFor dc:hasCondition ) .
+
+dc:caresFor  rdf:type     owl:ObjectProperty;
+        rdfs:domain       dc:Carer;
+        rdfs:label        "caresFor";
+        rdfs:range        dc:OlderAdult;
+        ns1:character     "none";
+        ns1:readAloud     "a Carer caresFor a OlderAdult";
+        ns1:sourceCell    "3. Relationships!A5:G5";
+        ns1:usedByCQ      "CQ1, CQ2, CQ3";
+        ns1:worksheetRow  "3. Relationships!A5:G5 | A=Carer | B=caresFor | C=OlderAdult | D=[BLANK] | E=none | F=CQ1, CQ2, CQ3 | G=a Carer caresFor a OlderAdult" .
+
+dc:hasCondition  rdf:type  owl:ObjectProperty;
+        rdfs:domain       dc:OlderAdult;
+        rdfs:label        "hasCondition";
+        rdfs:range        dc:HealthCondition;
+        ns1:character     "none";
+        ns1:readAloud     "a OlderAdult hasCondition a healthCondition";
+        ns1:sourceCell    "3. Relationships!A6:G6";
+        ns1:usedByCQ      "CQ1, CQ2, CQ3, CQ6";
+        ns1:worksheetRow  "3. Relationships!A6:G6 | A=OlderAdult | B=hasCondition | C=HealthCondition | D=[BLANK] | E=none | F=CQ1, CQ2, CQ3, CQ6 | G=a OlderAdult hasCondition a healthCondition" .
+
+dc:centreName  rdf:type   owl:DatatypeProperty;
+        rdfs:domain       dc:CareCentre;
+        rdfs:label        "centreName";
+        rdfs:range        xsd:string;
+        ns1:exampleValue  "St Vincent's Health Australia";
+        ns1:sourceCell    "4. Attributes!A23:E23";
+        ns1:usedByCQ      "CQ8";
+        ns1:worksheetRow  "4. Attributes!A23:E23 | A=CareCentre | B=centreName | C=xsd:string | D=St Vincent's Health Australia | E=CQ8" .
+
+ns1:exampleValue  rdf:type  owl:AnnotationProperty;
+        rdfs:label  "exampleValue" .
+
+dc:conditionName  rdf:type  owl:DatatypeProperty;
+        rdfs:domain       dc:HealthCondition;
+        rdfs:label        "conditionName";
+        rdfs:range        xsd:string;
+        ns1:exampleValue  "Dementia";
+        ns1:sourceCell    "4. Attributes!A8:E8";
+        ns1:usedByCQ      "CQ1, CQ2, CQ3, CQ5, CQ6, CQ7";
+        ns1:worksheetRow  "4. Attributes!A8:E8 | A=HealthCondition | B=conditionName | C=xsd:string | D=Dementia | E=CQ1, CQ2, CQ3, CQ5, CQ6, CQ7" .
+
+dc:Symptom  rdf:type      owl:Class;
+        rdfs:comment      "An observable cognitive, behavioral, or physical manifestation of a condition";
+        rdfs:label        "Symptom";
+        rdfs:subClassOf   dc:InformationTopic;
+        ns1:sourceCell    "2. Classes!A14:F14";
+        ns1:usedByCQ      "CQ5, CQ6, CQ9";
+        ns1:worksheetRow  "2. Classes!A14:F14 | A=Symptom | B=An observable cognitive, behavioral, or physical manifestation of a condition | C=InformationTopic | D=CQ5, CQ6, CQ9 | E=[BLANK] | F=[BLANK]" .
+
+dc:isDescribedIn  rdf:type  owl:ObjectProperty;
+        rdfs:label  "isDescribedIn" .
+
+dc:difficultyDescription
+        rdf:type          owl:DatatypeProperty;
+        rdfs:domain       dc:DailyTaskStruggling;
+        rdfs:label        "difficultyDescription";
+        rdfs:range        xsd:string;
+        ns1:exampleValue  "Difficulty managing medication";
+        ns1:sourceCell    "4. Attributes!A11:E11";
+        ns1:usedByCQ      "CQ1";
+        ns1:worksheetRow  "4. Attributes!A11:E11 | A=DailyTaskStruggling | B=difficultyDescription | C=xsd:string | D=Difficulty managing medication | E=CQ1" .
+
+dc:DailyTaskStruggling
+        rdf:type          owl:Class;
+        rdfs:comment      "Struggling to complete routine activities like cooking, driving, or managing medications.";
+        rdfs:label        "DailyTaskStruggling";
+        rdfs:subClassOf   dc:Symptom;
+        ns1:sourceCell    "2. Classes!A15:F15";
+        ns1:usedByCQ      "CQ1";
+        ns1:worksheetRow  "2. Classes!A15:F15 | A=DailyTaskStruggling | B=Struggling to complete routine activities like cooking, driving, or managing medications. | C=Symptom | D=CQ1 | E=[BLANK] | F=[BLANK]" .
+
+dc:displayName  rdf:type  owl:DatatypeProperty;
+        rdfs:domain       dc:Person;
+        rdfs:label        "displayName";
+        rdfs:range        xsd:string;
+        ns1:exampleValue  "Joe";
+        ns1:sourceCell    "4. Attributes!A5:E5";
+        ns1:usedByCQ      "CQ1–CQ8";
+        ns1:worksheetRow  "4. Attributes!A5:E5 | A=Person | B=displayName | C=xsd:string | D=Joe | E=CQ1–CQ8" .
+
+dc:Person  rdf:type       owl:Class;
+        rdfs:comment      "An individual human actor interacting with or referenced in the care system";
+        rdfs:label        "Person";
+        rdfs:seeAlso      schema:Person;
+        ns1:reuseReason   "Provides a standard general class for people.                                                                                                                                                                                               ";
+        ns1:reusedFrom    "https://schema.org/Person";
+        ns1:sourceCell    "2. Classes!A5:F5";
+        ns1:usedByCQ      "CQ1, CQ2, CQ3, CQ4, CQ5, CQ6, CQ7, CQ8, CQ9";
+        ns1:worksheetRow  "2. Classes!A5:F5 | A=Person | B=An individual human actor interacting with or referenced in the care system | C=[BLANK] | D=CQ1, CQ2, CQ3, CQ4, CQ5, CQ6, CQ7, CQ8, CQ9 | E=https://schema.org/Person | F=Provides a standard general class for people." .
+
+dc:Organization  rdf:type  owl:Class;
+        rdfs:comment      "An organisation responsible for a support service or care centre.";
+        rdfs:label        "Organization";
+        rdfs:seeAlso      schema:Organization;
+        ns1:reuseReason   "Provides a standard class for service providers.";
+        ns1:reusedFrom    "https://schema.org/Organization";
+        ns1:sourceCell    "2. Classes!A17:F17";
+        ns1:usedByCQ      "CQ3, CQ8";
+        ns1:worksheetRow  "2. Classes!A17:F17 | A=Organization | B=An organisation responsible for a support service or care centre. | C=[BLANK] | D=CQ3, CQ8 | E=https://schema.org/Organization | F=Provides a standard class for service providers." .
+
+dc:downloadURL  rdf:type        owl:DatatypeProperty;
+        rdfs:domain             dc:Guide;
+        rdfs:label              "downloadURL";
+        rdfs:range              xsd:anyURI;
+        ns1:exampleValueStatus  "blank";
+        ns1:sourceCell          "4. Attributes!A18:E18";
+        ns1:usedByCQ            "CQ4";
+        ns1:worksheetRow        "4. Attributes!A18:E18 | A=Guide | B=downloadURL | C=xsd:anyURI | D=[BLANK] | E=CQ4" .
+
+ns1:exampleValueStatus
+        rdf:type    owl:AnnotationProperty;
+        rdfs:label  "exampleValueStatus" .
+
+dc:formatName  rdf:type   owl:DatatypeProperty;
+        rdfs:domain       dc:DocumentFormat;
+        rdfs:label        "formatName";
+        rdfs:range        xsd:string;
+        ns1:exampleValue  "PDF";
+        ns1:sourceCell    "4. Attributes!A27:E27";
+        ns1:usedByCQ      "CQ4";
+        ns1:worksheetRow  "4. Attributes!A27:E27 | A=DocumentFormat | B=formatName | C=xsd:string | D=PDF | E=CQ4" .
+
+dc:DocumentFormat  rdf:type  owl:Class;
+        rdfs:comment      "The format in which a guide is provided, such as PDF.";
+        rdfs:label        "DocumentFormat";
+        ns1:sourceCell    "2. Classes!A22:F22";
+        ns1:usedByCQ      "CQ4";
+        ns1:worksheetRow  "2. Classes!A22:F22 | A=DocumentFormat | B=The format in which a guide is provided, such as PDF. | C=[BLANK] | D=CQ4 | E=[BLANK] | F=[BLANK]" .
+
+dc:formatType  rdf:type   owl:DatatypeProperty;
+        rdfs:domain       dc:DocumentFormat;
+        rdfs:label        "formatType";
+        rdfs:range        xsd:string;
+        ns1:exampleValue  "application/pdf";
+        ns1:sourceCell    "4. Attributes!A28:E28";
+        ns1:usedByCQ      "CQ4";
+        ns1:worksheetRow  "4. Attributes!A28:E28 | A=DocumentFormat | B=formatType | C=xsd:string | D=application/pdf | E=CQ4" .
+
+dc:StaffMember  rdf:type  owl:Class;
+        rdfs:comment      "A healthcare or administrative worker employed at an operating community care facility";
+        rdfs:label        "StaffMember";
+        rdfs:seeAlso      schema:EmployeeRole;
+        rdfs:subClassOf   dc:Person;
+        ns1:reuseReason   "Enables service directory queries based on individual staff competencies (e.g. spoken languages).";
+        ns1:reusedFrom    "https://schema.org/EmployeeRole";
+        ns1:sourceCell    "2. Classes!A9:F9";
+        ns1:usedByCQ      "CQ8";
+        ns1:worksheetRow  "2. Classes!A9:F9 | A=StaffMember | B=A healthcare or administrative worker employed at an operating community care facility | C=Person | D=CQ8 | E=https://schema.org/EmployeeRole | F=Enables service directory queries based on individual staff competencies (e.g. spoken languages)." .
+
+dc:hasSymptom  rdf:type   owl:ObjectProperty;
+        rdfs:domain       dc:HealthCondition;
+        rdfs:label        "hasSymptom";
+        rdfs:range        dc:Symptom;
+        ns1:character     "none";
+        ns1:readAloud     "a HealthCondition hasSymptom a Symptom";
+        ns1:sourceCell    "3. Relationships!A14:G14";
+        ns1:usedByCQ      "CQ5, CQ6";
+        ns1:worksheetRow  "3. Relationships!A14:G14 | A=HealthCondition | B=hasSymptom | C=Symptom | D=[BLANK] | E=none | F=CQ5, CQ6 | G=a HealthCondition hasSymptom a Symptom" .
+
+dc:Language  rdf:type     owl:Class;
+        rdfs:comment      "A formal spoken or written natural language (e.g., Mandarin, English)";
+        rdfs:label        "Language";
+        ns1:sourceCell    "2. Classes!A21:F21";
+        ns1:usedByCQ      "CQ7, CQ8";
+        ns1:worksheetRow  "2. Classes!A21:F21 | A=Language | B=A formal spoken or written natural language (e.g., Mandarin, English) | C=[BLANK] | D=CQ7, CQ8 | E=[BLANK] | F=[BLANK]" .
+
+dc:PrivacyPolicy  rdf:type  owl:Class;
+        rdfs:comment      "A policy explaining how Digital Care handles personal information.";
+        rdfs:label        "PrivacyPolicy";
+        ns1:sourceCell    "2. Classes!A23:F23";
+        ns1:usedByCQ      "CQ5";
+        ns1:worksheetRow  "2. Classes!A23:F23 | A=PrivacyPolicy | B=A policy explaining how Digital Care handles personal information. | C=[BLANK] | D=CQ5 | E=[BLANK] | F=[BLANK]" .
+
+dc:Location  rdf:type     owl:Class;
+        rdfs:comment      "The region in which the locality is, and which is in the country. ";
+        rdfs:label        "Location";
+        rdfs:seeAlso      schema:PostalAddress;
+        ns1:reuseReason   "Represents service areas using an established geographical concept.";
+        ns1:reusedFrom    "https://schema.org/PostalAddress";
+        ns1:sourceCell    "2. Classes!A20:F20";
+        ns1:usedByCQ      "CQ3, CQ8";
+        ns1:worksheetRow  "2. Classes!A20:F20 | A=Location | B=The region in which the locality is, and which is in the country.  | C=[BLANK] | D=CQ3, CQ8 | E=https://schema.org/PostalAddress | F=Represents service areas using an established geographical concept." .
+
+dc:isSupportedBy  rdf:type  owl:ObjectProperty;
+        rdfs:label     "isSupportedBy";
+        owl:inverseOf  dc:supportsCondition .
+
+dc:languageName  rdf:type  owl:DatatypeProperty;
+        rdfs:domain       dc:Language;
+        rdfs:label        "languageName";
+        rdfs:range        xsd:string;
+        ns1:exampleValue  "Chinese";
+        ns1:sourceCell    "4. Attributes!A26:E26";
+        ns1:usedByCQ      "CQ7, CQ8";
+        ns1:worksheetRow  "4. Attributes!A26:E26 | A=Language | B=languageName | C=xsd:string | D=Chinese | E=CQ7, CQ8" .
+
+dc:lastReviewedOn  rdf:type  owl:DatatypeProperty;
+        rdfs:domain       dc:Guide;
+        rdfs:label        "lastReviewedOn";
+        rdfs:range        xsd:date;
+        ns1:exampleValue  "2026-07-20";
+        ns1:sourceCell    "4. Attributes!A14:E14";
+        ns1:usedByCQ      "CQ2";
+        ns1:worksheetRow  "4. Attributes!A14:E14 | A=Guide | B=lastReviewedOn | C=xsd:date | D=2026-07-20 | E=CQ2" .
+
+xsd:date  rdf:type  rdfs:Datatype .
+
+dc:nearbyRadiusKm  rdf:type  owl:DatatypeProperty;
+        rdfs:domain       dc:OlderAdult;
+        rdfs:label        "Older adult's chosen nearby radius (km)";
+        rdfs:range        xsd:decimal;
+        ns1:exampleValue  10.0;
+        ns1:sourceCell    "4. Attributes!A36:E36";
+        ns1:usedByCQ      "CQ8";
+        ns1:worksheetRow  "4. Attributes!A36:E36 | A=OlderAdult | B=nearbyRadiusKm | C=xsd:decimal | D=10 | E=CQ8" .
+
+dc:organizationName  rdf:type  owl:DatatypeProperty;
+        rdfs:domain       dc:Organization;
+        rdfs:label        "organizationName";
+        rdfs:range        xsd:string;
+        ns1:exampleValue  "Dementia Australia";
+        ns1:sourceCell    "4. Attributes!A20:E20";
+        ns1:usedByCQ      "CQ3, CQ8";
+        ns1:worksheetRow  "4. Attributes!A20:E20 | A=Organization | B=organizationName | C=xsd:string | D=Dementia Australia | E=CQ3, CQ8" .
+
+dc:policyURL  rdf:type          owl:DatatypeProperty;
+        rdfs:domain             dc:PrivacyPolicy;
+        rdfs:label              "policyURL";
+        rdfs:range              xsd:anyURI;
+        ns1:exampleValueStatus  "blank";
+        ns1:sourceCell          "4. Attributes!A29:E29";
+        ns1:usedByCQ            "CQ5";
+        ns1:worksheetRow        "4. Attributes!A29:E29 | A=PrivacyPolicy | B=policyURL | C=xsd:anyURI | D=[BLANK] | E=CQ5" .
+
+dc:postcode  rdf:type     owl:DatatypeProperty;
+        rdfs:domain       dc:Location;
+        rdfs:label        "postcode";
+        rdfs:range        xsd:string;
+        ns1:exampleValue  "3000";
+        ns1:sourceCell    "4. Attributes!A25:E25";
+        ns1:usedByCQ      "CQ3, CQ8";
+        ns1:worksheetRow  "4. Attributes!A25:E25 | A=Location | B=postcode | C=xsd:string | D=3000 | E=CQ3, CQ8" .
+
+dc:professionalRole  rdf:type  owl:DatatypeProperty;
+        rdfs:domain       dc:HealthcareProfessional;
+        rdfs:label        "professionalRole";
+        rdfs:range        xsd:string;
+        ns1:exampleValue  "Geriatrician";
+        ns1:sourceCell    "4. Attributes!A6:E6";
+        ns1:usedByCQ      "CQ2";
+        ns1:worksheetRow  "4. Attributes!A6:E6 | A=HealthcareProfessional | B=professionalRole | C=xsd:string | D=Geriatrician | E=CQ2" .
+
+dc:readingLevel  rdf:type  owl:DatatypeProperty;
+        rdfs:domain       dc:Guide;
+        rdfs:label        "readingLevel";
+        rdfs:range        xsd:string;
+        ns1:exampleValue  "Plain English";
+        ns1:sourceCell    "4. Attributes!A15:E15";
+        ns1:usedByCQ      "CQ1";
+        ns1:worksheetRow  "4. Attributes!A15:E15 | A=Guide | B=readingLevel | C=xsd:string | D=Plain English | E=CQ1" .
+
+dc:regionName  rdf:type   owl:DatatypeProperty;
+        rdfs:domain       dc:Location;
+        rdfs:label        "regionName";
+        rdfs:range        xsd:string;
+        ns1:exampleValue  "Victoria";
+        ns1:sourceCell    "4. Attributes!A24:E24";
+        ns1:usedByCQ      "CQ3, CQ8";
+        ns1:worksheetRow  "4. Attributes!A24:E24 | A=Location | B=regionName | C=xsd:string | D=Victoria | E=CQ3, CQ8" .
+
+dc:requiresPersonalInformationForSearch
+        rdf:type          owl:DatatypeProperty;
+        rdfs:domain       dc:PrivacyPolicy;
+        rdfs:label        "Policy requires personal information to search";
+        rdfs:range        xsd:boolean;
+        ns1:exampleValue  false;
+        ns1:sourceCell    "4. Attributes!A33:E33";
+        ns1:usedByCQ      "CQ5";
+        ns1:worksheetRow  "4. Attributes!A33:E33 | A=PrivacyPolicy | B=requiresPersonalInformationForSearch | C=xsd:boolean | D=False | E=CQ5" .
+
+dc:searchRequirementEvidence
+        rdf:type          owl:DatatypeProperty;
+        rdfs:domain       dc:PrivacyPolicy;
+        rdfs:label        "Source for the search requirement";
+        rdfs:range        xsd:string;
+        ns1:exampleValue  "Digital Care Privacy Policy, section 3";
+        ns1:sourceCell    "4. Attributes!A34:E34";
+        ns1:usedByCQ      "CQ5";
+        ns1:worksheetRow  "4. Attributes!A34:E34 | A=PrivacyPolicy | B=searchRequirementEvidence | C=xsd:string | D=Digital Care Privacy Policy, section 3 | E=CQ5" .
+
+dc:serviceName  rdf:type  owl:DatatypeProperty;
+        rdfs:domain       dc:SupportService;
+        rdfs:label        "serviceName";
+        rdfs:range        xsd:string;
+        ns1:exampleValue  "Dementia Australia Helpline";
+        ns1:sourceCell    "4. Attributes!A21:E21";
+        ns1:usedByCQ      "CQ3";
+        ns1:worksheetRow  "4. Attributes!A21:E21 | A=SupportService | B=serviceName | C=xsd:string | D=Dementia Australia Helpline | E=CQ3" .
+
+dc:speaksLanguage  rdf:type  owl:ObjectProperty;
+        rdfs:domain       dc:StaffMember;
+        rdfs:label        "speaksLanguage";
+        rdfs:range        dc:Language;
+        ns1:character     "none";
+        ns1:readAloud     "a StaffMember speaksLanguage a Language";
+        ns1:sourceCell    "3. Relationships!A19:G19";
+        ns1:usedByCQ      "CQ8";
+        ns1:worksheetRow  "3. Relationships!A19:G19 | A=StaffMember | B=speaksLanguage | C=Language | D=[BLANK] | E=none | F=CQ8 | G=a StaffMember speaksLanguage a Language" .
+
+dc:staffRole  rdf:type    owl:DatatypeProperty;
+        rdfs:domain       dc:StaffMember;
+        rdfs:label        "staffRole";
+        rdfs:range        xsd:string;
+        ns1:exampleValue  "Dementia support worker";
+        ns1:sourceCell    "4. Attributes!A7:E7";
+        ns1:usedByCQ      "CQ8";
+        ns1:worksheetRow  "4. Attributes!A7:E7 | A=StaffMember | B=staffRole | C=xsd:string | D=Dementia support worker | E=CQ8" .
+
+dc:symptomName  rdf:type  owl:DatatypeProperty;
+        rdfs:domain       dc:Symptom;
+        rdfs:label        "symptomName";
+        rdfs:range        xsd:string;
+        ns1:exampleValue  "Short-term memory loss";
+        ns1:sourceCell    "4. Attributes!A10:E10";
+        ns1:usedByCQ      "CQ5, CQ6";
+        ns1:worksheetRow  "4. Attributes!A10:E10 | A=Symptom | B=symptomName | C=xsd:string | D=Short-term memory loss | E=CQ5, CQ6" .
+
+dc:typeDescription  rdf:type  owl:DatatypeProperty;
+        rdfs:domain       dc:DementiaType;
+        rdfs:label        "typeDescription";
+        rdfs:range        xsd:string;
+        ns1:exampleValue  "Alzheimer’s disease";
+        ns1:sourceCell    "4. Attributes!A9:E9";
+        ns1:usedByCQ      "CQ1, CQ2, CQ6, CQ7";
+        ns1:worksheetRow  "4. Attributes!A9:E9 | A=DementiaType | B=typeDescription | C=xsd:string | D=Alzheimer’s disease | E=CQ1, CQ2, CQ6, CQ7" .
+
+ns1:incompleteAssertion
+        rdf:type    owl:AnnotationProperty;
+        rdfs:label  "incompleteAssertion" .
+
+ns1:referenceOnly  rdf:type  owl:AnnotationProperty;
+        rdfs:label  "referenceOnly" .
+
+ns1:reuseReason  rdf:type  owl:AnnotationProperty;
+        rdfs:label  "reuseReason" .
+
+ns1:reusedFrom  rdf:type  owl:AnnotationProperty;
+        rdfs:label  "reusedFrom" .
+
+ns1:sampleOnly  rdf:type  owl:AnnotationProperty;
+        rdfs:label  "sampleOnly" .
+
+dc:isTargetAudienceOf
+        rdf:type    owl:ObjectProperty;
+        rdfs:label  "isTargetAudienceOf" .
+
+dc:InformationTopic  rdf:type  owl:Class;
+        rdfs:label        "InformationTopic";
+        ns1:sourceCell    "2. Classes!A10:F10";
+        ns1:usedByCQ      "CQ1, CQ2, CQ6, CQ7, CQ9";
+        ns1:worksheetRow  "2. Classes!A10:F10 | A=InformationTopic | B=A general topic or information need that a Guide can relate to | C=[BLANK] | D=CQ1, CQ2, CQ6, CQ7, CQ9 | E=[BLANK] | F=[BLANK]" .
+
+[ rdf:type             owl:AllDifferent;
+  owl:distinctMembers  ( dc:BathingDifficulty dc:Confusion dc:DressingDifficulty dc:EatingDifficulty dc:MemoryLoss dc:VisualHallucination )
+] .
+
+dc:TEST-Two-Direction-Guide-b78d34f6a08d498e911b21be8901e559
+        rdf:type          owl:NamedIndividual , dc:Guide;
+        rdfs:label        "TEST Two Direction Guide";
+        dc:isIntendedFor  dc:ChenOlderAdult;
+        dc:isRelatedTo    dc:AlzheimerType;
+        dc:publishedOn    "2026-09-23"^^xsd:date;
+        dc:title          "TEST Two Direction Guide" .

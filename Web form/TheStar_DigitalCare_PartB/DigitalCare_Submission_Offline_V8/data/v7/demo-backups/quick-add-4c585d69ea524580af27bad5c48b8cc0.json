@@ -1,0 +1,106 @@
+{
+  "dataset": "http://127.0.0.1:3032/digitalcare_submission_v7",
+  "createdAt": "2026-09-23T11:38:15.219508+00:00",
+  "plan": {
+    "cq": "CQ1",
+    "recordIri": "http://uow.edu.au/isit906/thestar/digitalcare#Demo-CQ1-4c585d69ea524580af27bad5c48b8cc0",
+    "recordLabel": "Dressing Care Guide",
+    "createdIndividuals": 1,
+    "ownedIris": [
+      "http://uow.edu.au/isit906/thestar/digitalcare#Demo-CQ1-4c585d69ea524580af27bad5c48b8cc0"
+    ],
+    "triples": "<http://uow.edu.au/isit906/thestar/digitalcare#Demo-CQ1-4c585d69ea524580af27bad5c48b8cc0> a dc:Guide, owl:NamedIndividual; rdfs:label \"Dressing Care Guide\"^^<http://www.w3.org/2001/XMLSchema#string>; rdfs:comment \"Fictional classroom demo data.\" .\n<http://uow.edu.au/isit906/thestar/digitalcare#Demo-CQ1-4c585d69ea524580af27bad5c48b8cc0> <http://uow.edu.au/isit906/thestar/digitalcare#title> \"Dressing Care Guide\"^^<http://www.w3.org/2001/XMLSchema#string> .\n<http://uow.edu.au/isit906/thestar/digitalcare#Demo-CQ1-4c585d69ea524580af27bad5c48b8cc0> <http://uow.edu.au/isit906/thestar/digitalcare#isIntendedFor> <http://uow.edu.au/isit906/thestar/digitalcare#SarahCarer> .\n<http://uow.edu.au/isit906/thestar/digitalcare#Demo-CQ1-4c585d69ea524580af27bad5c48b8cc0> <http://uow.edu.au/isit906/thestar/digitalcare#isRelatedTo> <http://uow.edu.au/isit906/thestar/digitalcare#DressingDifficulty> .\n<http://uow.edu.au/isit906/thestar/digitalcare#Demo-CQ1-4c585d69ea524580af27bad5c48b8cc0> <http://uow.edu.au/isit906/thestar/digitalcare#addresses> <http://uow.edu.au/isit906/thestar/digitalcare#AlzheimersDementia> .\n<http://uow.edu.au/isit906/thestar/digitalcare#Demo-CQ1-4c585d69ea524580af27bad5c48b8cc0> <http://uow.edu.au/isit906/thestar/digitalcare#readingLevel> \"Plain English\"^^<http://www.w3.org/2001/XMLSchema#string> .",
+    "guards": "<http://uow.edu.au/isit906/thestar/digitalcare#SarahCarer> rdf:type/rdfs:subClassOf* dc:Carer . \ndc:SarahCarer rdf:type/rdfs:subClassOf* dc:Carer; dc:caresFor <http://uow.edu.au/isit906/thestar/digitalcare#MaryOlderAdult> . <http://uow.edu.au/isit906/thestar/digitalcare#MaryOlderAdult> rdf:type/rdfs:subClassOf* dc:OlderAdult; dc:hasCondition <http://uow.edu.au/isit906/thestar/digitalcare#AlzheimersDementia> . <http://uow.edu.au/isit906/thestar/digitalcare#AlzheimersDementia> rdf:type/rdfs:subClassOf* dc:HealthCondition .\n<http://uow.edu.au/isit906/thestar/digitalcare#DressingDifficulty> rdf:type/rdfs:subClassOf* dc:DailyTaskStruggling . ",
+    "form": {
+      "cq": "CQ1",
+      "title": "Add a daily-care guide",
+      "summary": "Enter the fields below. Examples show what to enter.",
+      "ready": true,
+      "formVersion": 2,
+      "fields": [
+        {
+          "id": "name",
+          "label": "Guide title",
+          "type": "text",
+          "required": true,
+          "example": "My CQ1 demo",
+          "hint": "Enter the name you want to see in the answer.",
+          "maxLength": 150
+        },
+        {
+          "id": "audience",
+          "label": "Audience",
+          "type": "select",
+          "required": true,
+          "example": "SarahCarer",
+          "hint": "Choose SarahCarer for this demo.",
+          "options": [
+            {
+              "value": "http://uow.edu.au/isit906/thestar/digitalcare#DavidCarer",
+              "label": "DavidCarer"
+            },
+            {
+              "value": "http://uow.edu.au/isit906/thestar/digitalcare#MeiCarer",
+              "label": "MeiCarer"
+            },
+            {
+              "value": "http://uow.edu.au/isit906/thestar/digitalcare#SarahCarer",
+              "label": "SarahCarer"
+            }
+          ]
+        },
+        {
+          "id": "condition",
+          "label": "Condition",
+          "type": "select",
+          "required": true,
+          "example": "AlzheimersDementia",
+          "hint": "Choose the condition already recorded for the older adult in Sarah's scenario.",
+          "options": [
+            {
+              "value": "http://uow.edu.au/isit906/thestar/digitalcare#AlzheimersDementia",
+              "label": "AlzheimersDementia"
+            }
+          ]
+        },
+        {
+          "id": "dailyTask",
+          "label": "Daily task",
+          "type": "select",
+          "required": true,
+          "example": "BathingDifficulty",
+          "hint": "Choose a daily-care difficulty, for example BathingDifficulty.",
+          "options": [
+            {
+              "value": "http://uow.edu.au/isit906/thestar/digitalcare#BathingDifficulty",
+              "label": "BathingDifficulty"
+            },
+            {
+              "value": "http://uow.edu.au/isit906/thestar/digitalcare#DressingDifficulty",
+              "label": "DressingDifficulty"
+            },
+            {
+              "value": "http://uow.edu.au/isit906/thestar/digitalcare#EatingDifficulty",
+              "label": "EatingDifficulty"
+            }
+          ]
+        },
+        {
+          "id": "readingLevel",
+          "label": "Reading level",
+          "type": "text",
+          "required": true,
+          "example": "Easy (classroom example)",
+          "hint": "Type a reading level for your fictional guide.",
+          "maxLength": 150
+        }
+      ],
+      "context": [
+        "This question uses Sarah's recorded care relationship."
+      ]
+    }
+  },
+  "planHash": "2ea29726da766804ea5cab4aa61829be1f81b1326dc6f338ff511aedc2a6b166",
+  "inputHash": "983648cc6848749c0c3cb04dbfffd29483f153688a5608d2a334a8adbc679363",
+  "resetStamp": "2026-09-23T11:36:07.393113+00:00"
+}

@@ -1,0 +1,15 @@
+{
+  "fuseki": {
+    "version": "6.2.0",
+    "url": "https://dlcdn.apache.org/jena/binaries/apache-jena-fuseki-6.2.0.zip",
+    "sha512": "46e5d798faf80fe5f4b32318750071b9172315f9d86bb3aa3ba4d5e94abe2e21cd194eab349d491a203c934c6e59b370a671b338f2a413110e859dc628ffe934",
+    "jar": "runtime/apache-jena-fuseki-6.2.0/fuseki-server.jar"
+  },
+  "java": {
+    "version": "21.0.12+101.0.LTS",
+    "url": "https://github.com/adoptium/temurin21-binaries/releases/download/jdk-21.0.12.1%2B1/OpenJDK21U-jre_x64_windows_hotspot_21.0.12.1_1.zip",
+    "name": "OpenJDK21U-jre_x64_windows_hotspot_21.0.12.1_1.zip",
+    "sha256": "d35f31e712f0fcf6ac5a093edc90204fbff22f720ba3950bd09d331d5e621636",
+    "executable": "runtime/java/jdk-21.0.12.1+1-jre/bin/java.exe"
+  }
+}

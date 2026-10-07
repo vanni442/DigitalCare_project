@@ -1,0 +1,20 @@
+PREFIX dc: <http://uow.edu.au/isit906/thestar/digitalcare#>
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX owl: <http://www.w3.org/2002/07/owl#>
+
+# Only links whose endpoints are eligible for this Task 2 form.
+SELECT ?guide ?reviewer
+       (COALESCE(MIN(STR(?rawGuideLabel)), STRAFTER(STR(?guide), "#")) AS ?guideLabel)
+       (COALESCE(MIN(STR(?rawReviewerLabel)), STRAFTER(STR(?reviewer), "#")) AS ?reviewerLabel)
+WHERE {
+  ?guide rdf:type/rdfs:subClassOf* dc:Guide ; dc:isReviewedBy ?reviewer .
+  ?reviewer rdf:type/rdfs:subClassOf* dc:HealthcareProfessional .
+  FILTER(isIRI(?guide) && STRSTARTS(STR(?guide), "http://uow.edu.au/isit906/thestar/digitalcare#"))
+  FILTER(isIRI(?reviewer) && STRSTARTS(STR(?reviewer), "http://uow.edu.au/isit906/thestar/digitalcare#"))
+  OPTIONAL { ?guide rdfs:label ?rawGuideLabel }
+  OPTIONAL { ?reviewer rdfs:label ?rawReviewerLabel }
+}
+GROUP BY ?guide ?reviewer
+ORDER BY LCASE(?guideLabel) LCASE(?reviewerLabel) STR(?guide) STR(?reviewer)
+

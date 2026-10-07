@@ -1,0 +1,41 @@
+PREFIX dc: <http://uow.edu.au/isit906/thestar/digitalcare#>
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX owl: <http://www.w3.org/2002/07/owl#>
+
+# CQ2: Which dementia guides for carers about my mum's type of dementia
+# have been reviewed by a healthcare professional?
+# This is the V7 SarahCarer scenario, not a query across unrelated families.
+# The addressed condition is the SAME IRI as the older adult's condition.
+# Require a dementia-type link and a typed Carer audience to implement the
+# question's "dementia" and "for carers" restrictions without a reasoner.
+# V7 uses dc:SarahCarer as an intended audience; accept any explicitly typed Carer audience.
+# Read the explicit review edge; do not require an inferred ProfessionallyReviewedGuide type.
+SELECT
+  (COALESCE(MIN(STR(?carerLabel)), STRAFTER(STR(?carerRecord), "#")) AS ?carer)
+  (COALESCE(MIN(STR(?adultLabel)), STRAFTER(STR(?adultRecord), "#")) AS ?olderAdult)
+  (COALESCE(MIN(STR(?conditionLabel)), STRAFTER(STR(?conditionRecord), "#")) AS ?condition)
+  (COALESCE(MIN(STR(?guideLabel)), STRAFTER(STR(?guideRecord), "#")) AS ?guide)
+  (COALESCE(MIN(STR(?reviewerLabel)), STRAFTER(STR(?reviewerRecord), "#")) AS ?reviewer)
+WHERE {
+  VALUES ?carerRecord { dc:SarahCarer }
+  ?carerRecord rdf:type/rdfs:subClassOf* dc:Carer ; dc:caresFor ?adultRecord .
+  ?adultRecord rdf:type/rdfs:subClassOf* dc:OlderAdult ; dc:hasCondition ?conditionRecord .
+  ?conditionRecord rdf:type/rdfs:subClassOf* dc:HealthCondition .
+  ?guideRecord rdf:type/rdfs:subClassOf* dc:Guide ;
+               dc:addresses ?conditionRecord ;
+               dc:isReviewedBy ?reviewerRecord ;
+               dc:isRelatedTo ?dementiaType ;
+               dc:isIntendedFor ?audience .
+  ?reviewerRecord rdf:type/rdfs:subClassOf* dc:HealthcareProfessional .
+  ?dementiaType rdf:type/rdfs:subClassOf* dc:DementiaType .
+  ?audience rdf:type/rdfs:subClassOf* dc:Carer .
+  OPTIONAL { ?carerRecord rdfs:label ?carerLabel }
+  OPTIONAL { ?adultRecord rdfs:label ?adultLabel }
+  OPTIONAL { ?conditionRecord rdfs:label ?conditionLabel }
+  OPTIONAL { ?guideRecord rdfs:label ?guideLabel }
+  OPTIONAL { ?reviewerRecord rdfs:label ?reviewerLabel }
+}
+GROUP BY ?carerRecord ?adultRecord ?conditionRecord ?guideRecord ?reviewerRecord
+ORDER BY LCASE(?guide) LCASE(?reviewer)
+

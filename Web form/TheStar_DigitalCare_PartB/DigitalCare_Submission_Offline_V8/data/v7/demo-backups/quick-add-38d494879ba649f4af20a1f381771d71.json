@@ -1,0 +1,119 @@
+{
+  "dataset": "http://127.0.0.1:3032/digitalcare_submission_v7",
+  "createdAt": "2026-09-23T12:05:38.484841+00:00",
+  "plan": {
+    "cq": "CQ9",
+    "recordIri": "http://uow.edu.au/isit906/thestar/digitalcare#Demo-CQ9-38d494879ba649f4af20a1f381771d71",
+    "recordLabel": "Confusion and Hallucination Guide",
+    "createdIndividuals": 1,
+    "ownedIris": [
+      "http://uow.edu.au/isit906/thestar/digitalcare#Demo-CQ9-38d494879ba649f4af20a1f381771d71"
+    ],
+    "triples": "<http://uow.edu.au/isit906/thestar/digitalcare#Demo-CQ9-38d494879ba649f4af20a1f381771d71> a dc:SymptomComparisonGuide, owl:NamedIndividual; rdfs:label \"Confusion and Hallucination Guide\"^^<http://www.w3.org/2001/XMLSchema#string>; rdfs:comment \"Fictional classroom demo data.\" .\n<http://uow.edu.au/isit906/thestar/digitalcare#Demo-CQ9-38d494879ba649f4af20a1f381771d71> <http://uow.edu.au/isit906/thestar/digitalcare#title> \"Confusion and Hallucination Guide\"^^<http://www.w3.org/2001/XMLSchema#string> .\n<http://uow.edu.au/isit906/thestar/digitalcare#Demo-CQ9-38d494879ba649f4af20a1f381771d71> <http://uow.edu.au/isit906/thestar/digitalcare#isIntendedFor> <http://uow.edu.au/isit906/thestar/digitalcare#SarahCarer> .\n<http://uow.edu.au/isit906/thestar/digitalcare#Demo-CQ9-38d494879ba649f4af20a1f381771d71> <http://uow.edu.au/isit906/thestar/digitalcare#isRelatedTo> <http://uow.edu.au/isit906/thestar/digitalcare#Confusion> .\n<http://uow.edu.au/isit906/thestar/digitalcare#Demo-CQ9-38d494879ba649f4af20a1f381771d71> <http://uow.edu.au/isit906/thestar/digitalcare#isRelatedTo> <http://uow.edu.au/isit906/thestar/digitalcare#VisualHallucination> .",
+    "guards": "<http://uow.edu.au/isit906/thestar/digitalcare#SarahCarer> rdf:type/rdfs:subClassOf* dc:Carer . \n<http://uow.edu.au/isit906/thestar/digitalcare#Confusion> rdf:type/rdfs:subClassOf* dc:Symptom . \n<http://uow.edu.au/isit906/thestar/digitalcare#VisualHallucination> rdf:type/rdfs:subClassOf* dc:Symptom . ",
+    "form": {
+      "cq": "CQ9",
+      "title": "Add a symptom comparison guide",
+      "summary": "Enter the fields below. Examples show what to enter.",
+      "ready": true,
+      "formVersion": 2,
+      "fields": [
+        {
+          "id": "name",
+          "label": "Guide title",
+          "type": "text",
+          "required": true,
+          "example": "My CQ9 demo",
+          "hint": "Enter the name you want to see in the answer.",
+          "maxLength": 150
+        },
+        {
+          "id": "audience",
+          "label": "Audience",
+          "type": "select",
+          "required": true,
+          "example": "SarahCarer",
+          "hint": "Choose SarahCarer for this demo.",
+          "options": [
+            {
+              "value": "http://uow.edu.au/isit906/thestar/digitalcare#SarahCarer",
+              "label": "SarahCarer"
+            }
+          ]
+        },
+        {
+          "id": "symptom1",
+          "label": "First symptom",
+          "type": "select",
+          "required": true,
+          "example": "MemoryLoss",
+          "hint": "Choose the first symptom, for example MemoryLoss.",
+          "options": [
+            {
+              "value": "http://uow.edu.au/isit906/thestar/digitalcare#BathingDifficulty",
+              "label": "BathingDifficulty"
+            },
+            {
+              "value": "http://uow.edu.au/isit906/thestar/digitalcare#Confusion",
+              "label": "Confusion"
+            },
+            {
+              "value": "http://uow.edu.au/isit906/thestar/digitalcare#DressingDifficulty",
+              "label": "DressingDifficulty"
+            },
+            {
+              "value": "http://uow.edu.au/isit906/thestar/digitalcare#EatingDifficulty",
+              "label": "EatingDifficulty"
+            },
+            {
+              "value": "http://uow.edu.au/isit906/thestar/digitalcare#MemoryLoss",
+              "label": "MemoryLoss"
+            },
+            {
+              "value": "http://uow.edu.au/isit906/thestar/digitalcare#VisualHallucination",
+              "label": "VisualHallucination"
+            }
+          ]
+        },
+        {
+          "id": "symptom2",
+          "label": "Second symptom",
+          "type": "select",
+          "required": true,
+          "example": "Confusion",
+          "hint": "Choose a different symptom, for example Confusion.",
+          "options": [
+            {
+              "value": "http://uow.edu.au/isit906/thestar/digitalcare#BathingDifficulty",
+              "label": "BathingDifficulty"
+            },
+            {
+              "value": "http://uow.edu.au/isit906/thestar/digitalcare#Confusion",
+              "label": "Confusion"
+            },
+            {
+              "value": "http://uow.edu.au/isit906/thestar/digitalcare#DressingDifficulty",
+              "label": "DressingDifficulty"
+            },
+            {
+              "value": "http://uow.edu.au/isit906/thestar/digitalcare#EatingDifficulty",
+              "label": "EatingDifficulty"
+            },
+            {
+              "value": "http://uow.edu.au/isit906/thestar/digitalcare#MemoryLoss",
+              "label": "MemoryLoss"
+            },
+            {
+              "value": "http://uow.edu.au/isit906/thestar/digitalcare#VisualHallucination",
+              "label": "VisualHallucination"
+            }
+          ]
+        }
+      ],
+      "context": []
+    }
+  },
+  "planHash": "29a887d6cebed4768aad24b2e9f0719559f514f63285febc00eeb30a74d9c769",
+  "inputHash": "d1ef8e116fdd6a69289d18b179d0d491a1cf03ec2a1930bd0ee2f5450c17c011",
+  "resetStamp": "2026-09-23T11:36:07.393113+00:00"
+}

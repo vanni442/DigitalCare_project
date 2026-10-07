@@ -1,0 +1,88 @@
+{
+  "dataset": "http://127.0.0.1:3032/digitalcare_submission_v7",
+  "createdAt": "2026-09-23T12:03:31.081963+00:00",
+  "plan": {
+    "cq": "CQ8",
+    "recordIri": "http://uow.edu.au/isit906/thestar/digitalcare#Demo-CQ8-d541804464f741a89df4edae8c1912c9",
+    "recordLabel": "Victoria Care Centre 3",
+    "createdIndividuals": 2,
+    "ownedIris": [
+      "http://uow.edu.au/isit906/thestar/digitalcare#Demo-CQ8-d541804464f741a89df4edae8c1912c9",
+      "http://uow.edu.au/isit906/thestar/digitalcare#Demo-CQ8-Staff-d541804464f741a89df4edae8c1912c9"
+    ],
+    "triples": "<http://uow.edu.au/isit906/thestar/digitalcare#Demo-CQ8-d541804464f741a89df4edae8c1912c9> a dc:CareCentre, owl:NamedIndividual; rdfs:label \"Victoria Care Centre 3\"^^<http://www.w3.org/2001/XMLSchema#string>; rdfs:comment \"Fictional classroom demo data.\" .\n<http://uow.edu.au/isit906/thestar/digitalcare#Demo-CQ8-d541804464f741a89df4edae8c1912c9> <http://uow.edu.au/isit906/thestar/digitalcare#isLocatedIn> <http://uow.edu.au/isit906/thestar/digitalcare#Victoria> .\n<http://uow.edu.au/isit906/thestar/digitalcare#Demo-CQ8-d541804464f741a89df4edae8c1912c9> <http://uow.edu.au/isit906/thestar/digitalcare#hasStaffMember> <http://uow.edu.au/isit906/thestar/digitalcare#Demo-CQ8-Staff-d541804464f741a89df4edae8c1912c9> .\n<http://uow.edu.au/isit906/thestar/digitalcare#Demo-CQ8-d541804464f741a89df4edae8c1912c9> <http://uow.edu.au/isit906/thestar/digitalcare#distanceKm> \"8.5\"^^<http://www.w3.org/2001/XMLSchema#decimal> .\n<http://uow.edu.au/isit906/thestar/digitalcare#Demo-CQ8-Staff-d541804464f741a89df4edae8c1912c9> a dc:StaffMember, owl:NamedIndividual; rdfs:label \"Staff 3\"^^<http://www.w3.org/2001/XMLSchema#string>; rdfs:comment \"Fictional classroom demo data.\" .\n<http://uow.edu.au/isit906/thestar/digitalcare#Demo-CQ8-Staff-d541804464f741a89df4edae8c1912c9> <http://uow.edu.au/isit906/thestar/digitalcare#speaksLanguage> <http://uow.edu.au/isit906/thestar/digitalcare#Chinese> .",
+    "guards": "dc:ChenOlderAdult rdf:type/rdfs:subClassOf* dc:OlderAdult; dc:isLocatedIn dc:Victoria .\ndc:ChenOlderAdult dc:nearbyRadiusKm \"10.0\"^^<http://www.w3.org/2001/XMLSchema#decimal> . FILTER NOT EXISTS { dc:ChenOlderAdult dc:nearbyRadiusKm ?otherRadius FILTER(!sameTerm(?otherRadius, \"10.0\"^^<http://www.w3.org/2001/XMLSchema#decimal>)) }\n<http://uow.edu.au/isit906/thestar/digitalcare#Victoria> rdf:type/rdfs:subClassOf* dc:Location . \n<http://uow.edu.au/isit906/thestar/digitalcare#Chinese> rdf:type/rdfs:subClassOf* dc:Language . ",
+    "form": {
+      "cq": "CQ8",
+      "title": "Add a Chinese-speaking care centre",
+      "summary": "Enter the fields below. Examples show what to enter.",
+      "ready": true,
+      "formVersion": 2,
+      "fields": [
+        {
+          "id": "name",
+          "label": "Care centre name",
+          "type": "text",
+          "required": true,
+          "example": "My CQ8 demo",
+          "hint": "Enter the name you want to see in the answer.",
+          "maxLength": 150
+        },
+        {
+          "id": "location",
+          "label": "Location",
+          "type": "select",
+          "required": true,
+          "example": "Victoria",
+          "hint": "Choose Victoria because CQ8 uses Chen's location.",
+          "options": [
+            {
+              "value": "http://uow.edu.au/isit906/thestar/digitalcare#Victoria",
+              "label": "Victoria"
+            }
+          ]
+        },
+        {
+          "id": "staffName",
+          "label": "New staff member name",
+          "type": "text",
+          "required": true,
+          "example": "Demo staff member",
+          "hint": "Enter the name of a fictional staff member at this new centre.",
+          "maxLength": 150
+        },
+        {
+          "id": "language",
+          "label": "Staff language",
+          "type": "select",
+          "required": true,
+          "example": "Chinese",
+          "hint": "Choose Chinese to match CQ8's language requirement.",
+          "options": [
+            {
+              "value": "http://uow.edu.au/isit906/thestar/digitalcare#Chinese",
+              "label": "Chinese"
+            }
+          ]
+        },
+        {
+          "id": "distance",
+          "label": "Distance from Chen (km)",
+          "type": "number",
+          "required": true,
+          "example": "1",
+          "hint": "Enter a distance no greater than 10.0 km.",
+          "min": 0,
+          "max": 10.0,
+          "step": "any"
+        }
+      ],
+      "context": [
+        "Chen's existing nearby radius is 10.0 km. It will be kept."
+      ]
+    }
+  },
+  "planHash": "fd0dc1e08374bf3c43a9c2f5f4b6ca0c83eca0a33712602b433334f78fe68a08",
+  "inputHash": "398f508d3aceec78eb979e336a1dc2889a94688c98538b6b7099053cf6047c57",
+  "resetStamp": "2026-09-23T11:36:07.393113+00:00"
+}

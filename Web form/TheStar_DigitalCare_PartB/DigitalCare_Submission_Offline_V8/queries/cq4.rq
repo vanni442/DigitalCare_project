@@ -1,0 +1,29 @@
+PREFIX dc: <http://uow.edu.au/isit906/thestar/digitalcare#>
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
+
+SELECT
+  (COALESCE(MIN(STR(?guideLabel)), STRAFTER(STR(?guideRecord), "#")) AS ?guide)
+  (COALESCE(MIN(STR(?audienceLabel)), STRAFTER(STR(?audienceRecord), "#")) AS ?audience)
+  (COALESCE(MIN(STR(?formatLabel)), STRAFTER(STR(?formatRecord), "#")) AS ?format)
+  (GROUP_CONCAT(DISTINCT STR(?download); separator="; ") AS ?downloadable)
+  (GROUP_CONCAT(DISTINCT STR(?print); separator="; ") AS ?printable)
+  (GROUP_CONCAT(DISTINCT STR(?url); separator="; ") AS ?downloadURL)
+WHERE {
+
+  ?guideRecord rdf:type/rdfs:subClassOf* dc:Guide ; dc:isIntendedFor ?audienceRecord ;
+    dc:isAvailableInFormat ?formatRecord .
+  ?audienceRecord rdf:type/rdfs:subClassOf* dc:Carer .
+  ?formatRecord rdf:type/rdfs:subClassOf* dc:DocumentFormat .
+  OPTIONAL { ?guideRecord dc:isDownloadable ?download }
+  OPTIONAL { ?guideRecord dc:isPrintable ?print }
+  FILTER(?download = true || ?print = true)
+  OPTIONAL { ?guideRecord dc:downloadURL ?url }
+
+  OPTIONAL { ?guideRecord rdfs:label ?guideLabel }
+  OPTIONAL { ?audienceRecord rdfs:label ?audienceLabel }
+  OPTIONAL { ?formatRecord rdfs:label ?formatLabel }
+}
+GROUP BY ?guideRecord ?audienceRecord ?formatRecord
+ORDER BY ?guide ?format

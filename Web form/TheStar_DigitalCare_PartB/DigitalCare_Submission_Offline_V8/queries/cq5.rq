@@ -1,0 +1,31 @@
+PREFIX dc: <http://uow.edu.au/isit906/thestar/digitalcare#>
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
+
+SELECT
+  (COALESCE(MIN(STR(?conditionLabel)), STRAFTER(STR(?conditionRecord), "#")) AS ?condition)
+  (COALESCE(MIN(STR(?symptomLabel)), STRAFTER(STR(?symptomRecord), "#")) AS ?symptom)
+  (COALESCE(MIN(STR(?guideLabel)), STRAFTER(STR(?guideRecord), "#")) AS ?guide)
+  (COALESCE(MIN(STR(?policyLabel)), STRAFTER(STR(?policyRecord), "#")) AS ?policy)
+  (GROUP_CONCAT(DISTINCT STR(?requiresInfo); separator="|") AS ?requiresInfo)
+  (GROUP_CONCAT(DISTINCT STR(?evidence); separator="; ") AS ?searchEvidence)
+
+WHERE {
+
+  VALUES ?conditionRecord { dc:AlzheimersDementia }
+  ?conditionRecord rdf:type/rdfs:subClassOf* dc:HealthCondition ; dc:hasSymptom ?symptomRecord .
+  ?symptomRecord rdf:type/rdfs:subClassOf* dc:Symptom .
+  ?guideRecord rdf:type/rdfs:subClassOf* dc:Guide ; dc:describes ?symptomRecord .
+  OPTIONAL { ?guideRecord dc:isGovernedBy ?policyRecord .
+    ?policyRecord rdf:type/rdfs:subClassOf* dc:PrivacyPolicy .
+    OPTIONAL { ?policyRecord rdfs:label ?policyLabel }
+    OPTIONAL { ?policyRecord dc:requiresPersonalInformationForSearch ?requiresInfo }
+    OPTIONAL { ?policyRecord dc:searchRequirementEvidence ?evidence } }
+
+  OPTIONAL { ?conditionRecord rdfs:label ?conditionLabel }
+  OPTIONAL { ?symptomRecord rdfs:label ?symptomLabel }
+  OPTIONAL { ?guideRecord rdfs:label ?guideLabel }
+}
+GROUP BY ?conditionRecord ?symptomRecord ?guideRecord ?policyRecord
+ORDER BY ?guide ?symptom

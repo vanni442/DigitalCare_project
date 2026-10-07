@@ -1,0 +1,95 @@
+{
+  "dataset": "http://127.0.0.1:3032/digitalcare_submission_v7",
+  "createdAt": "2026-09-23T11:51:01.554665+00:00",
+  "plan": {
+    "cq": "CQ4",
+    "recordIri": "http://uow.edu.au/isit906/thestar/digitalcare#Demo-CQ4-059aea357f614b44aea26136250ed860",
+    "recordLabel": "Printable Web Guide",
+    "createdIndividuals": 1,
+    "ownedIris": [
+      "http://uow.edu.au/isit906/thestar/digitalcare#Demo-CQ4-059aea357f614b44aea26136250ed860"
+    ],
+    "triples": "<http://uow.edu.au/isit906/thestar/digitalcare#Demo-CQ4-059aea357f614b44aea26136250ed860> a dc:Guide, owl:NamedIndividual; rdfs:label \"Printable Web Guide\"^^<http://www.w3.org/2001/XMLSchema#string>; rdfs:comment \"Fictional classroom demo data.\" .\n<http://uow.edu.au/isit906/thestar/digitalcare#Demo-CQ4-059aea357f614b44aea26136250ed860> <http://uow.edu.au/isit906/thestar/digitalcare#title> \"Printable Web Guide\"^^<http://www.w3.org/2001/XMLSchema#string> .\n<http://uow.edu.au/isit906/thestar/digitalcare#Demo-CQ4-059aea357f614b44aea26136250ed860> <http://uow.edu.au/isit906/thestar/digitalcare#isIntendedFor> <http://uow.edu.au/isit906/thestar/digitalcare#DavidCarer> .\n<http://uow.edu.au/isit906/thestar/digitalcare#Demo-CQ4-059aea357f614b44aea26136250ed860> <http://uow.edu.au/isit906/thestar/digitalcare#isAvailableInFormat> <http://uow.edu.au/isit906/thestar/digitalcare#PrintableWebPage> .\n<http://uow.edu.au/isit906/thestar/digitalcare#Demo-CQ4-059aea357f614b44aea26136250ed860> <http://uow.edu.au/isit906/thestar/digitalcare#isPrintable> \"true\"^^<http://www.w3.org/2001/XMLSchema#boolean> .",
+    "guards": "<http://uow.edu.au/isit906/thestar/digitalcare#DavidCarer> rdf:type/rdfs:subClassOf* dc:Carer . \n<http://uow.edu.au/isit906/thestar/digitalcare#PrintableWebPage> rdf:type/rdfs:subClassOf* dc:DocumentFormat . ",
+    "form": {
+      "cq": "CQ4",
+      "title": "Add a printable guide",
+      "summary": "Enter the fields below. Examples show what to enter.",
+      "ready": true,
+      "formVersion": 2,
+      "fields": [
+        {
+          "id": "name",
+          "label": "Guide title",
+          "type": "text",
+          "required": true,
+          "example": "My CQ4 demo",
+          "hint": "Enter the name you want to see in the answer.",
+          "maxLength": 150
+        },
+        {
+          "id": "audience",
+          "label": "Audience",
+          "type": "select",
+          "required": true,
+          "example": "SarahCarer",
+          "hint": "Choose SarahCarer for this demo.",
+          "options": [
+            {
+              "value": "http://uow.edu.au/isit906/thestar/digitalcare#DavidCarer",
+              "label": "DavidCarer"
+            },
+            {
+              "value": "http://uow.edu.au/isit906/thestar/digitalcare#MeiCarer",
+              "label": "MeiCarer"
+            },
+            {
+              "value": "http://uow.edu.au/isit906/thestar/digitalcare#SarahCarer",
+              "label": "SarahCarer"
+            }
+          ]
+        },
+        {
+          "id": "format",
+          "label": "Document format",
+          "type": "select",
+          "required": true,
+          "example": "PDF",
+          "hint": "Choose a format, for example PDF.",
+          "options": [
+            {
+              "value": "http://uow.edu.au/isit906/thestar/digitalcare#HTML",
+              "label": "HTML"
+            },
+            {
+              "value": "http://uow.edu.au/isit906/thestar/digitalcare#PDF",
+              "label": "PDF"
+            },
+            {
+              "value": "http://uow.edu.au/isit906/thestar/digitalcare#PrintableWebPage",
+              "label": "PrintableWebPage"
+            }
+          ]
+        },
+        {
+          "id": "printable",
+          "label": "Can be printed",
+          "type": "select",
+          "required": true,
+          "example": "True",
+          "hint": "Choose True so the guide matches CQ4's print requirement.",
+          "options": [
+            {
+              "value": "true",
+              "label": "True"
+            }
+          ]
+        }
+      ],
+      "context": []
+    }
+  },
+  "planHash": "30d1c8982a5fe409feb51c0721488ada3c3b85b4f6f5db46170bd8971f20cc82",
+  "inputHash": "d2ca7e1d6c1f7cce650e4b3271419764b944f63db77c6e89ee729c7cb2825405",
+  "resetStamp": "2026-09-23T11:36:07.393113+00:00"
+}

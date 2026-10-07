@@ -1,0 +1,23 @@
+PREFIX dc: <http://uow.edu.au/isit906/thestar/digitalcare#>
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
+
+SELECT
+  (COALESCE(MIN(STR(?guideLabel)), STRAFTER(STR(?guideRecord), "#")) AS ?guide)
+  (COUNT(DISTINCT ?symptom) AS ?symptomCount)
+  (GROUP_CONCAT(DISTINCT ?symptomName; separator="; ") AS ?symptoms)
+WHERE {
+
+  ?guideRecord rdf:type/rdfs:subClassOf* dc:Guide ; dc:isIntendedFor dc:SarahCarer ;
+    dc:isRelatedTo ?symptom .
+  dc:SarahCarer rdf:type/rdfs:subClassOf* dc:Carer .
+  ?symptom rdf:type/rdfs:subClassOf* dc:Symptom .
+  OPTIONAL { ?symptom rdfs:label ?symptomLabel }
+  BIND(COALESCE(STR(?symptomLabel), STRAFTER(STR(?symptom), "#")) AS ?symptomName)
+
+  OPTIONAL { ?guideRecord rdfs:label ?guideLabel }
+}
+GROUP BY ?guideRecord
+HAVING(COUNT(DISTINCT ?symptom) >= 2)
+ORDER BY DESC(?symptomCount) ?guide

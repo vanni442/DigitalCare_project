@@ -1,0 +1,382 @@
+[
+  {
+    "id": "CQ1",
+    "title": "Daily-task guides for carers",
+    "question": "Mum’s dementia is getting harder to manage, and I don’t know where to start. Where I can find a simple guide written for carers how to deal with difficult daily tasks struggling of my mother?",
+    "persona": "Sarah—Unpaid carer",
+    "requirements": "FR01, FR02, CR01, CR03",
+    "sourceCell": "1. Competency Questions!A5:I5",
+    "sourcePath": "Carer —caresFor→ OlderAdult —hasCondition→ HealthCondition ←addresses— Guide —isRelatedTo→ DailyTaskStruggling",
+    "sourceModelAnswer": "Yes",
+    "sourceGap": "[BLANK]",
+    "type": "Multi-relationship",
+    "queryFile": "cq1.rq",
+    "columns": [
+      {
+        "key": "carer",
+        "label": "Carer"
+      },
+      {
+        "key": "olderAdult",
+        "label": "Older adult"
+      },
+      {
+        "key": "condition",
+        "label": "Condition"
+      },
+      {
+        "key": "guide",
+        "label": "Guide"
+      },
+      {
+        "key": "difficulty",
+        "label": "Daily task"
+      },
+      {
+        "key": "readingLevel",
+        "label": "Reading level"
+      }
+    ],
+    "scenario": "SarahCarer and the condition of the older adult she cares for.",
+    "notes": [
+      "The query follows the CQ1 worksheet path and requires a carer audience. Missing reading-level values are shown as Not recorded; the model does not prove that a guide is simple to read.",
+      "A guide's topic is not evidence that this older adult actually experiences that difficulty."
+    ],
+    "incomplete": false
+  },
+  {
+    "id": "CQ2",
+    "title": "Professionally reviewed dementia guides",
+    "question": "Which dementia guides for carers about my mum’s type of dementia have been reviewed by a healthcare professional?",
+    "persona": "Sarah—Unpaid carer",
+    "requirements": "FR02, CR03, GR04",
+    "sourceCell": "1. Competency Questions!A6:I6",
+    "sourcePath": "Carer —caresFor→ OlderAdult —hasCondition→ HealthCondition ←addresses— Guide —isReviewedBy→ HealthcareProfessional; Guide —isRelatedTo→ DementiaType",
+    "sourceModelAnswer": "Yes",
+    "sourceGap": "[BLANK]",
+    "type": "Multi-relationship",
+    "queryFile": "cq2.rq",
+    "columns": [
+      {
+        "key": "carer",
+        "label": "Carer"
+      },
+      {
+        "key": "olderAdult",
+        "label": "Older adult"
+      },
+      {
+        "key": "condition",
+        "label": "Condition"
+      },
+      {
+        "key": "guide",
+        "label": "Guide"
+      },
+      {
+        "key": "reviewer",
+        "label": "Reviewer"
+      }
+    ],
+    "scenario": "SarahCarer and the condition of the older adult she cares for.",
+    "notes": [
+      "A result is one guide-reviewer combination. Several rows can describe the same guide.",
+      "Review links are assertions in the supplied dataset, not independent verification of a reviewer's credentials."
+    ],
+    "incomplete": false
+  },
+  {
+    "id": "CQ3",
+    "title": "Support services in NSW",
+    "question": "How many reliable and nearest support services or organisations in NSW I can call for help in case of mother's urgencies?",
+    "persona": "Sarah—Unpaid carer",
+    "requirements": "CR05, FR01, FR03",
+    "sourceCell": "1. Competency Questions!A7:I7",
+    "sourcePath": "Carer —caresFor→ OlderAdult —hasCondition→ HealthCondition ←supportsCondition— SupportService —isLocatedIn→ Location",
+    "sourceModelAnswer": "No",
+    "sourceGap": "Add reliability status, phone number and postcode/distance data so services can be filtered, counted and ranked by proximity.",
+    "type": "Multi-relationship, Counting",
+    "queryFile": "cq3.rq",
+    "columns": [
+      {
+        "key": "serviceName",
+        "label": "Service"
+      },
+      {
+        "key": "phone",
+        "label": "Phone"
+      },
+      {
+        "key": "reliable",
+        "label": "Recorded reliable"
+      },
+      {
+        "key": "reliabilityEvidence",
+        "label": "Assessment source"
+      },
+      {
+        "key": "distanceKm",
+        "label": "Distance from Mary (km)"
+      },
+      {
+        "key": "assessment",
+        "label": "Assessment"
+      }
+    ],
+    "scenario": "SarahCarer; support for her cared-for adult's condition; NSW; a recorded phone number.",
+    "notes": [
+      "Counts distinct callable services matching the condition and NSW. The current RDF declares reliability and distanceKm properties; results use recorded instance values, never worksheet exampleValue annotations.",
+      "Ranking covers only services with an explicit reliable assessment, a source and valid distance from MaryOlderAdult. Missing or conflicting values remain unknown. Recorded sample contacts are not independently verified."
+    ],
+    "incomplete": true
+  },
+  {
+    "id": "CQ4",
+    "title": "Downloadable or printable carer guides",
+    "question": "Which dementia care guides for carers can I download or print to read offline on smartphone?",
+    "persona": "Sarah—Unpaid carer",
+    "requirements": "FR02, FR04, CR03, TR01",
+    "sourceCell": "1. Competency Questions!A8:I8",
+    "sourcePath": "Carer ←isIntendedFor—  Guide —isAvailableInFormat→ DocumentFormat\nisDownloadable: true / isPrintable: true",
+    "sourceModelAnswer": "Yes",
+    "sourceGap": "[BLANK]",
+    "type": "Multi-relationship",
+    "queryFile": "cq4.rq",
+    "columns": [
+      {
+        "key": "guide",
+        "label": "Guide"
+      },
+      {
+        "key": "audience",
+        "label": "Carer audience"
+      },
+      {
+        "key": "format",
+        "label": "Format"
+      },
+      {
+        "key": "downloadable",
+        "label": "Downloadable"
+      },
+      {
+        "key": "printable",
+        "label": "Printable"
+      },
+      {
+        "key": "downloadURL",
+        "label": "Download URL"
+      }
+    ],
+    "scenario": "All typed carer audiences, following the CQ4 worksheet path.",
+    "notes": [
+      "A recorded true download OR print flag is required. A format alone is insufficient. Missing flags remain Not recorded, not false.",
+      "The flags describe guide capabilities. A usable download URL and smartphone/offline operation cannot be confirmed when those details are absent."
+    ],
+    "incomplete": false
+  },
+  {
+    "id": "CQ5",
+    "title": "Alzheimer's symptoms and privacy",
+    "question": "Can I search for Alzheimer’s symptoms without giving the website my privacy information?",
+    "persona": "Chen —Older adult",
+    "requirements": "FR01, GR01, GR02",
+    "sourceCell": "1. Competency Questions!A9:I9",
+    "sourcePath": "HealthCondition —hasSymptom→ Symptom ←describes— Guide —isGovernedBy→ PrivacyPolicy",
+    "sourceModelAnswer": "No",
+    "sourceGap": "Add a boolean attribute such as requiresPersonalInformationForSearch = false to represent anonymous symptom searching.",
+    "type": "Multi-relationship",
+    "queryFile": "cq5.rq",
+    "columns": [
+      {
+        "key": "condition",
+        "label": "Condition"
+      },
+      {
+        "key": "symptom",
+        "label": "Symptom"
+      },
+      {
+        "key": "guide",
+        "label": "Guide"
+      },
+      {
+        "key": "policy",
+        "label": "Privacy policy"
+      },
+      {
+        "key": "requiresInfo",
+        "label": "Requires personal information"
+      },
+      {
+        "key": "searchEvidence",
+        "label": "Requirement source"
+      },
+      {
+        "key": "anonymousSearch",
+        "label": "Anonymous search"
+      }
+    ],
+    "scenario": "The Alzheimer's topic explicitly named in the question.",
+    "notes": [
+      "A privacy-policy link alone does not establish anonymous searching. The current RDF declares properties for the policy requirement and its source; values must be recorded for the selected policy.",
+      "Answers describe recorded policies. They do not test a real website or independently verify a user-entered source. Missing or conflicting requirements remain unknown."
+    ],
+    "incomplete": true
+  },
+  {
+    "id": "CQ6",
+    "title": "Recent symptom guides with large text",
+    "question": "Which Alzheimer’s symptoms written for older people were published most recently I can read in larger text size?",
+    "persona": "Chen —Older adult",
+    "requirements": "FR02, CR02, CR03, TR03",
+    "sourceCell": "1. Competency Questions!A10:I10",
+    "sourcePath": "OlderAdult —hasCondition→ HealthCondition —hasSymptom→ Symptom ←describes— Guide —isRelatedTo→ DementiaType",
+    "sourceModelAnswer": "Yes",
+    "sourceGap": "[BLANK]",
+    "type": "Multi-relationship",
+    "queryFile": "cq6.rq",
+    "columns": [
+      {
+        "key": "olderAdult",
+        "label": "Older adult with Alzheimer's"
+      },
+      {
+        "key": "symptom",
+        "label": "Symptom"
+      },
+      {
+        "key": "guide",
+        "label": "Guide"
+      },
+      {
+        "key": "publishedOn",
+        "label": "Published on"
+      }
+    ],
+    "scenario": "Alzheimer's symptom guides for older adults, sorted newest first.",
+    "notes": [
+      "The query follows hasCondition, hasSymptom, describes and isRelatedTo, requires an older-adult audience and supportsLargeText=true, and sorts recorded publication dates newest first.",
+      "CQ6 names Alzheimer's. The query follows that topic and matching older adults in the current graph, rather than substituting Chen's personal condition. Undated guides cannot be ranked."
+    ],
+    "incomplete": false
+  },
+  {
+    "id": "CQ7",
+    "title": "Chinese Alzheimer's guides",
+    "question": "Which Alzheimer’s guides are written for older people and available in Chinese?",
+    "persona": "Chen —Older adult",
+    "requirements": "FR02, CR03, CR04",
+    "sourceCell": "1. Competency Questions!A11:I11",
+    "sourcePath": "OlderAdult ←isIntendedFor— Guide —isRelatedTo→ AlzheimersDementia and Guide —isAvailableIn→ Language (Chinese)",
+    "sourceModelAnswer": "Yes",
+    "sourceGap": "[BLANK]",
+    "type": "Multi-relationship",
+    "queryFile": "cq7.rq",
+    "columns": [
+      {
+        "key": "guide",
+        "label": "Guide"
+      },
+      {
+        "key": "audience",
+        "label": "Older-adult audience"
+      },
+      {
+        "key": "language",
+        "label": "Language"
+      }
+    ],
+    "scenario": "Guides explicitly related to AlzheimersDementia, intended for an older adult and available in Chinese.",
+    "notes": [
+      "Only explicitly recorded Chinese availability is returned. An English or Italian language assertion does not prove that a Chinese translation is unavailable."
+    ],
+    "incomplete": false
+  },
+  {
+    "id": "CQ8",
+    "title": "Chinese-speaking care-centre staff in Victoria",
+    "question": "Is there a care centre near my area in Victoria with someone who speaks Chinese?",
+    "persona": "Chen —Older adult",
+    "requirements": "CR05, FR01, FR03",
+    "sourceCell": "1. Competency Questions!A12:I12",
+    "sourcePath": "OlderAdult —isLocatedIn→ Location (Victoria) ←isLocatedIn— CareCentre —hasStaffMember→ StaffMember —speaksLanguage→ Language (Chinese)",
+    "sourceModelAnswer": "No",
+    "sourceGap": "Add suburb/postcode or coordinates and a distance measure so care centres can be ranked by proximity to the older adult.",
+    "type": "Multi-relationship",
+    "queryFile": "cq8.rq",
+    "columns": [
+      {
+        "key": "olderAdult",
+        "label": "Older adult"
+      },
+      {
+        "key": "location",
+        "label": "Region"
+      },
+      {
+        "key": "centre",
+        "label": "Care centre"
+      },
+      {
+        "key": "staff",
+        "label": "Staff member"
+      },
+      {
+        "key": "language",
+        "label": "Language"
+      },
+      {
+        "key": "distanceKm",
+        "label": "Distance from Chen (km)"
+      },
+      {
+        "key": "radiusKm",
+        "label": "Chosen radius (km)"
+      },
+      {
+        "key": "nearby",
+        "label": "Near assessment"
+      }
+    ],
+    "scenario": "ChenOlderAdult in Victoria, looking for a centre with Chinese-speaking staff.",
+    "notes": [
+      "The path establishes region and staff language. The current RDF uses distanceKm for the scenario's distance from ChenOlderAdult and nearbyRadiusKm for his chosen radius; missing instance values remain unknown.",
+      "Near means within the user-recorded radius, not a fixed universal definition. Results use recorded distances, not a routing service. Missing or conflicting distance/radius values remain unknown."
+    ],
+    "incomplete": true
+  },
+  {
+    "id": "CQ9",
+    "title": "Guides comparing at least two symptoms",
+    "question": "Is there a guide that can help me compare different dementia symptoms my mother might experience?",
+    "persona": "Sarah—Unpaid carer",
+    "requirements": "FR02, CR01, CR03",
+    "sourceCell": "1. Competency Questions!A13:I13",
+    "sourcePath": "Guide —isRelatedTo→ Symptom (×2, e.g. MemoryLoss and Confusion); Symptom is a subclass of InformationTopic",
+    "sourceModelAnswer": "Yes",
+    "sourceGap": "[BLANK]",
+    "type": "Multi-relationship, Counting",
+    "queryFile": "cq9.rq",
+    "columns": [
+      {
+        "key": "guide",
+        "label": "Guide"
+      },
+      {
+        "key": "symptomCount",
+        "label": "Distinct symptom records"
+      },
+      {
+        "key": "symptoms",
+        "label": "Symptoms"
+      }
+    ],
+    "scenario": "Guides intended for SarahCarer and linked to at least two typed Symptom records.",
+    "notes": [
+      "COUNT(DISTINCT ?symptom) counts symptom IRIs, including declared subclasses such as DailyTaskStruggling. Dementia-type links are excluded.",
+      "This checks recorded relationships. An OWL minimum-cardinality axiom does not create named symptom records or prove which symptoms a person will experience."
+    ],
+    "incomplete": false
+  }
+]

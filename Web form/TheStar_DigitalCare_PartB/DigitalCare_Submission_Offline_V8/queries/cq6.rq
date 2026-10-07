@@ -1,0 +1,30 @@
+PREFIX dc: <http://uow.edu.au/isit906/thestar/digitalcare#>
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
+
+SELECT
+  (COALESCE(MIN(STR(?olderAdultLabel)), STRAFTER(STR(?olderAdultRecord), "#")) AS ?olderAdult)
+  (COALESCE(MIN(STR(?symptomLabel)), STRAFTER(STR(?symptomRecord), "#")) AS ?symptom)
+  (COALESCE(MIN(STR(?guideLabel)), STRAFTER(STR(?guideRecord), "#")) AS ?guide)
+  (MAX(?date) AS ?publishedOn)
+WHERE {
+
+  # Follow the Alzheimer's topic named by CQ6. In V7 Chen has Lewy body dementia;
+  # do not silently substitute his condition for the question's Alzheimer's topic.
+  ?olderAdultRecord rdf:type/rdfs:subClassOf* dc:OlderAdult ; dc:hasCondition dc:AlzheimersDementia .
+  dc:AlzheimersDementia dc:hasSymptom ?symptomRecord .
+  ?symptomRecord rdf:type/rdfs:subClassOf* dc:Symptom .
+  ?guideRecord rdf:type/rdfs:subClassOf* dc:Guide ; dc:describes ?symptomRecord ;
+    dc:isIntendedFor ?audience ; dc:isRelatedTo ?dementiaType ;
+    dc:supportsLargeText true ; dc:publishedOn ?date .
+  ?audience rdf:type/rdfs:subClassOf* dc:OlderAdult .
+  ?dementiaType rdf:type/rdfs:subClassOf* dc:DementiaType .
+  FILTER(DATATYPE(?date) = xsd:date)
+
+  OPTIONAL { ?olderAdultRecord rdfs:label ?olderAdultLabel }
+  OPTIONAL { ?symptomRecord rdfs:label ?symptomLabel }
+  OPTIONAL { ?guideRecord rdfs:label ?guideLabel }
+}
+GROUP BY ?olderAdultRecord ?symptomRecord ?guideRecord
+ORDER BY DESC(?publishedOn) ?guide ?symptom

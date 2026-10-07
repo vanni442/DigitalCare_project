@@ -1,0 +1,37 @@
+PREFIX dc: <http://uow.edu.au/isit906/thestar/digitalcare#>
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
+
+SELECT
+  (COALESCE(MIN(STR(?olderAdultLabel)), STRAFTER(STR(?olderAdultRecord), "#")) AS ?olderAdult)
+  (COALESCE(MIN(STR(?locationLabel)), STRAFTER(STR(?locationRecord), "#")) AS ?location)
+  (COALESCE(MIN(STR(?centreLabel)), STRAFTER(STR(?centreRecord), "#")) AS ?centre)
+  (COALESCE(MIN(STR(?staffLabel)), STRAFTER(STR(?staffRecord), "#")) AS ?staff)
+  (COALESCE(MIN(STR(?languageLabel)), STRAFTER(STR(?languageRecord), "#")) AS ?language)
+  (GROUP_CONCAT(DISTINCT STR(?distance); separator="|") AS ?distanceKm)
+  (GROUP_CONCAT(DISTINCT STR(?radius); separator="|") AS ?radiusKm)
+  ?centreRecord
+
+WHERE {
+
+  VALUES ?olderAdultRecord { dc:ChenOlderAdult }
+  VALUES ?locationRecord { dc:Victoria }
+  VALUES ?languageRecord { dc:Chinese }
+  ?olderAdultRecord rdf:type/rdfs:subClassOf* dc:OlderAdult ; dc:isLocatedIn ?locationRecord .
+  ?locationRecord rdf:type/rdfs:subClassOf* dc:Location .
+  ?centreRecord rdf:type/rdfs:subClassOf* dc:CareCentre ;
+    dc:isLocatedIn ?locationRecord ; dc:hasStaffMember ?staffRecord .
+  ?staffRecord rdf:type/rdfs:subClassOf* dc:StaffMember ; dc:speaksLanguage ?languageRecord .
+  ?languageRecord rdf:type/rdfs:subClassOf* dc:Language .
+  OPTIONAL { ?centreRecord dc:distanceKm ?distance }
+  OPTIONAL { ?olderAdultRecord dc:nearbyRadiusKm ?radius }
+
+  OPTIONAL { ?olderAdultRecord rdfs:label ?olderAdultLabel }
+  OPTIONAL { ?locationRecord rdfs:label ?locationLabel }
+  OPTIONAL { ?centreRecord rdfs:label ?centreLabel }
+  OPTIONAL { ?staffRecord rdfs:label ?staffLabel }
+  OPTIONAL { ?languageRecord rdfs:label ?languageLabel }
+}
+GROUP BY ?olderAdultRecord ?locationRecord ?centreRecord ?staffRecord ?languageRecord
+ORDER BY ?centre ?staff

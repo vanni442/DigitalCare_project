@@ -1,0 +1,24 @@
+PREFIX dc: <http://uow.edu.au/isit906/thestar/digitalcare#>
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
+
+SELECT
+  (COALESCE(MIN(STR(?guideLabel)), STRAFTER(STR(?guideRecord), "#")) AS ?guide)
+  (COALESCE(MIN(STR(?audienceLabel)), STRAFTER(STR(?audienceRecord), "#")) AS ?audience)
+  (COALESCE(MIN(STR(?languageLabel)), STRAFTER(STR(?languageRecord), "#")) AS ?language)
+
+WHERE {
+
+  ?guideRecord rdf:type/rdfs:subClassOf* dc:Guide ; dc:isIntendedFor ?audienceRecord ;
+    dc:isRelatedTo dc:AlzheimersDementia ; dc:isAvailableIn ?languageRecord .
+  ?audienceRecord rdf:type/rdfs:subClassOf* dc:OlderAdult .
+  VALUES ?languageRecord { dc:Chinese }
+  ?languageRecord rdf:type/rdfs:subClassOf* dc:Language .
+
+  OPTIONAL { ?guideRecord rdfs:label ?guideLabel }
+  OPTIONAL { ?audienceRecord rdfs:label ?audienceLabel }
+  OPTIONAL { ?languageRecord rdfs:label ?languageLabel }
+}
+GROUP BY ?guideRecord ?audienceRecord ?languageRecord
+ORDER BY ?guide

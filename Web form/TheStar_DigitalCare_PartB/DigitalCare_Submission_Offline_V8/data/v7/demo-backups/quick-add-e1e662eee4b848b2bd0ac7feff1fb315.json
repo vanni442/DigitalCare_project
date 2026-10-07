@@ -1,0 +1,113 @@
+{
+  "dataset": "http://127.0.0.1:3032/digitalcare_submission_v7",
+  "createdAt": "2026-09-23T11:57:05.628048+00:00",
+  "plan": {
+    "cq": "CQ6",
+    "recordIri": "http://uow.edu.au/isit906/thestar/digitalcare#Demo-CQ6-e1e662eee4b848b2bd0ac7feff1fb315",
+    "recordLabel": "Memory Guide 1",
+    "createdIndividuals": 1,
+    "ownedIris": [
+      "http://uow.edu.au/isit906/thestar/digitalcare#Demo-CQ6-e1e662eee4b848b2bd0ac7feff1fb315"
+    ],
+    "triples": "<http://uow.edu.au/isit906/thestar/digitalcare#Demo-CQ6-e1e662eee4b848b2bd0ac7feff1fb315> a dc:Guide, owl:NamedIndividual; rdfs:label \"Memory Guide 1\"^^<http://www.w3.org/2001/XMLSchema#string>; rdfs:comment \"Fictional classroom demo data.\" .\n<http://uow.edu.au/isit906/thestar/digitalcare#Demo-CQ6-e1e662eee4b848b2bd0ac7feff1fb315> <http://uow.edu.au/isit906/thestar/digitalcare#title> \"Memory Guide 1\"^^<http://www.w3.org/2001/XMLSchema#string> .\n<http://uow.edu.au/isit906/thestar/digitalcare#Demo-CQ6-e1e662eee4b848b2bd0ac7feff1fb315> <http://uow.edu.au/isit906/thestar/digitalcare#publishedOn> \"2026-09-15\"^^<http://www.w3.org/2001/XMLSchema#date> .\n<http://uow.edu.au/isit906/thestar/digitalcare#Demo-CQ6-e1e662eee4b848b2bd0ac7feff1fb315> <http://uow.edu.au/isit906/thestar/digitalcare#isIntendedFor> <http://uow.edu.au/isit906/thestar/digitalcare#MaryOlderAdult> .\n<http://uow.edu.au/isit906/thestar/digitalcare#Demo-CQ6-e1e662eee4b848b2bd0ac7feff1fb315> <http://uow.edu.au/isit906/thestar/digitalcare#isRelatedTo> <http://uow.edu.au/isit906/thestar/digitalcare#AlzheimerType> .\n<http://uow.edu.au/isit906/thestar/digitalcare#Demo-CQ6-e1e662eee4b848b2bd0ac7feff1fb315> <http://uow.edu.au/isit906/thestar/digitalcare#describes> <http://uow.edu.au/isit906/thestar/digitalcare#MemoryLoss> .\n<http://uow.edu.au/isit906/thestar/digitalcare#Demo-CQ6-e1e662eee4b848b2bd0ac7feff1fb315> <http://uow.edu.au/isit906/thestar/digitalcare#supportsLargeText> \"true\"^^<http://www.w3.org/2001/XMLSchema#boolean> .",
+    "guards": "dc:AlzheimersDementia rdf:type/rdfs:subClassOf* dc:HealthCondition .\n?cq6Adult rdf:type/rdfs:subClassOf* dc:OlderAdult; dc:hasCondition dc:AlzheimersDementia .\n<http://uow.edu.au/isit906/thestar/digitalcare#MemoryLoss> rdf:type/rdfs:subClassOf* dc:Symptom . dc:AlzheimersDementia dc:hasSymptom <http://uow.edu.au/isit906/thestar/digitalcare#MemoryLoss> .\n<http://uow.edu.au/isit906/thestar/digitalcare#MaryOlderAdult> rdf:type/rdfs:subClassOf* dc:OlderAdult . \n<http://uow.edu.au/isit906/thestar/digitalcare#AlzheimerType> rdf:type/rdfs:subClassOf* dc:DementiaType . ",
+    "form": {
+      "cq": "CQ6",
+      "title": "Add a large-text guide",
+      "summary": "Enter the fields below. Examples show what to enter.",
+      "ready": true,
+      "formVersion": 2,
+      "fields": [
+        {
+          "id": "name",
+          "label": "Guide title",
+          "type": "text",
+          "required": true,
+          "example": "My CQ6 demo",
+          "hint": "Enter the name you want to see in the answer.",
+          "maxLength": 150
+        },
+        {
+          "id": "publishedOn",
+          "label": "Publication date",
+          "type": "date",
+          "required": true,
+          "example": "2026-09-23",
+          "hint": "Enter your demo publication date. CQ6 sorts newest first."
+        },
+        {
+          "id": "symptom",
+          "label": "Alzheimer's symptom",
+          "type": "select",
+          "required": true,
+          "example": "MemoryLoss",
+          "hint": "Choose a symptom already linked to Alzheimer's, for example MemoryLoss.",
+          "options": [
+            {
+              "value": "http://uow.edu.au/isit906/thestar/digitalcare#MemoryLoss",
+              "label": "MemoryLoss"
+            }
+          ]
+        },
+        {
+          "id": "audience",
+          "label": "Audience",
+          "type": "select",
+          "required": true,
+          "example": "MaryOlderAdult",
+          "hint": "Choose an older-adult audience, for example MaryOlderAdult.",
+          "options": [
+            {
+              "value": "http://uow.edu.au/isit906/thestar/digitalcare#ChenOlderAdult",
+              "label": "ChenOlderAdult"
+            },
+            {
+              "value": "http://uow.edu.au/isit906/thestar/digitalcare#JoeOlderAdult",
+              "label": "JoeOlderAdult"
+            },
+            {
+              "value": "http://uow.edu.au/isit906/thestar/digitalcare#MaryOlderAdult",
+              "label": "MaryOlderAdult"
+            },
+            {
+              "value": "http://uow.edu.au/isit906/thestar/digitalcare#RobertOlderAdult",
+              "label": "RobertOlderAdult"
+            }
+          ]
+        },
+        {
+          "id": "dementiaType",
+          "label": "Dementia type",
+          "type": "select",
+          "required": true,
+          "example": "AlzheimerType",
+          "hint": "Choose AlzheimerType for this Alzheimer's question.",
+          "options": [
+            {
+              "value": "http://uow.edu.au/isit906/thestar/digitalcare#AlzheimerType",
+              "label": "AlzheimerType"
+            }
+          ]
+        },
+        {
+          "id": "largeText",
+          "label": "Supports large text",
+          "type": "select",
+          "required": true,
+          "example": "True",
+          "hint": "Choose True so the guide meets CQ6's large-text requirement.",
+          "options": [
+            {
+              "value": "true",
+              "label": "True"
+            }
+          ]
+        }
+      ],
+      "context": []
+    }
+  },
+  "planHash": "63b45f5cb24b6b52bfd19290ac0457b16212b7422d931f4eba98aff34203fc9f",
+  "inputHash": "bcc250f4052a979e03b84229e7c11eba2bc82709d498f944fcb05e6fbbd4d55e",
+  "resetStamp": "2026-09-23T11:36:07.393113+00:00"
+}

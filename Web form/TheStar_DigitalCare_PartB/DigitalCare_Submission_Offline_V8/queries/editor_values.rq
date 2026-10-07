@@ -1,0 +1,2 @@
+SELECT ?value WHERE { <__SUBJECT__> <__PROPERTY__> ?value }
+ORDER BY STR(?value)

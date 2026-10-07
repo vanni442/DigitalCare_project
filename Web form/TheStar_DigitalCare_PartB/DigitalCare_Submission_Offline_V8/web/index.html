@@ -1,0 +1,182 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="color-scheme" content="light">
+  <meta name="description" content="Create, link and amend Digital Care graph data, then explore answers to CQ1-CQ9.">
+  <title>Digital Care · Part B demo</title>
+  <link rel="stylesheet" href="/styles.css">
+  <script src="/app.js" defer></script>
+  <script src="/editor.js" defer></script>
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+  <header class="site-header">
+    <a class="brand" href="/" aria-label="Digital Care home">
+      <span class="brand-mark" aria-hidden="true"><svg viewBox="0 0 32 32" fill="none"><path d="M16 6v20M6 16h20" stroke="currentColor" stroke-width="5" stroke-linecap="round"/><circle cx="25" cy="7" r="3" fill="currentColor"/></svg></span>
+      <span>Digital<span class="brand-light">Care</span></span>
+    </a>
+    <div class="connection" id="connection" data-state="loading" role="status"><span class="status-dot" aria-hidden="true"></span><span id="connection-label">Connecting to data</span></div>
+  </header>
+
+  <main id="main" class="page">
+    <div class="demo-topbar">
+      <section class="overview-card graph-overview" aria-labelledby="overview-title">
+        <div class="graph-heading"><p class="overline">Live graph</p><h2 id="overview-title">Current database</h2><p class="updated-at" id="updated-at">Loading counts…</p></div>
+        <dl class="metrics" aria-live="polite" aria-atomic="true">
+          <div><dt>Guides</dt><dd id="count-guides">—</dd></div>
+          <div><dt>Healthcare professionals</dt><dd id="count-reviewers">—</dd></div>
+          <div class="metric-total"><dt>Review links</dt><dd id="count-links">—</dd></div>
+        </dl>
+        <button class="button button-outline" id="refresh-overview" type="button" disabled title="Read the source RDF and refresh counts, choices and answers">Sync RDF</button>
+      </section>
+    <nav class="demo-nav" aria-label="Demo steps">
+      <a href="#demo-create"><span>01</span> Create guide</a>
+      <a href="#demo-connect"><span>02</span> Link audience</a>
+      <a href="#competency-questions"><span>03</span> Edit &amp; see results</a>
+      <a href="#demo-export"><span>04</span> Export &amp; verify</a>
+    </nav>
+    </div>
+
+    <section class="intro" aria-labelledby="page-title">
+      <p class="eyebrow">Assignment 2 · Part B</p>
+      <h1 id="page-title">Create. Connect. Test.</h1>
+      <p class="intro-copy">Save data. See the answers change.</p>
+    </section>
+
+
+    <div id="page-notice" class="notice notice-error" role="alert" hidden></div>
+
+    <section class="partb-forms" aria-labelledby="partb-title">
+      <h2 id="partb-title" class="visually-hidden">Create and connect</h2>
+      <div class="partb-grid">
+        <details class="partb-panel" id="demo-create" open><summary><span class="step-number">01</span><span>Create a guide<small>Task 1 · New record</small></span></summary>
+          <form id="create-guide-form" class="capture-form">
+            <div class="field"><label for="new-title">Guide title</label><input id="new-title" required maxlength="150" placeholder="Example: Demo daily care guide"></div>
+            <div class="field"><label for="new-date">Publication date</label><input id="new-date" type="date" required></div>
+            <div class="field"><label for="new-audience">Intended audience</label><select id="new-audience" data-range-property="isIntendedFor" required disabled></select></div>
+            <div class="field"><label for="new-topic">Topic or symptom</label><select id="new-topic" data-range-property="isRelatedTo" required disabled></select></div>
+            <details class="capture-optional"><summary>More fields (optional)</summary>
+              <div class="field"><label for="new-condition">Condition addressed</label><select id="new-condition" data-range-property="addresses" disabled></select></div>
+              <div class="field"><label for="new-symptom">Symptom described</label><select id="new-symptom" data-range-property="describes" disabled></select></div>
+              <div class="field"><label for="new-language">Available language</label><select id="new-language" data-range-property="isAvailableIn" disabled></select></div>
+              <div class="field"><label for="new-format">Document format</label><select id="new-format" data-range-property="isAvailableInFormat" disabled></select></div>
+              <div class="field"><label for="new-reviewer">Healthcare reviewer</label><select id="new-reviewer" data-range-property="isReviewedBy" disabled></select></div>
+              <div class="field"><label for="new-downloadable">Downloadable</label><select id="new-downloadable"><option value="">Not recorded</option><option value="true">True</option><option value="false">False</option></select></div>
+              <div class="field"><label for="new-printable">Printable</label><select id="new-printable"><option value="">Not recorded</option><option value="true">True</option><option value="false">False</option></select></div>
+              <div class="field"><label for="new-large">Supports large text</label><select id="new-large"><option value="">Not recorded</option><option value="true">True</option><option value="false">False</option></select></div>
+            </details>
+            <button class="button button-primary" id="create-guide-button" disabled>Create guide</button>
+            <div id="create-feedback" class="notice" role="status" tabindex="-1" hidden></div>
+            <details class="query-details" id="create-proof" hidden><summary>Saved record · RDF details</summary><pre id="create-triple" class="code-block" hidden></pre></details>
+          </form>
+        </details>
+        <details class="partb-panel" id="demo-connect" open><summary><span class="step-number">02</span><span>Link an audience<small>Task 2 · Existing records</small></span></summary>
+          <form id="audience-link-form" class="capture-form">
+            <div class="field"><label for="audience-guide">Existing guide</label><select id="audience-guide" data-range-property="isTargetAudienceOf" required disabled></select></div>
+            <div class="field"><label for="audience-person">Existing person</label><select id="audience-person" data-range-property="isIntendedFor" required disabled></select></div>
+            <p id="audience-current" class="muted">Choose a guide to see its current audiences.</p>
+            <button class="button button-primary" id="audience-link-button" disabled>Save audience link</button>
+            <div id="audience-feedback" class="notice" role="status" tabindex="-1" hidden></div>
+          </form>
+        </details>
+      </div>
+      <div class="capture-tools"><p id="capture-load-status" class="muted" role="status">Loading records…</p><button type="button" class="button button-quiet" id="capture-reload">Reload choices</button></div>
+    </section>
+
+    <section class="form-card cq-explorer" aria-labelledby="cq-title" id="competency-questions">
+      <div class="section-heading"><div class="step-heading"><span class="step-number">03</span><div><h2 id="cq-title">Edit &amp; see results</h2><p class="muted">Task 3 · CQ1–CQ9</p></div></div></div>
+      <div class="cq-controls"><div class="field"><label for="cq-select">Question</label><select id="cq-select" disabled><option value="CQ2">Loading questions…</option></select></div><button type="button" class="button button-outline" id="cq-refresh">Refresh answer</button></div>
+      <p id="cq-question" class="cq-question">Loading the selected question…</p>
+      <div class="cq-demo-grid">
+      <section class="cq-editor" aria-labelledby="demo-add-title">
+        <div class="demo-add-heading"><p class="overline">Guided entry</p><span class="demo-data-badge">Demo data</span></div>
+        <h3 id="demo-add-title">Add a matching record</h3>
+        <p id="demo-add-summary" class="demo-add-summary">Loading the fields for this question…</p>
+        <p id="demo-add-context" class="muted demo-add-context" hidden></p>
+        <form id="demo-add-form" class="guided-entry-form">
+          <div id="demo-add-fields" class="guided-entry-fields"></div>
+          <button type="submit" id="demo-add-button" class="button button-primary demo-add-button" disabled>Save record <span aria-hidden="true">→</span></button>
+        </form>
+        <p id="demo-add-status" class="muted" role="status">Enter your data using the examples below each field.</p>
+        <button type="button" id="demo-plan-reload" class="button button-quiet" hidden>Reload fields</button>
+        <div id="demo-add-feedback" class="notice" role="status" tabindex="-1" hidden></div>
+        <details id="editor-advanced" class="editor-advanced"><summary>Advanced: edit fields</summary>
+        <h3 id="editor-title" class="visually-hidden">Edit data</h3>
+        <form id="cq-editor-form" class="capture-form">
+          <div class="editor-grid">
+            <div class="field"><label for="editor-field">Field to change</label><select id="editor-field" disabled></select></div>
+            <div class="field"><label for="editor-subject">Existing record</label><select id="editor-subject" disabled></select></div>
+          </div>
+          <p class="current-value">Current: <strong id="editor-current">Loading…</strong></p>
+          <div class="editor-grid">
+            <div class="field"><label for="editor-action">Action</label><select id="editor-action" disabled></select></div>
+            <div class="field" id="editor-value-field"><label for="editor-value">Value / linked record</label><select id="editor-value" disabled></select><input id="editor-text" hidden disabled maxlength="1500"></div>
+          </div>
+          <div class="demo-actions"><button class="button button-primary" id="editor-save" disabled>Save data change</button><button type="button" class="button button-outline" id="editor-reload">Reload current values</button><button type="button" class="button button-outline" id="editor-undo" disabled>Undo last data change</button></div>
+          <p id="editor-history" class="muted"></p>
+          <div id="editor-feedback" class="notice" role="status" tabindex="-1" hidden></div>
+          <details class="query-details"><summary>Help &amp; field mapping</summary><div class="cq-source"><p id="editor-tip"></p><p id="editor-help"></p><p id="editor-mapping"></p></div></details>
+        </form>
+        </details>
+      </section>
+      <section class="cq-results" aria-labelledby="results-title" aria-live="polite">
+      <div class="results-heading"><div><p class="overline">From the current data</p><h3 id="results-title">Answer</h3></div></div>
+      <div id="cq-answer-box" class="cq-direct-answer" hidden><strong id="cq-answer-status" class="visually-hidden"></strong><p id="cq-answer"></p><div id="cq-answer-items"></div><p id="cq-answer-note" class="cq-answer-note" hidden></p></div>
+      <p id="cq-status" class="muted" role="status">Loading query results…</p>
+      <p id="cq-recovery" class="notice notice-warning" hidden>The updated application uses port 8770. <a href="http://127.0.0.1:8770/#competency-questions">Open CQ1–CQ9</a>. If it is not running, start it with <code>start.cmd</code>.</p>
+      <details id="cq-evidence" class="query-details cq-evidence" hidden><summary>Verify this answer <span id="cq-result-count" class="evidence-row-count">—</span></summary><div class="cq-evidence-content">
+      <div class="table-wrap" id="cq-table-wrap" hidden tabindex="0" role="region" aria-label="Competency question results"><table><caption class="visually-hidden" id="cq-caption">Current graph results</caption><thead><tr id="cq-head"></tr></thead><tbody id="cq-body"></tbody></table></div>
+      <details class="query-details"><summary>Query interpretation</summary><ul id="cq-notes" class="cq-notes"></ul></details>
+      <details class="query-details"><summary id="cq-query-title">View executed SPARQL</summary><pre class="code-block"><code id="cq-query">Query not loaded.</code></pre></details>
+      <details class="query-details"><summary>Question source</summary><div class="cq-source"><p id="cq-id"></p><p id="cq-scenario"></p><p id="cq-source"></p><p id="cq-source-path"></p><p id="cq-source-gap"></p></div></details>
+      </div></details>
+      </section>
+      </div>
+    </section>
+
+    <section class="export-stage" id="demo-export" aria-labelledby="export-title">
+      <div class="step-heading"><span class="step-number">04</span><div><h2 id="export-title">Export &amp; verify</h2><p class="muted">Website → Save → Export RDF<br>Source RDF → Edit &amp; save → Sync RDF</p><details class="source-file-details"><summary>Source file to edit</summary><code id="source-rdf-path">Loading source path…</code></details></div></div>
+      <div class="export-actions"><a href="/api/export.rdf" id="export-rdf-link" class="button button-primary" aria-disabled="true" tabindex="-1" download="digitalcare-current.rdf">Export RDF <span aria-hidden="true">↓</span></a><a href="/api/export" id="export-link" class="button button-outline" aria-disabled="true" tabindex="-1" download="DigitalCare_A2_Task2.ttl">Export TTL <span aria-hidden="true">↓</span></a></div>
+    </section>
+
+    <section class="database-reset" aria-labelledby="database-reset-title">
+      <div><p class="overline">Classroom demo</p><h2 id="database-reset-title">Start with the original data</h2><p class="muted" id="database-reset-scope">Remove test records and edits. Restore the current RDF source.</p></div>
+      <div class="demo-actions"><button type="button" class="button button-reset" id="reset-database" aria-describedby="database-reset-scope" disabled>Reset to original data</button><button type="button" class="button button-outline" id="restore-database" disabled>Restore previous data</button></div>
+      <p id="database-baseline" class="muted"></p>
+      <p id="database-backup-status" class="muted" role="status">Checking recovery backup…</p>
+      <div id="database-feedback" class="notice" role="status" tabindex="-1" hidden></div>
+    </section>
+
+    <details class="evidence" id="assessment-evidence">
+      <summary><span><span class="evidence-symbol" aria-hidden="true">↗</span>Data &amp; technical details <span class="evidence-caption">Saved links · SPARQL · demo reset</span></span><svg class="chevron" viewBox="0 0 20 20" fill="none" aria-hidden="true"><path d="m5 7 5 5 5-5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></summary>
+      <div class="evidence-body">
+
+
+        <section class="evidence-section" aria-labelledby="links-title">
+          <div class="section-heading"><div><p class="overline">Current graph</p><h3 id="links-title">Saved review links</h3></div></div>
+          <p id="links-status" class="muted" role="status">Loading saved links…</p>
+          <details class="demo-tools review-reset-tools"><summary id="demo-title">Advanced · Clear review links only</summary>
+            <p class="muted" id="demo-scope">Clears only review links, including sample links. Guides and other data stay.</p>
+            <div class="demo-actions"><button type="button" class="button button-reset" id="reset-reviews" aria-describedby="demo-scope" disabled>Reset review links</button><button type="button" class="button button-outline" id="restore-reviews" disabled>Restore previous links</button></div>
+            <p class="muted" id="demo-backup-status" role="status">Checking recovery backup…</p>
+            <div id="demo-feedback" class="notice" role="status" tabindex="-1" hidden></div>
+          </details>
+          <div class="table-wrap" id="links-table-wrap" hidden tabindex="0" role="region" aria-label="Saved review links table"><table><caption class="visually-hidden">All current Guide isReviewedBy HealthcareProfessional relationships</caption><thead><tr><th scope="col">Guide</th><th scope="col">Healthcare professional</th></tr></thead><tbody id="links-body"></tbody></table></div>
+        </section>
+
+
+
+        <section class="evidence-section" aria-labelledby="queries-title"><p class="overline">Field mapping</p><h3 id="queries-title">Form queries</h3><p class="muted">Both selections use existing record IRIs. The saved relationship is <code>Guide → isReviewedBy → HealthcareProfessional</code>.</p>
+          <details class="query-details"><summary>Guide choices · SELECT</summary><pre class="code-block"><code id="guides-query">Query not loaded.</code></pre></details>
+          <details class="query-details"><summary>Healthcare professional choices · SELECT</summary><pre class="code-block"><code id="reviewers-query">Query not loaded.</code></pre></details>
+          <details class="query-details"><summary>Saved relationships · SELECT</summary><pre class="code-block"><code id="links-query">Query not loaded.</code></pre></details>
+          <details class="query-details"><summary>Save relationship · SPARQL UPDATE template</summary><pre class="code-block"><code id="update-query">Query not loaded.</code></pre></details>
+        </section>
+      </div>
+    </details>
+    <footer class="page-footer"><span>Digital Care <span aria-hidden="true">/</span> ISIT906 Assignment 2</span><span>Create → Connect → Edit → Export</span></footer>
+  </main>
+</body>
+</html>

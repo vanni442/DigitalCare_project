@@ -1,0 +1,26 @@
+PREFIX dc: <http://uow.edu.au/isit906/thestar/digitalcare#>
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
+
+# One row per service; competency.py counts and ranks these distinct records.
+SELECT ?service
+       (COALESCE(MIN(STR(?label)), STRAFTER(STR(?service), "#")) AS ?serviceName)
+       (GROUP_CONCAT(DISTINCT STR(?phone); separator="; ") AS ?phone)
+       (GROUP_CONCAT(DISTINCT STR(?reliable); separator="|") AS ?reliable)
+       (GROUP_CONCAT(DISTINCT STR(?evidence); separator="; ") AS ?reliabilityEvidence)
+       (GROUP_CONCAT(DISTINCT STR(?distance); separator="|") AS ?distanceKm)
+WHERE {
+  dc:SarahCarer rdf:type/rdfs:subClassOf* dc:Carer ; dc:caresFor ?adult .
+  ?adult rdf:type/rdfs:subClassOf* dc:OlderAdult ; dc:hasCondition ?condition .
+  ?condition rdf:type/rdfs:subClassOf* dc:HealthCondition .
+  ?service rdf:type/rdfs:subClassOf* dc:SupportService ;
+    dc:supportsCondition ?condition ; dc:isLocatedIn dc:NSW ; dc:phoneNumber ?phone .
+  dc:NSW rdf:type/rdfs:subClassOf* dc:Location .
+  FILTER(STRLEN(STR(?phone)) > 0)
+  OPTIONAL { ?service rdfs:label ?label }
+  OPTIONAL { ?service dc:isReliable ?reliable }
+  OPTIONAL { ?service dc:reliabilityEvidence ?evidence }
+  OPTIONAL { ?service dc:distanceKm ?distance . FILTER(?adult = dc:MaryOlderAdult) }
+}
+GROUP BY ?service ORDER BY ?serviceName

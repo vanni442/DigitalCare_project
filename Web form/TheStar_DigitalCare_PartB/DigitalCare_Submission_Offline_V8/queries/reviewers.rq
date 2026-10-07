@@ -1,0 +1,16 @@
+PREFIX dc: <http://uow.edu.au/isit906/thestar/digitalcare#>
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX owl: <http://www.w3.org/2002/07/owl#>
+
+# Live dropdown: one row per existing IRI; labels come from the graph.
+# The property path supports explicitly typed subclasses without a reasoner.
+SELECT ?iri (COALESCE(MIN(STR(?rawLabel)), STRAFTER(STR(?iri), "#")) AS ?label)
+WHERE {
+  dc:isReviewedBy rdfs:range ?range .
+  ?iri rdf:type/rdfs:subClassOf* ?range .
+  FILTER(isIRI(?iri) && STRSTARTS(STR(?iri), "http://uow.edu.au/isit906/thestar/digitalcare#"))
+  OPTIONAL { ?iri rdfs:label ?rawLabel }
+}
+GROUP BY ?iri
+ORDER BY LCASE(?label) STR(?iri)

@@ -1,0 +1,17 @@
+PREFIX dc: <http://uow.edu.au/isit906/thestar/digitalcare#>
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX owl: <http://www.w3.org/2002/07/owl#>
+
+# Internal template: RECORD is an IRI validated against the fixed namespace;
+# CLASS is one of the server's two fixed class names, never request input.
+SELECT ?exists ?validType
+       (COALESCE(MIN(STR(?rawLabel)), STRAFTER(STR(?record), "#")) AS ?label)
+WHERE {
+  VALUES ?record { <__RECORD__> }
+  BIND(EXISTS { { ?record ?p ?o } UNION { ?s ?p ?record } } AS ?exists)
+  BIND(EXISTS { ?record rdf:type/rdfs:subClassOf* dc:__CLASS__ } AS ?validType)
+  OPTIONAL { ?record rdfs:label ?rawLabel }
+}
+GROUP BY ?record ?exists ?validType
+

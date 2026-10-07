@@ -1,0 +1,91 @@
+{
+  "dataset": "http://127.0.0.1:3032/digitalcare_submission_v7",
+  "createdAt": "2026-09-23T11:59:37.476160+00:00",
+  "plan": {
+    "cq": "CQ7",
+    "recordIri": "http://uow.edu.au/isit906/thestar/digitalcare#Demo-CQ7-82dac6c4837f40969cfb23e1fd75ce5c",
+    "recordLabel": "Alzheimer Guide 2",
+    "createdIndividuals": 1,
+    "ownedIris": [
+      "http://uow.edu.au/isit906/thestar/digitalcare#Demo-CQ7-82dac6c4837f40969cfb23e1fd75ce5c"
+    ],
+    "triples": "<http://uow.edu.au/isit906/thestar/digitalcare#Demo-CQ7-82dac6c4837f40969cfb23e1fd75ce5c> a dc:Guide, owl:NamedIndividual; rdfs:label \"Alzheimer Guide 2\"^^<http://www.w3.org/2001/XMLSchema#string>; rdfs:comment \"Fictional classroom demo data.\" .\n<http://uow.edu.au/isit906/thestar/digitalcare#Demo-CQ7-82dac6c4837f40969cfb23e1fd75ce5c> <http://uow.edu.au/isit906/thestar/digitalcare#title> \"Alzheimer Guide 2\"^^<http://www.w3.org/2001/XMLSchema#string> .\n<http://uow.edu.au/isit906/thestar/digitalcare#Demo-CQ7-82dac6c4837f40969cfb23e1fd75ce5c> <http://uow.edu.au/isit906/thestar/digitalcare#isIntendedFor> <http://uow.edu.au/isit906/thestar/digitalcare#RobertOlderAdult> .\n<http://uow.edu.au/isit906/thestar/digitalcare#Demo-CQ7-82dac6c4837f40969cfb23e1fd75ce5c> <http://uow.edu.au/isit906/thestar/digitalcare#isRelatedTo> <http://uow.edu.au/isit906/thestar/digitalcare#AlzheimersDementia> .\n<http://uow.edu.au/isit906/thestar/digitalcare#Demo-CQ7-82dac6c4837f40969cfb23e1fd75ce5c> <http://uow.edu.au/isit906/thestar/digitalcare#isAvailableIn> <http://uow.edu.au/isit906/thestar/digitalcare#Chinese> .",
+    "guards": "<http://uow.edu.au/isit906/thestar/digitalcare#RobertOlderAdult> rdf:type/rdfs:subClassOf* dc:OlderAdult . \n<http://uow.edu.au/isit906/thestar/digitalcare#AlzheimersDementia> rdf:type/rdfs:subClassOf* dc:HealthCondition . \n<http://uow.edu.au/isit906/thestar/digitalcare#Chinese> rdf:type/rdfs:subClassOf* dc:Language . ",
+    "form": {
+      "cq": "CQ7",
+      "title": "Add a Chinese guide",
+      "summary": "Enter the fields below. Examples show what to enter.",
+      "ready": true,
+      "formVersion": 2,
+      "fields": [
+        {
+          "id": "name",
+          "label": "Guide title",
+          "type": "text",
+          "required": true,
+          "example": "My CQ7 demo",
+          "hint": "Enter the name you want to see in the answer.",
+          "maxLength": 150
+        },
+        {
+          "id": "audience",
+          "label": "Audience",
+          "type": "select",
+          "required": true,
+          "example": "MaryOlderAdult",
+          "hint": "Choose an older-adult audience, for example MaryOlderAdult.",
+          "options": [
+            {
+              "value": "http://uow.edu.au/isit906/thestar/digitalcare#ChenOlderAdult",
+              "label": "ChenOlderAdult"
+            },
+            {
+              "value": "http://uow.edu.au/isit906/thestar/digitalcare#JoeOlderAdult",
+              "label": "JoeOlderAdult"
+            },
+            {
+              "value": "http://uow.edu.au/isit906/thestar/digitalcare#MaryOlderAdult",
+              "label": "MaryOlderAdult"
+            },
+            {
+              "value": "http://uow.edu.au/isit906/thestar/digitalcare#RobertOlderAdult",
+              "label": "RobertOlderAdult"
+            }
+          ]
+        },
+        {
+          "id": "topic",
+          "label": "Topic",
+          "type": "select",
+          "required": true,
+          "example": "AlzheimersDementia",
+          "hint": "Choose AlzheimersDementia because CQ7 asks for Alzheimer's guides.",
+          "options": [
+            {
+              "value": "http://uow.edu.au/isit906/thestar/digitalcare#AlzheimersDementia",
+              "label": "AlzheimersDementia"
+            }
+          ]
+        },
+        {
+          "id": "language",
+          "label": "Language",
+          "type": "select",
+          "required": true,
+          "example": "Chinese",
+          "hint": "Choose Chinese because CQ7 asks for Chinese guides.",
+          "options": [
+            {
+              "value": "http://uow.edu.au/isit906/thestar/digitalcare#Chinese",
+              "label": "Chinese"
+            }
+          ]
+        }
+      ],
+      "context": []
+    }
+  },
+  "planHash": "46e4d122fc1dbb91167498883afe472324782f679f99fed1086ab614e7aee6eb",
+  "inputHash": "e05ef4044727c7ab0588c4868d1e8d7965023bd4ba571dcb2fb95fc65ec5a08c",
+  "resetStamp": "2026-09-23T11:36:07.393113+00:00"
+}

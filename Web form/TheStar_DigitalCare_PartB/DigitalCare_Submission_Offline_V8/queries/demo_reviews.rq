@@ -1,0 +1,6 @@
+# All review assertions in the default graph, including the original seed links.
+PREFIX dc: <http://uow.edu.au/isit906/thestar/digitalcare#>
+SELECT DISTINCT ?guide ?reviewer WHERE {
+  ?guide dc:isReviewedBy ?reviewer .
+}
+ORDER BY ?guide ?reviewer

@@ -1,0 +1,84 @@
+{
+  "dataset": "http://127.0.0.1:3032/digitalcare_submission_v7",
+  "createdAt": "2026-09-23T11:54:44.638376+00:00",
+  "plan": {
+    "cq": "CQ5",
+    "recordIri": "http://uow.edu.au/isit906/thestar/digitalcare#Demo-CQ5-35cd32d909d9401383c2bc3dc325a4f3",
+    "recordLabel": "Private Symptom Search Guide",
+    "createdIndividuals": 2,
+    "ownedIris": [
+      "http://uow.edu.au/isit906/thestar/digitalcare#Demo-CQ5-35cd32d909d9401383c2bc3dc325a4f3",
+      "http://uow.edu.au/isit906/thestar/digitalcare#Demo-CQ5-Policy-35cd32d909d9401383c2bc3dc325a4f3"
+    ],
+    "triples": "<http://uow.edu.au/isit906/thestar/digitalcare#Demo-CQ5-35cd32d909d9401383c2bc3dc325a4f3> a dc:Guide, owl:NamedIndividual; rdfs:label \"Private Symptom Search Guide\"^^<http://www.w3.org/2001/XMLSchema#string>; rdfs:comment \"Fictional classroom demo data.\" .\n<http://uow.edu.au/isit906/thestar/digitalcare#Demo-CQ5-35cd32d909d9401383c2bc3dc325a4f3> <http://uow.edu.au/isit906/thestar/digitalcare#title> \"Private Symptom Search Guide\"^^<http://www.w3.org/2001/XMLSchema#string> .\n<http://uow.edu.au/isit906/thestar/digitalcare#Demo-CQ5-35cd32d909d9401383c2bc3dc325a4f3> <http://uow.edu.au/isit906/thestar/digitalcare#describes> <http://uow.edu.au/isit906/thestar/digitalcare#MemoryLoss> .\n<http://uow.edu.au/isit906/thestar/digitalcare#Demo-CQ5-35cd32d909d9401383c2bc3dc325a4f3> <http://uow.edu.au/isit906/thestar/digitalcare#isRelatedTo> <http://uow.edu.au/isit906/thestar/digitalcare#MemoryLoss> .\n<http://uow.edu.au/isit906/thestar/digitalcare#Demo-CQ5-35cd32d909d9401383c2bc3dc325a4f3> <http://uow.edu.au/isit906/thestar/digitalcare#isGovernedBy> <http://uow.edu.au/isit906/thestar/digitalcare#Demo-CQ5-Policy-35cd32d909d9401383c2bc3dc325a4f3> .\n<http://uow.edu.au/isit906/thestar/digitalcare#Demo-CQ5-Policy-35cd32d909d9401383c2bc3dc325a4f3> a dc:PrivacyPolicy, owl:NamedIndividual; rdfs:label \"No Personal Details Policy\"^^<http://www.w3.org/2001/XMLSchema#string>; rdfs:comment \"Fictional classroom demo data.\" .\n<http://uow.edu.au/isit906/thestar/digitalcare#Demo-CQ5-Policy-35cd32d909d9401383c2bc3dc325a4f3> <http://uow.edu.au/isit906/thestar/digitalcare#requiresPersonalInformationForSearch> \"false\"^^<http://www.w3.org/2001/XMLSchema#boolean> .\n<http://uow.edu.au/isit906/thestar/digitalcare#Demo-CQ5-Policy-35cd32d909d9401383c2bc3dc325a4f3> <http://uow.edu.au/isit906/thestar/digitalcare#searchRequirementEvidence> \"Search does not request a name or email\"^^<http://www.w3.org/2001/XMLSchema#string> .",
+    "guards": "dc:AlzheimersDementia rdf:type/rdfs:subClassOf* dc:HealthCondition .\n<http://uow.edu.au/isit906/thestar/digitalcare#MemoryLoss> rdf:type/rdfs:subClassOf* dc:Symptom . dc:AlzheimersDementia dc:hasSymptom <http://uow.edu.au/isit906/thestar/digitalcare#MemoryLoss> .",
+    "form": {
+      "cq": "CQ5",
+      "title": "Add a anonymous-search guide",
+      "summary": "Enter the fields below. Examples show what to enter.",
+      "ready": true,
+      "formVersion": 2,
+      "fields": [
+        {
+          "id": "name",
+          "label": "Guide title",
+          "type": "text",
+          "required": true,
+          "example": "My CQ5 demo",
+          "hint": "Enter the name you want to see in the answer.",
+          "maxLength": 150
+        },
+        {
+          "id": "symptom",
+          "label": "Alzheimer's symptom",
+          "type": "select",
+          "required": true,
+          "example": "MemoryLoss",
+          "hint": "Choose a symptom already linked to Alzheimer's, for example MemoryLoss.",
+          "options": [
+            {
+              "value": "http://uow.edu.au/isit906/thestar/digitalcare#MemoryLoss",
+              "label": "MemoryLoss"
+            }
+          ]
+        },
+        {
+          "id": "policyName",
+          "label": "New privacy policy name",
+          "type": "text",
+          "required": true,
+          "example": "My demo privacy policy",
+          "hint": "Enter a name for this guide's own new policy.",
+          "maxLength": 150
+        },
+        {
+          "id": "personalInformation",
+          "label": "Personal information required",
+          "type": "select",
+          "required": true,
+          "example": "False",
+          "hint": "Choose False to demonstrate searching without personal information.",
+          "options": [
+            {
+              "value": "false",
+              "label": "False"
+            }
+          ]
+        },
+        {
+          "id": "evidence",
+          "label": "Policy source",
+          "type": "text",
+          "required": true,
+          "example": "Fictional classroom policy: no personal information required",
+          "hint": "Enter the demo policy source supporting this answer.",
+          "maxLength": 500
+        }
+      ],
+      "context": []
+    }
+  },
+  "planHash": "7806f236e23a19972020fcdcd6a585bcbc50f60309549e45a2ae7dc3c2ac3f5c",
+  "inputHash": "7acead65676bdddf10579f639a939f091f065b24c0d0d3aa1b18e781e67941f4",
+  "resetStamp": "2026-09-23T11:36:07.393113+00:00"
+}
